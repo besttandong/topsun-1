@@ -13,15 +13,15 @@ public class AdjustShopInfo {
 	
 	private String id; //标识
 	
-	private String outShop; //调出店铺
+	private int outShop; //调出店铺
 	
-	private String intoShop;//调入店铺
+	private int intoShop;//调入店铺
 	
 	private String voucherNo; //单据编号
 	
 	private Date callDate; //调拨日期
 	
-	private String callType; // 调拨类型
+	private int callType; // 调拨类型
 	
 	private Date checkDate;//审核日期
 	
@@ -33,36 +33,12 @@ public class AdjustShopInfo {
 	
 	private List<Item> itemList; // 商品列表
 	
-	private String applyUser;//制单人
+	private int applyUser;//制单人
 	
-	private String checker;//审核人
+	private int checker;//审核人
 	
-	private String reChecker;//复核人
+	private int reChecker;//复核人
 	
-	public String getApplyUser() {
-		return applyUser;
-	}
-
-	public void setApplyUser(String applyUser) {
-		this.applyUser = applyUser;
-	}
-
-	public String getChecker() {
-		return checker;
-	}
-
-	public void setChecker(String checker) {
-		this.checker = checker;
-	}
-
-	public String getReChecker() {
-		return reChecker;
-	}
-
-	public void setReChecker(String reChecker) {
-		this.reChecker = reChecker;
-	}
-
 	public String getId() {
 		return id;
 	}
@@ -111,36 +87,12 @@ public class AdjustShopInfo {
 		this.remark = remark;
 	}
 
-	public String getOutShop() {
-		return outShop;
-	}
-
-	public void setOutShop(String outShop) {
-		this.outShop = outShop;
-	}
-
-	public String getIntoShop() {
-		return intoShop;
-	}
-
-	public void setIntoShop(String intoShop) {
-		this.intoShop = intoShop;
-	}
-
 	public Date getCallDate() {
 		return callDate;
 	}
 
 	public void setCallDate(Date callDate) {
 		this.callDate = callDate;
-	}
-
-	public String getCallType() {
-		return callType;
-	}
-
-	public void setCallType(String callType) {
-		this.callType = callType;
 	}
 
 	public int getItemNum() {
@@ -150,5 +102,52 @@ public class AdjustShopInfo {
 	public void setItemNum(int itemNum) {
 		this.itemNum = itemNum;
 	}
-	
+
+	public final int getOutShop() {
+		return outShop;
+	}
+
+	public final void setOutShop(int outShop) {
+		this.outShop = outShop;
+	}
+
+	public final int getIntoShop() {
+		return intoShop;
+	}
+
+	public final void setIntoShop(int intoShop) {
+		this.intoShop = intoShop;
+	}
+
+	public final int getCallType() {
+		return callType;
+	}
+
+	public final void setCallType(int callType) {
+		this.callType = callType;
+	}
+
+	public final int getApplyUser() {
+		return applyUser;
+	}
+
+	public final void setApplyUser(int applyUser) {
+		this.applyUser = applyUser;
+	}
+
+	public final int getChecker() {
+		return checker;
+	}
+
+	public final void setChecker(int checker) {
+		this.checker = checker;
+	}
+
+	public final int getReChecker() {
+		return reChecker;
+	}
+
+	public final void setReChecker(int reChecker) {
+		this.reChecker = reChecker;
+	}
 }
