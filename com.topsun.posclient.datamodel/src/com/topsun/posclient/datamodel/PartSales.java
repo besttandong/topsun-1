@@ -17,11 +17,11 @@ public class PartSales implements Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private String shopName; //店铺名称
+	private int shopId; //店铺名称
 	
 	private String no;//单据编号
 	
-	private String balloter;//收银员
+	private int balloter;//收银员
 	
 	private String ballotNo;//收银票号
 	
@@ -31,7 +31,7 @@ public class PartSales implements Serializable {
 	
 	private Date checkDate; //审核日期
 	
-	private String userName; //会员
+	private int userId; //会员
 	
 	private String cardNo;// 会员卡号
 	
@@ -39,9 +39,9 @@ public class PartSales implements Serializable {
 
 	private String enablePoint; //可用积分
 	
-	private String applyUser;//制单人
+	private int applyUser;//制单人
 	
-	private String checker;//审核人
+	private int checker;//审核人
 	
 	private List<Item> itemList; //零售明细，商品列表
 	
@@ -72,14 +72,6 @@ public class PartSales implements Serializable {
 		this.checkDate = checkDate;
 	}
 
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
 	public String getCardNo() {
 		return cardNo;
 	}
@@ -96,44 +88,12 @@ public class PartSales implements Serializable {
 		this.enablePoint = enablePoint;
 	}
 
-	public String getApplyUser() {
-		return applyUser;
-	}
-
-	public void setApplyUser(String applyUser) {
-		this.applyUser = applyUser;
-	}
-
-	public String getChecker() {
-		return checker;
-	}
-
-	public void setChecker(String checker) {
-		this.checker = checker;
-	}
-
-	public String getShopName() {
-		return shopName;
-	}
-
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
-	}
-
 	public String getNo() {
 		return no;
 	}
 
 	public void setNo(String no) {
 		this.no = no;
-	}
-
-	public String getBalloter() {
-		return balloter;
-	}
-
-	public void setBalloter(String balloter) {
-		this.balloter = balloter;
 	}
 
 	public String getBallotNo() {
@@ -166,5 +126,45 @@ public class PartSales implements Serializable {
 
 	public void setPsCashierList(List<PartSalesCashier> psCashierList) {
 		this.psCashierList = psCashierList;
+	}
+
+	public final int getShopId() {
+		return shopId;
+	}
+
+	public final void setShopId(int shopId) {
+		this.shopId = shopId;
+	}
+
+	public final int getBalloter() {
+		return balloter;
+	}
+
+	public final void setBalloter(int balloter) {
+		this.balloter = balloter;
+	}
+
+	public final int getUserId() {
+		return userId;
+	}
+
+	public final void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public final int getApplyUser() {
+		return applyUser;
+	}
+
+	public final void setApplyUser(int applyUser) {
+		this.applyUser = applyUser;
+	}
+
+	public final int getChecker() {
+		return checker;
+	}
+
+	public final void setChecker(int checker) {
+		this.checker = checker;
 	}
 }
