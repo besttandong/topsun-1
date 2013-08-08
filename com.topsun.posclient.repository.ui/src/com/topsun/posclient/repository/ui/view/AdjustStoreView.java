@@ -204,17 +204,17 @@ public class AdjustStoreView extends ViewPart {
 				
 					Button button = (Button)e.getSource();
 					adjustShopInfo = new AdjustShopInfo();
-					adjustShopInfo.setOutShop(leaveStoreName.getText());
-					adjustShopInfo.setIntoShop(inStoreName.getText());
+//					adjustShopInfo.setOutShop(leaveStoreName.getText());
+//					adjustShopInfo.setIntoShop(inStoreName.getText());
+//					adjustShopInfo.setCallType(adjustType.getText());
 					adjustShopInfo.setVoucherNo(orderNo.getText());
-					adjustShopInfo.setCallType(adjustType.getText());
 					adjustShopInfo.setCallDate(callDate.getDate().getTime());
 					adjustShopInfo.setCheckDate(checkDate.getDate().getTime());
 					adjustShopInfo.setReCheckDate(reCheckDate.getDate().getTime());
 					adjustShopInfo.setItemNum(Integer.valueOf(numberTotal.getText()));
-					adjustShopInfo.setChecker(checker.getText());
-					adjustShopInfo.setReChecker(reviewer.getText());
-					adjustShopInfo.setApplyUser(applyUser.getText());
+//					adjustShopInfo.setChecker(checker.getText());
+//					adjustShopInfo.setReChecker(reviewer.getText());
+//					adjustShopInfo.setApplyUser(applyUser.getText());
 					
 					adjustShopInfo.setRemark(remark.getText());
 					if (recordViewer.getInput() instanceof List) {

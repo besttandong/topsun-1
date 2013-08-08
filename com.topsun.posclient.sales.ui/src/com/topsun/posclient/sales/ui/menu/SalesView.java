@@ -67,7 +67,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 	
 	
 	public IPartSaleService partSaleService = new PartSaleServiceImpl();
-	
+	public User user = POSClientApp.get().getLoginUser();
 	List<Item> itemsList = new ArrayList<Item>();
 		
 	public PartSales partSales;
@@ -303,14 +303,15 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					}
 					
 					partSales = new PartSales();
-					partSales.setApplyUser(applyUser.getText());
+					String userCode = user.getUserCode();
+					partSales.setApplyUser(Integer.valueOf(userCode));
 					//partSales.setBalance(balance)
-					partSales.setBalloter(casher.getText());
+					partSales.setBalloter(Integer.valueOf(userCode));
 					partSales.setBallotNo(casherNo.getText());
 					partSales.setCardNo(cardNo.getText());
 //					Calendar checkCal= checkDate.getDate();
 //					partSales.setCheckDate(checkCal.getTime());
-					partSales.setChecker(checker.getText());
+					partSales.setChecker(Integer.valueOf(userCode));
 					partSales.setEnableBalance(enableBalance.getText());
 					partSales.setEnablePoint(enablePoint.getText());
 					partSales.setNo(orderNo.getText());
@@ -319,8 +320,10 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					Calendar salesCal= salesDate.getDate();
 					partSales.setCheckDate(salesCal.getTime());
 					
-					partSales.setShopName(shopName.getText());
-					partSales.setUserName(userName.getText());
+					partSales.setShopId(user.getDeptId());
+				
+					partSales.setUserId(Integer.valueOf(user.getUserCode()));
+//					partSales.setUserName(userName.getText());
 					if(tableViewer.getInput() instanceof List){
 						List list = (List)tableViewer.getInput();
 						partSales.setItemList(list);
@@ -384,7 +387,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 	
 	private void buildRecodeInfo(Composite parent){
 		Composite recodeComposite = new Composite(parent, SWT.NONE);
-		User user = POSClientApp.get().getLoginUser();
+		
 		recodeComposite.setLayout(new GridLayout(4,false));
 		{
 			Label label = new Label(recodeComposite, SWT.NONE);

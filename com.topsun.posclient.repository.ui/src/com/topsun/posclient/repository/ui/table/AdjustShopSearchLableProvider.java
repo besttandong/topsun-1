@@ -33,10 +33,10 @@ public class AdjustShopSearchLableProvider implements ITableLabelProvider {
 		if (element instanceof AdjustShopInfo) {
 			AdjustShopInfo adjustShopInfo = (AdjustShopInfo) element;
 			String callDate = ProjectUtil.getDateString(adjustShopInfo.getCallDate());
-			String outShopName = adjustShopInfo.getOutShop();
-			String intoShopName = adjustShopInfo.getIntoShop();
+			int outShopName = adjustShopInfo.getOutShop();
+			int intoShopName = adjustShopInfo.getIntoShop();
 			String orderNumber = adjustShopInfo.getVoucherNo();
-			String callType = adjustShopInfo.getCallType();
+			int callType = adjustShopInfo.getCallType();
 			int callNum = adjustShopInfo.getItemNum();
 			String remark = adjustShopInfo.getRemark();
 			String checkDate = ProjectUtil.getDateString(adjustShopInfo.getCheckDate());
@@ -47,17 +47,17 @@ public class AdjustShopSearchLableProvider implements ITableLabelProvider {
 			case 1:
 				return orderNumber;
 			case 2:
-				return outShopName;
+				return String.valueOf(outShopName);
 			case 3:
-				return intoShopName;
+				return String.valueOf(intoShopName);
 			case 4:
-				return callType;
+				return String.valueOf(callType);
 			case 5:
 				return String.valueOf(callNum);
 			case 6:
-				return intoShopName;
+				return String.valueOf(intoShopName);
 			case 7:
-				return intoShopName;
+				return String.valueOf(intoShopName);
 			case 8:
 				return checkDate;
 			case 9:

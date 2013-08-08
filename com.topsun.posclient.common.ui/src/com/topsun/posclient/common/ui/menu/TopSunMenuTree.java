@@ -32,15 +32,18 @@ public class TopSunMenuTree extends ViewPart{
 	@Override
 	public void createPartControl(Composite parent) {
 		
-		Composite composite = new Composite(parent, SWT.BORDER);
+		Composite composite = new Composite(parent, SWT.NONE);
 		composite.setBackground(ColorUtils.getSystemColor(SWT.COLOR_WHITE));
 		GridLayout gridLayout = new GridLayout(1,false);
+		gridLayout.marginBottom = 0;
+		gridLayout.marginHeight = 0;
+		gridLayout.marginLeft = 0;
+		gridLayout.marginRight = 0 ;
+		gridLayout.marginTop = 0;
+		gridLayout.marginWidth = 0;
 		composite.setLayout(gridLayout);
-		Color color = PlatformUI.getWorkbench().getDisplay().getSystemColor(SWT.COLOR_WHITE);
-		PShelf pShelf = new PShelf(composite, SWT.BORDER);
-		//Font font = new Font(parent.getDisplay(),"黑体", 9, SWT.BOLD);
-//		pShelf.setFont(font);
-//		pShelf.setBackground(color);
+		PShelf pShelf = new PShelf(composite, SWT.NONE);
+		
 		pShelf.setLayoutData(new GridData(GridData.FILL_BOTH));
 		
 		MenuTreeManagerFacede.getInstance().loadMenuExtension();
