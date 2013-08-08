@@ -1,6 +1,5 @@
 package com.topsun.posclient.repository.dao;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -20,6 +19,8 @@ import com.topsun.posclient.webservice.dto.QueryShopAllotReq;
 import com.topsun.posclient.webservice.dto.QueryShopAllotReqCondition;
 import com.topsun.posclient.webservice.dto.QueryShopAllotResponse;
 import com.topsun.posclient.webservice.dto.QueryShopAllotResult;
+import com.topsun.posclient.webservice.dto.SaveShopAllot;
+import com.topsun.posclient.webservice.dto.SaveShopAllotReq;
 import com.topsun.posclient.webservice.dto.ShopAllot;
 
 /**
@@ -38,112 +39,132 @@ public class AdjustShopDao extends BaseDao {
 	 */
 	public void saveAdjustShop(AdjustShopDTO adjustStoreDTO) throws Exception {
 		if (checkConnection()) {
-			//保存本地备份数据
-			File file = this.getLocalProcessor().createXmlFileFromObject(adjustStoreDTO, "data_adjustShop", AppConstants.DATA_ADJUSTSHOP_PATH_BACK);
-			String saveData = this.getLocalProcessor().getDataFileContent(file);
-//			IPosWebService webservice = this.getServerCaller().getWebService();
-//			webservice.saveShopPay(saveData);
-		}else{
+			// 保存本地备份数据
+			this.getLocalProcessor().createXmlFileFromObject(adjustStoreDTO,
+					"data_adjustShop", AppConstants.DATA_ADJUSTSHOP_PATH_BACK);
+
+			List<AdjustShopInfo> list = adjustStoreDTO.getAdjustShopList();
+
+			ShopAllot[] shopAllots = new ShopAllot[list.size()];
+			AdjustShopInfo info = list.get(0);
+			ShopAllot sa = new ShopAllot();
+			sa.setAllotDate(ProjectUtil.getCalendar(info.getCallDate()));
+			sa.setAllotTypeId(info.getCallType());
+			sa.setDocNum(info.getVoucherNo());
+			sa.setDocNumPOS("POS09");
+			sa.setInShpId(info.getIntoShop());
+			sa.setOutShpId(info.getOutShop());
+			sa.setMemo(info.getRemark());
+			sa.setMakerID(info.getApplyUser());
+			sa.setItems(getItemArray(info.getItemList()));
+			
+			shopAllots[0] = sa;
+			
+			ArrayOfshopAllot aoa = new ArrayOfshopAllot();
+			aoa.setShopAllot(shopAllots);
+
+			SaveShopAllotReq req = new SaveShopAllotReq();
+			req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+			req.setShopAllots(aoa);
+
+			SaveShopAllot saveShopAllot = new SaveShopAllot();
+			saveShopAllot.setSaveShopAllotReq(req);
+			POSServerCaller.getWebService().saveShopAllot(saveShopAllot);
+
+			System.out
+					.println("--------->>> Call webservice saveShopAllot finished!");
+
+		} else {
 			this.getLocalProcessor().createXmlFileFromObject(adjustStoreDTO,
 					"data_adjustShop", AppConstants.DATA_ADJUSTSHOP_PATH);
 		}
 	}
-	
+
 	/**
 	 * 查询调店信息
 	 * 
 	 * @return 调店信息集合
 	 * @throws Exception
 	 */
-	public List<AdjustShopInfo> queryAdjustShopInfo(HashMap<String, Object> queryParams) throws Exception {
-		if (checkConnection()) {
-			//设置查询条件
-			QueryShopAllotReqCondition condition = new QueryShopAllotReqCondition();
-//			condition.setInShpId(0);
-//			condition.setMakerID(0);
-//			condition.setOutShpId(0);
-//			condition.setDocNum(null);
-//			condition.setAllotTypeId(0);
-//			condition.setAllotDateStart(null);
-//			condition.setAllotDateFinish(null);
-			
-			//设置查询请求报文
-			QueryShopAllot queryShopAllot = new QueryShopAllot();
-			
-			QueryShopAllotReq req = new QueryShopAllotReq();
-			req.setUserCredential(POSServerCaller.getDefaultUserCredential());
-			req.setCondition(condition);
-			
-			queryShopAllot.setQueryShopAllotReq(req);
-			
-			//处理返回值
-			QueryShopAllotResponse response = POSServerCaller.getWebService().queryShopAllot(queryShopAllot);
-			QueryShopAllotResult result = response.getQueryShopAllotResult();
-			
-			List<AdjustShopInfo> resultList = new ArrayList<AdjustShopInfo>();
-			
-			if(result.getResult().getFlag().equals("0")){
-				ArrayOfshopAllot arrayOfshopAllot = result.getShopAllots();
-				ShopAllot[] shopAllotArray = arrayOfshopAllot.getShopAllot();
-				for(int i=0; i<shopAllotArray.length; i++){
-					ShopAllot shopAllot = shopAllotArray[i];
-					AdjustShopInfo adjustShop = new AdjustShopInfo();
-					adjustShop.setVoucherNo(shopAllot.getDocNum());
-					adjustShop.setApplyUser(String.valueOf(shopAllot.getMakerID()));
-					adjustShop.setCallDate(shopAllot.getAllotDate().getTime());
-					adjustShop.setCallType(String.valueOf(shopAllot.getAllotTypeId()));
-					adjustShop.setIntoShop(String.valueOf(shopAllot.getInShpId()));
-					adjustShop.setRemark(shopAllot.getMemo());
-					adjustShop.setOutShop(String.valueOf(shopAllot.getOutShpId()));
-					adjustShop.setItemList(getItemList(shopAllot.getItems()));
-					adjustShop.setCheckDate(new Date());
-					adjustShop.setChecker(String.valueOf(shopAllot.getMakerID()));
-					adjustShop.setReCheckDate(new Date());
-					adjustShop.setReChecker(String.valueOf(shopAllot.getMakerID()));
-					adjustShop.setItemNum(shopAllotArray.length);
-					resultList.add(adjustShop);
-				}
-			}else{
-				throw new Exception(result.getResult().getMsg());
+	public List<AdjustShopInfo> queryAdjustShopInfo(
+			HashMap<String, Object> queryParams) throws Exception {
+		// 设置查询条件
+		QueryShopAllotReqCondition condition = new QueryShopAllotReqCondition();
+		// condition.setInShpId(0);
+		// condition.setMakerID(0);
+		// condition.setOutShpId(0);
+		// condition.setDocNum(null);
+		// condition.setAllotTypeId(0);
+		// condition.setAllotDateStart(null);
+		// condition.setAllotDateFinish(null);
+
+		// 设置查询请求报文
+		QueryShopAllot queryShopAllot = new QueryShopAllot();
+
+		QueryShopAllotReq req = new QueryShopAllotReq();
+		req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+		req.setCondition(condition);
+
+		queryShopAllot.setQueryShopAllotReq(req);
+
+		// 处理返回值
+		QueryShopAllotResponse response = POSServerCaller.getWebService()
+				.queryShopAllot(queryShopAllot);
+		QueryShopAllotResult result = response.getQueryShopAllotResult();
+
+		List<AdjustShopInfo> resultList = new ArrayList<AdjustShopInfo>();
+
+		if (result.getResult().getFlag().equals("0")) {
+			ArrayOfshopAllot arrayOfshopAllot = result.getShopAllots();
+			ShopAllot[] shopAllotArray = arrayOfshopAllot.getShopAllot();
+			for (int i = 0; i < shopAllotArray.length; i++) {
+				ShopAllot shopAllot = shopAllotArray[i];
+				AdjustShopInfo adjustShop = new AdjustShopInfo();
+				adjustShop.setVoucherNo(shopAllot.getDocNum());
+				adjustShop.setApplyUser(shopAllot.getMakerID());
+				adjustShop.setCallDate(shopAllot.getAllotDate().getTime());
+				adjustShop.setCallType(shopAllot.getAllotTypeId());
+				adjustShop.setIntoShop(shopAllot.getInShpId());
+				adjustShop.setRemark(shopAllot.getMemo());
+				adjustShop.setOutShop(shopAllot.getOutShpId());
+				adjustShop.setItemList(getItemList(shopAllot.getItems()));
+				adjustShop.setCheckDate(new Date());
+				adjustShop.setChecker(shopAllot.getMakerID());
+				adjustShop.setReCheckDate(new Date());
+				adjustShop.setReChecker(shopAllot.getMakerID());
+				adjustShop.setItemNum(shopAllotArray.length);
+				resultList.add(adjustShop);
 			}
-			return resultList;
-		}else{
-			List<AdjustShopInfo> returnList = new ArrayList<AdjustShopInfo>();
-			List<AdjustShopDTO> adjustShopDTOList = new ArrayList<AdjustShopDTO>();
-			
-			File file = new File(ProjectUtil.getRuntimeClassPath() + AppConstants.DATA_ADJUSTSHOP_PATH);
-			File[] dataFiles = file.listFiles();
-			for(int i=0; i<dataFiles.length; i++){
-				File dataFile = dataFiles[i];
-				if(dataFile.isFile()){
-					AdjustShopDTO adjustShopDTO = (AdjustShopDTO)this.getLocalProcessor()
-					.getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustShopDTO.class);
-					adjustShopDTOList.add(adjustShopDTO);
-				}
-			}
-			for(AdjustShopDTO adjustShopDTO : adjustShopDTOList){
-				List<AdjustShopInfo> adjustShopInfoList = adjustShopDTO.getAdjustShopList();
-				for(AdjustShopInfo asi : adjustShopInfoList){
-					Date startDate = new Date();
-					Date endDate = new Date();
-					//时间区间判断
-					if(asi.getCallDate().before(startDate) && asi.getCallDate().after(endDate)){
-						returnList.add(asi);
-					}
-				}
-			}
-			return returnList;
+		} else {
+			throw new Exception(result.getResult().getMsg());
 		}
+		return resultList;
 	}
 	
-	private static List<Item> getItemList(ArrayOfitem itemArray){
+	private static ArrayOfitem getItemArray(List<Item> itemList){
+		ArrayOfitem arrayOfitem = new ArrayOfitem();
+		com.topsun.posclient.webservice.dto.Item[] itemArray = new com.topsun.posclient.webservice.dto.Item[itemList.size()];;
+		for(int i=0; i<itemList.size(); i++){
+			Item ee = itemList.get(i);
+			com.topsun.posclient.webservice.dto.Item iii = new com.topsun.posclient.webservice.dto.Item();
+			iii.setItemId(ee.getId());
+			iii.setLineNum(Integer.valueOf(ee.getItemCode()));
+			iii.setMemo(ee.getDescription());
+			iii.setQuantity(ee.getNum());
+			itemArray[i] = iii;
+		}
+		arrayOfitem.setItem(itemArray);
+		return arrayOfitem;
+	}
+
+	private static List<Item> getItemList(ArrayOfitem itemArray) {
 		List<Item> items = new ArrayList<Item>();
 		com.topsun.posclient.webservice.dto.Item[] iArray = itemArray.getItem();
-		if(null == iArray){
+		if (null == iArray) {
 			return null;
 		}
-		for(int i=0; i<iArray.length; i++){
-			com.topsun.posclient.webservice.dto.Item im =  iArray[i];
+		for (int i = 0; i < iArray.length; i++) {
+			com.topsun.posclient.webservice.dto.Item im = iArray[i];
 			Item iii = new Item();
 			iii.setId(im.getItemId());
 			iii.setItemCode(String.valueOf(im.getLineNum()));
