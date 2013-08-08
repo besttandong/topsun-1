@@ -303,15 +303,15 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					}
 					
 					partSales = new PartSales();
-					String userCode = user.getUserCode();
-					partSales.setApplyUser(Integer.valueOf(userCode));
+					int userId = user.getId();
+					partSales.setApplyUser(userId);
 					//partSales.setBalance(balance)
-					partSales.setBalloter(Integer.valueOf(userCode));
+					partSales.setBalloter(userId);
 					partSales.setBallotNo(casherNo.getText());
 					partSales.setCardNo(cardNo.getText());
 //					Calendar checkCal= checkDate.getDate();
 //					partSales.setCheckDate(checkCal.getTime());
-					partSales.setChecker(Integer.valueOf(userCode));
+					partSales.setChecker(userId);
 					partSales.setEnableBalance(enableBalance.getText());
 					partSales.setEnablePoint(enablePoint.getText());
 					partSales.setNo(orderNo.getText());
@@ -319,10 +319,10 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					
 					Calendar salesCal= salesDate.getDate();
 					partSales.setCheckDate(salesCal.getTime());
-					
+					partSales.setSalesDate(salesCal.getTime());
 					partSales.setShopId(user.getDeptId());
 				
-					partSales.setUserId(Integer.valueOf(user.getUserCode()));
+					partSales.setUserId(Integer.valueOf(user.getId()));
 //					partSales.setUserName(userName.getText());
 					if(tableViewer.getInput() instanceof List){
 						List list = (List)tableViewer.getInput();
