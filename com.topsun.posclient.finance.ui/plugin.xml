@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.views">
+      <view allowMultiple="true" class="com.topsun.posclient.finance.ui.view.ShopPayView"
+            icon="icons/gtk-sort-descending-14.png" id="com.topsun.posclient.finance.ui.StorePayView"
+            name="店铺缴款" restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.topsun.posclient.finance.ui.view.IncomeView"
+            icon="icons/stock_table-optimize.png"
+            id="com.topsun.posclient.finance.ui.income"
+            name="收款"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="true"
+            class="com.topsun.posclient.finance.ui.view.DisbursementView"
+            icon="icons/stock_table-optimize.png"
+            id="com.topsun.posclient.finance.ui.Disbursementview"
+            name="付款"
+            restorable="true">
+      </view>
+      
+   </extension>
+   <extension
+         point="com.topsun.tree">
+      <tree
+            icons="icons/gtk-sort-descending-14.png"
+            index="1"
+            menuid="finance.menu"
+            name="店铺缴款"
+            treeid="sotrepay.tree"
+            viewid="com.topsun.posclient.finance.ui.StorePayView">
+      </tree>
+      <tree
+            icons="icons/stock_table-optimize.png"
+            index="3"
+            menuid="finance.menu"
+            name="付款"
+            treeid="com.topsun.posclient.finance.ui.Disbursement"
+            viewid="com.topsun.posclient.finance.ui.Disbursementview">
+      </tree>
+      <tree
+            icons="icons/stock_table-optimize.png"
+            index="4"
+            menuid="finance.menu"
+            name="收款"
+            treeid="com.topsun.posclient.finance.ui.income"
+            viewid="com.topsun.posclient.finance.ui.income">
+      </tree>
+   </extension>
+   <extension
+         point="com.topsun.menu">
+      <menu
+            icon="icons/finance.png"
+            index="200"
+            menuid="finance.menu"
+            name="财务管理">
+      </menu>
+   </extension>
+</plugin>

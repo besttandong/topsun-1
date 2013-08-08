@@ -1,0 +1,2908 @@
+Signature-Version: 1.0
+SHA1-Digest-Manifest: Q7rQhnSeZqwj8az3NXOhmoJWbSQ=
+Created-By: 1.6.0 (IBM Corporation)
+SHA1-Digest-Manifest-Main-Attributes: gGlK5rlkPmK32fUZlBW8hRk8si8=
+
+Name: org/eclipse/nebula/widgets/nattable/config/AbstractUiBindingConf
+ iguration.java
+SHA1-Digest: G9CPZHyv9NUUlhmS4gDmh/AH3BA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectionUtils.jav
+ a
+SHA1-Digest: A9TEACl1UHzsJU5AVo4W6MW1ns4=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/DefaultEditBindi
+ ngs.java
+SHA1-Digest: pE4yn+CVjrCN6wA7UuhufgjoHEM=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/HorizontalScrollBar
+ Handler.java
+SHA1-Digest: bBmXDPM8f7hr0m5zHl/KbgKGP6o=
+
+Name: org/eclipse/nebula/widgets/nattable/util/IClientAreaProvider.jav
+ a
+SHA1-Digest: 0wTKkAWCRXf6ZdEdOInL5mFCSyg=
+
+Name: org/eclipse/nebula/widgets/nattable/config/EditableRule.java
+SHA1-Digest: 05WRwKhfwK7DBGOxIdCAxpbMbFc=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/command/BlinkTimerEnab
+ leCommandHandler.java
+SHA1-Digest: ms4RHjzYq/mkSwOtdBx9Y/byXNA=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rCommandHandler.java
+SHA1-Digest: aRlMKGxb/7tx2gStR6cOIdqmlVI=
+
+Name: org/eclipse/nebula/widgets/nattable/data/ExtendedReflectiveColum
+ nPropertyAccessor.java
+SHA1-Digest: 1UQ+JWtp9A+TfaWtldl2knWEIxA=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/EditController.java
+SHA1-Digest: yqTdo3uSj1T6wJWn2R50ViidG6s=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/event/ClearFilterI
+ conMouseEventMatcher.java
+SHA1-Digest: Im6F12F+YULRr/qveRdP4LeaQRE=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/AbstractRowHideShow
+ Layer.java
+SHA1-Digest: P2iHZwP37Di8r4hPuzIgSsgBQHc=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/ColumnResizeC
+ ommandHandler.java
+SHA1-Digest: Ai7CE0EsIoXVjPonOBajzl72mTg=
+
+Name: org/eclipse/nebula/widgets/nattable/images/auto_resize.png
+SHA1-Digest: PwtWurTmQ5cmP6V0DNZk+WTf8W0=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/IFreezeCoordi
+ natesProvider.java
+SHA1-Digest: izD8FHOwbhRLEv89tb3PwVpjdfs=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/RowHideShowLayer.ja
+ va
+SHA1-Digest: BjDbc7n8iPUcGEBMUw6GsTSkI60=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/PasswordTextPai
+ nter.java
+SHA1-Digest: FWAfcgS5VEs+Fx89huafs0NgPKU=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/ComboBoxF
+ ilterIconPainter.java
+SHA1-Digest: m8LOdNTBrkV8zECslbRcoJ0RU0M=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/IVisualChangeEve
+ nt.java
+SHA1-Digest: Ah2UBOC4XoSGi8PmzbMApqqaWu8=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_up.gif
+SHA1-Digest: SV5rtkgyHU2dSDLMukdVSp3ScUU=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ColumnGroupExp
+ andCollapseCommandHandler.java
+SHA1-Digest: PjvmFsxKncHxADnnlofFWg6ufoU=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/IRowSelectionModel
+ .java
+SHA1-Digest: YTiqC8pnwgwwirNh17fvBvmOoQk=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/IUniqueIndexLayer.java
+SHA1-Digest: HF7Mr1L/8mIQ8UiItbDQY0RZHC4=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/command/TreeExpandColla
+ pseCommand.java
+SHA1-Digest: f/wTYfsAHF/y3HJuIcnz7c1YPhA=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/SortDirectionEnum.java
+SHA1-Digest: N5hYdKzT8Ed/GDNw0wbe8YPVkDo=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/NoOpMouseAction.ja
+ va
+SHA1-Digest: LXMrptcBG1wlCQHjOt7Sk6P9f+c=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ColumnGroupExp
+ andCollapseCommand.java
+SHA1-Digest: /TGAZ3Wq2LjvhkPLaXPI3ZUayus=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/PercentageDispl
+ ayConverter.java
+SHA1-Digest: DGr2Dp92lspf3ioePMQ607s8QPQ=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/action/AutoResizeColu
+ mnAction.java
+SHA1-Digest: /+CexKb1kzP6/BLOry9RVy8cQHQ=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_down_end.png
+SHA1-Digest: 8oZY8sBtLg9GGmesziDo3e6WZCQ=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/DiscardValueErro
+ rHandling.java
+SHA1-Digest: B8d6oxiZGLrxj0WU/WvSx/c8IIQ=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/ColumnEntry.ja
+ va
+SHA1-Digest: bYvdXOh/In7ZG5exwawQjLr1SOQ=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/DragModeEventHandl
+ er.java
+SHA1-Digest: htHISfOL8V5yxvd8MR0Q994NPO0=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/ColorPersistor.j
+ ava
+SHA1-Digest: VzrfxEcOW7wYWEqiDSaYYypjR+8=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/PopupMenuAction.java
+SHA1-Digest: I2Sh1hNTNcp7PzVzrjomL/8/nok=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/MultiLineTextCel
+ lEditor.java
+SHA1-Digest: VLoZuZm86v3KBeFKhXzctgQiE9U=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/CellStyleEditor
+ Panel.java
+SHA1-Digest: DPCE4FfsZ3I7wyPdUy+cbVOm/+U=
+
+Name: org/eclipse/nebula/widgets/nattable/util/GCFactory.java
+SHA1-Digest: SshoZSPeAec9FUTLPpDAWb3Mhyc=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/AutomaticRowHei
+ ghtTextPainter.java
+SHA1-Digest: ncsdTUJoFxqvgRqNg5gd/t1OF5k=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/MultiColumnR
+ eorderCommand.java
+SHA1-Digest: W44/V2N5mvCFq/CQ2Q0VKdm87AY=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/event/UnfreezeEvent.j
+ ava
+SHA1-Digest: ukThv5DHbcta6SQM0KfxDptSKiE=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultBooleanD
+ isplayConverter.java
+SHA1-Digest: Fm9ZxwM++e+/nae8lXlZVPzz+i4=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/ConversionFaile
+ dException.java
+SHA1-Digest: wbGxapOCEFgKxGU1iQScAzvY2xA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/ISelectionModel.ja
+ va
+SHA1-Digest: VgNXDg8acaZ1SLMb+2JYZMAwWUc=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/TextCellEditor.j
+ ava
+SHA1-Digest: tbq9b9VjqMvdFlzHbGhrjwQhm8c=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/ITreeRowModelListener.j
+ ava
+SHA1-Digest: SlXlNpXaNrerllcgBYI3kPt3aas=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DefaultBodyDataPro
+ vider.java
+SHA1-Digest: hHH32RBLdff/LQfAB+4kY5TFtTQ=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/action/ColumnReorder
+ DragMode.java
+SHA1-Digest: QkjMKNDNtIcLfVc0yeh/Ewe5CGI=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/RowOnlySele
+ ctionBindings.java
+SHA1-Digest: ZvlNEbfN0iCvyxPlvCr2Emfvht0=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/action/RowReorderDra
+ gMode.java
+SHA1-Digest: mtBZzqtRasOMN1HDO1UjZjZXtMU=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/CreateColumnGr
+ oupCommand.java
+SHA1-Digest: ndQgBievW+n1/EJBHaR7+IquY3o=
+
+Name: org/eclipse/nebula/widgets/nattable/images/green_button.PNG
+SHA1-Digest: 4gdMXM+PXlVoV+suxbQozGsVSls=
+
+Name: org/eclipse/nebula/widgets/nattable/images/hide_column.png
+SHA1-Digest: QPfaJc0WV91cRkuC5LLduhNBhHQ=
+
+Name: org/eclipse/nebula/widgets/nattable/util/Scheduler.java
+SHA1-Digest: AE0OrOdlqaa7a0bcGAh5QDAB05g=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/TranslatedLayerCe
+ ll.java
+SHA1-Digest: jjvshmukKFLdPmp3xNvd+BSo8FE=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportSel
+ ectRowCommandHandler.java
+SHA1-Digest: FM/etX/Q9HUa6x8dtjBrVwWG8o8=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiColumn
+ ShowCommand.java
+SHA1-Digest: bY5Xo/eq3aOdJ62p6cP7GbBbg28=
+
+Name: org/eclipse/nebula/widgets/nattable/conflation/AbstractEventConf
+ later.java
+SHA1-Digest: cJLqhm5knPq0/UAwA9uCEgl9OBs=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/PixelCoordinate.j
+ ava
+SHA1-Digest: 4Kai3TtK8ay/+W5V+U964ZoV6PM=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/action/TreeExpandCollap
+ seAction.java
+SHA1-Digest: g7Lj+Qaci1ln+sH+WlfeNr7gbII=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/CellEditDialog.java
+SHA1-Digest: o5s5uf1HkV/YT6e0sKk77pTDLfA=
+
+Name: org/eclipse/nebula/widgets/nattable/export/IOutputStreamProvider
+ .java
+SHA1-Digest: BDi4EZ5T9C8+dbHc+MzSj3tqEz4=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/AbstractCellPai
+ nter.java
+SHA1-Digest: jLN/+opF0ueh1NqjYnn43dygIDU=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/gui/Availab
+ leColumnCategoriesProvider.java
+SHA1-Digest: WIh0DJriwuCGBAS3+XoyYFqAxeU=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/ValidationFail
+ edException.java
+SHA1-Digest: SfAF5DjQ/NEC+t5x+der1GhTMJs=
+
+Name: org/eclipse/nebula/widgets/nattable/group/model/RowGroup.java
+SHA1-Digest: LyyNYUtxWeZKiaiicYVOHwoHlbQ=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/IColumnCate
+ goriesDialogListener.java
+SHA1-Digest: mSEFgEMNrhRTpX6AEcWG1+0brgo=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/action/ViewportSele
+ ctRowAction.java
+SHA1-Digest: NT99/w8t8bPwVSEw/G04TnP8tzA=
+
+Name: org/eclipse/nebula/widgets/nattable/config/DefaultEditableRule.j
+ ava
+SHA1-Digest: G03xieSsejZqmCHh8nkwjP8GaBE=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/ButtonCellPaint
+ er.java
+SHA1-Digest: xYGjSasDiSgzmUR5f8pUulVSBPs=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/PositionCoordinat
+ e.java
+SHA1-Digest: 9TH0kHrmg1D6iOaIeKwWpQ9gJyo=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/ActiveCellEditorRegistr
+ y.java
+SHA1-Digest: H0lmJJHwrvmRhcSPAtZIRxNQck4=
+
+Name: org/eclipse/nebula/widgets/nattable/group/event/GroupColumnsEven
+ t.java
+SHA1-Digest: qjwWP9W1ZUEfNlagdyxHPbltp1Q=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/ComboBoxF
+ ilterRowConfiguration.java
+SHA1-Digest: +jG5T0paZxkhnRNBySDyVC8NHUc=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/CellSelecti
+ onDragMode.java
+SHA1-Digest: XUEq4VUVHWoj0ohg066mR9CXAiQ=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/RowOverrideLabelA
+ ccumulator.java
+SHA1-Digest: arFcKL2OiRenQoTODSnT8bKsQIE=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/DefaultGridLayer.
+ java
+SHA1-Digest: PTBXRrCFOtdIVWSLeTzssMYldkY=
+
+Name: org/eclipse/nebula/widgets/nattable/images/filter.png
+SHA1-Digest: XTx4CV00mRkzgX/fE+jXmL4R1xs=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/action/AutoResizeRowA
+ ction.java
+SHA1-Digest: O3LdCbw5YT87KkyFN8RhVgJjcIs=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/event/HideColumnPos
+ itionsEvent.java
+SHA1-Digest: hmR+63DJqG8UYjw7lOqEmu4xVds=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ColumnHideC
+ ommand.java
+SHA1-Digest: YRzFecT1NEa1HoTMbPb2FKfSYcM=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DummyBodyDataProvi
+ der.java
+SHA1-Digest: bUOdkyOCOsRgTkNRAEV+sLXKLI8=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/ScrollBarHandlerTem
+ plate.java
+SHA1-Digest: 6e4xNfrMHCsFSapR8Ug5v3fJMtI=
+
+Name: org/eclipse/nebula/widgets/nattable/style/TextDecorationEnum.jav
+ a
+SHA1-Digest: nE/q/8Phx+BYDXiQrGCWdR24PJ4=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/ParseResult.java
+SHA1-Digest: 5JH+nAh2TiSajK8c7O2Hn8kEHK0=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/AbstractKey
+ SelectAction.java
+SHA1-Digest: QnKe4ooC3DXPRiMMY2XhRb6J5u8=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/FontPicker.java
+SHA1-Digest: fmuVV0RVW9vQXOud3qJ/7B+L1Qo=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/FilterRowPainter.j
+ ava
+SHA1-Digest: L+lgO3HPO2duE46wN+igLr5bN3o=
+
+Name: org/eclipse/nebula/widgets/nattable/copy/action/CopyDataAction.j
+ ava
+SHA1-Digest: z2bpxkrcG8tiS8ENHkSu3SuXoBs=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectColumnComman
+ dHandler.java
+SHA1-Digest: UaexAtQsVVHml9sFna0UVbKUz+M=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/IndexCoordinate.j
+ ava
+SHA1-Digest: Z5wZGRLLE3pl9ElqZYGsAnZfweo=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/DialogErrorHandl
+ ing.java
+SHA1-Digest: Gzf4zGce08ke1JgpREttw6dXbnw=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/CellKeyStrategyImpl.ja
+ va
+SHA1-Digest: AtJizpVOLyBG10pWiO2kO9xObqQ=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeColumnS
+ trategy.java
+SHA1-Digest: xK4CUlT0RjuxTWO4pvKN1BItRG8=
+
+Name: org/eclipse/nebula/widgets/nattable/style/ConfigAttribute.java
+SHA1-Digest: 0p7T8Drxh23H9yhLt13d1FgrLAc=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezePositio
+ nCommand.java
+SHA1-Digest: YOfYt/VsgBKS+H12swyWdA31mQQ=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/EditCellCommand
+ Handler.java
+SHA1-Digest: fiuH14fDBT+Pom4B0CRxmxS8vOo=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/event/FreezeEventHand
+ ler.java
+SHA1-Digest: hxZGe19JQuccZ9ELncIVWiRU3dk=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/BlinkLayer.java
+SHA1-Digest: 9KVk/9zSSia7Kz9IqTv3z0/2trE=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/event/CellSelectio
+ nEvent.java
+SHA1-Digest: /85/VlsV94s6R1KQQWKDT1AdKSw=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/event/ColumnResizeEve
+ ntMatcher.java
+SHA1-Digest: 1qKqcHIesV2UmLXBnwPv37X7KVA=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractMultiColumnC
+ ommand.java
+SHA1-Digest: rNICWkbV22UIh8Gg/kVvrjN5e9s=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/TreeLayer.java
+SHA1-Digest: scOpX8t/UOlFJng8w9KBKZwi2zQ=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/SpanningDataLayer.java
+SHA1-Digest: b+fYenjvWQEXn7UuhEXB1bnWraI=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectionModel.jav
+ a
+SHA1-Digest: 2ZBL2GcdF7CN/UVKPoHgGaWJpnY=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/ColumnReorderLayer.j
+ ava
+SHA1-Digest: q/CrtxYjX5RM3ggkxcYcD0HPxm4=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/LineB
+ orderDecorator.java
+SHA1-Digest: GqYNJ+x73n6gMAIX7BP/+Iz/W60=
+
+Name: org/eclipse/nebula/widgets/nattable/group/painter/ColumnGroupHea
+ derTextPainter.java
+SHA1-Digest: OoVE+xoDDg2DuEw6YpnsTJ37R+8=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/config/DefaultGri
+ dLayerConfiguration.java
+SHA1-Digest: 6pGXZo9fWy2TjZuaEu+9r5xNURU=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/event/SelectionLay
+ erStructuralChangeEventHandler.java
+SHA1-Digest: IZF6XzoeFSpRWhNhEzMbEDZo5j4=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/IComboBoxDataPro
+ vider.java
+SHA1-Digest: /E+UdqPL6OpCaiQ6pEcvOR0nNCM=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ColumnStructural
+ ChangeEvent.java
+SHA1-Digest: +R26RWkDUquHHQoc/cpf7DZZMmw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/IDragMode.java
+SHA1-Digest: E4aGMPPTTjvIiWH0llfS0RjjTOM=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/layer/NatGridLayerPa
+ inter.java
+SHA1-Digest: xGz1PmwcPmV7MJIHWXaQzGSXVVc=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/Mode.java
+SHA1-Digest: yvxen5CNEHCbSg8XS8akweHt8Is=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/DialogEditHandler.java
+SHA1-Digest: o8vrb7APaFinSnIhps+qtmYppLk=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/config/TreeExportFormat
+ ter.java
+SHA1-Digest: VVTebK5zXPK2EoQuXzjvc0zhTVM=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/ChooseColum
+ nsFromCategoriesCommand.java
+SHA1-Digest: nBPqJxb1AVJ3BXxqanDX/lpyW9Y=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/UpdateDataComma
+ ndHandler.java
+SHA1-Digest: 9tRQE3zi6sUmTRikvqF1SF1P5P0=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/event/ScrollEvent.j
+ ava
+SHA1-Digest: EMTs8W/bIuGUd5n/TwLfp6IDAY8=
+
+Name: org/eclipse/nebula/widgets/nattable/print/action/PrintAction.jav
+ a
+SHA1-Digest: 5Y6rPGnc9tbfxyCorNsN0IZ0Ta4=
+
+Name: org/eclipse/nebula/widgets/nattable/Messages.java
+SHA1-Digest: 4djKXvW4KH9PTZXqCiIaQkp+PPU=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ILayerEventHandl
+ er.java
+SHA1-Digest: GQnpbl/nbKzmzs+oGXkLJkciE78=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_down.gif
+SHA1-Digest: lolEuObaGRfOv+mUM5pT7rOlErg=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/ISortModel.java
+SHA1-Digest: ZWU3/UgSOsKSYXvhYSU6CLT6eVA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/SelectColu
+ mnCommand.java
+SHA1-Digest: UbxSztV5RZ+valphbhA4IEd8tv8=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultByteDisp
+ layConverter.java
+SHA1-Digest: VjgqogOykd7Vm4Unsky7Uwu/Xv0=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/SelectRows
+ Command.java
+SHA1-Digest: q7jn9o8dr6g3uZ5ImAYX4d3C2QA=
+
+Name: org/eclipse/nebula/widgets/nattable/util/ObjectUtils.java
+SHA1-Digest: XLPD1jeR6YTa01AEW7xoU/UD150=
+
+Name: org/eclipse/nebula/widgets/nattable/print/command/TurnViewportOf
+ fCommand.java
+SHA1-Digest: pMJ7lXFLYKyefxOttSK91g7E4jA=
+
+Name: org/eclipse/nebula/widgets/nattable/tooltip/NatTableContentToolt
+ ip.java
+SHA1-Digest: jd7uUbM9af2qEjvAgZK+t90nT10=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/FreezeLayer.java
+SHA1-Digest: AWIXWu6D7AdbrkXBwQLxMYGSzY4=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/gui/ColumnC
+ ategoriesLabelProvider.java
+SHA1-Digest: i0iunJa/Ma3SQ8x7CdULyAuFtNY=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractLayerCommand
+ Handler.java
+SHA1-Digest: ouSDauRoRowsJyMiJ9JwWXCRgb4=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/event/SortColumnEvent.j
+ ava
+SHA1-Digest: oVSLsSb99C9WSFbiFlC2MF+NRF0=
+
+Name: org/eclipse/nebula/widgets/nattable/export/FileOutputStreamProvi
+ der.java
+SHA1-Digest: CbmB1C4UoCaP4NVHqTocwFrrTrs=
+
+Name: org/eclipse/nebula/widgets/nattable/config/CellConfigAttributes.
+ java
+SHA1-Digest: YN1iQtrdYtBmU23JNFXhBoTtPaw=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/TickUpdateConfigA
+ ttributes.java
+SHA1-Digest: 9G8+hiEkO/mb7BT8VzbV2bmd81I=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/CellEditDialogFacto
+ ry.java
+SHA1-Digest: iCGsJT99xYYBxGHPbvlvq6+GI2Q=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/AutoResizeColum
+ nCommandHandler.java
+SHA1-Digest: nNfwUtJ0I1kJyXqheoQO5zn70Jk=
+
+Name: org/eclipse/nebula/widgets/nattable/export/ILayerExporter.java
+SHA1-Digest: gkSobrLVgQmU0PjpwZ/ae4CQsDk=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/stack/DummyGridLayerSt
+ ack.java
+SHA1-Digest: 1/9il8rYkGpeW++F1XhGbDti06Q=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/InvertUtil.java
+SHA1-Digest: ZbZvZe8T4yIbgk32InldkWChnhI=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractPositionComm
+ and.java
+SHA1-Digest: uSG9ykR/Tl4NoI5sEevRxPve2qs=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/AbstractSear
+ chStrategy.java
+SHA1-Digest: a8646EafUj6ueCpNWyMATKmUWRk=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/IColumnGroupCo
+ mmand.java
+SHA1-Digest: VxhwL5YOPSL1i34FK5lFUbYLX8k=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/binding/DragBinding.java
+SHA1-Digest: PkUTDIaCHuH980L+oTkGFZTtMiI=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/SimpleConfigLabel
+ Accumulator.java
+SHA1-Digest: 6pECddher710m62JipQdcmHSPJA=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowUpdateEvent.j
+ ava
+SHA1-Digest: fiGfGDWv/QuD/RkGnX0ADNbBppU=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/DimensionallyDepe
+ ndentLayer.java
+SHA1-Digest: s1mIhEaofLFZNxtt+YLn64g2qW0=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/util/CancelableRunnable.j
+ ava
+SHA1-Digest: dC55I6VUYVDjRxlsA/QmMZqF7eg=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowVisualChangeE
+ vent.java
+SHA1-Digest: 35jMbhG7eafH4YjDU1m+w26QlZU=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ColumnGroupsCo
+ mmandHandler.java
+SHA1-Digest: 0ieX47Py93ZT+UqiRfyhY9lIjVo=
+
+Name: org/eclipse/nebula/widgets/nattable/data/ISpanningDataProvider.j
+ ava
+SHA1-Digest: OwrcoUw9SPePcPQysogzY1o1RSo=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/DimensionallyDepe
+ ndentIndexLayer.java
+SHA1-Digest: B88rwR0kg3QTMsv1oPDyRdNUQI4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/DisplayMode.java
+SHA1-Digest: Y9Io9zN6vHvtCakl5J/9H/4buPk=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/event/FilterRowMou
+ seEventMatcher.java
+SHA1-Digest: xh0GpBRTNaGg1Qza/m10yMcOrr8=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeRowStra
+ tegy.java
+SHA1-Digest: bte0sdkcgNOPivrtobJgI5rlN4M=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/Selectable.java
+SHA1-Digest: HLEBYiuiAPjAY/TVtvc25Mcjg7o=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/SeparatorPanel.
+ java
+SHA1-Digest: qlTV/XqSuxnbp2yAJXM5UcDx6JE=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/ToggleSelec
+ tCellAction.java
+SHA1-Digest: HFFVo0El7rEkJn4XJWSp1GoMfYs=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultIntegerD
+ isplayConverter.java
+SHA1-Digest: SHyNbL5K7pVhsrJoqFn9Ajq5TxA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/SelectAllC
+ ommand.java
+SHA1-Digest: Jc8HZRYvQktbMAs5S1+HejIFtzQ=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/command/StateCha
+ ngeEvent.java
+SHA1-Digest: OGyY22dS3vHkUPsMy5UHW2fLwl8=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/config/DefaultRowResi
+ zeBindings.java
+SHA1-Digest: nBuJFOfHoisAXGmOtB0zLErCAoI=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/UngroupColumnsA
+ ction.java
+SHA1-Digest: z9lOSgCSVaeXGS5FZvhi+C71ovg=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/AbstractEditErro
+ rHandler.java
+SHA1-Digest: 3IMZUGDWqlJJTGRthxGUDRH/IW0=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/binding/UiBindingRegistry
+ .java
+SHA1-Digest: FLjrg9oK7NTQaz/havfxHL3JlN0=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/BodyOverrideConfi
+ gLabelAccumulator.java
+SHA1-Digest: J/uTW4dHEgMB7qfH8nfJERO0KOs=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/FilterRowHeaderCom
+ posite.java
+SHA1-Digest: s8cpd5fStZDGOeNCfDUXA0ezuPE=
+
+Name: org/eclipse/nebula/widgets/nattable/group/model/RowGroupModel.ja
+ va
+SHA1-Digest: bbiwFdwrZ5ENFofCeAWEL4dC/ro=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/event/ColumnHeade
+ rSelectionEvent.java
+SHA1-Digest: gM1TRbsKDzSGT2J7/WrC1d0qcMw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/IMouseEventMatche
+ r.java
+SHA1-Digest: fWFF4EStdM0+we+g70/gQlZVzvo=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/IModeEventHandler.ja
+ va
+SHA1-Digest: p2mwG37L0/b551CiJuvGNaL4w24=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/DataLayer.java
+SHA1-Digest: 3Ds3KvGQNzf7A032lKeX7F7K9Gg=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderSt
+ artCommandHandler.java
+SHA1-Digest: XnA78jkOJyWaIRxbNtFcc580VYM=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/DisplayColumnRe
+ nameDialogCommand.java
+SHA1-Digest: hkuundTW+tcZoIUVwBldT8WH9RY=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DefaultRowHeaderDa
+ taProvider.java
+SHA1-Digest: rsqWakhPN+gtlmOfFdIIOIlTREg=
+
+Name: org/eclipse/nebula/widgets/nattable/util/GUIHelper.java
+SHA1-Digest: l/7O3SV8ZK4Gp0PyqKkFRzoKagI=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/CreateColumnGro
+ upAction.java
+SHA1-Digest: +oNSB1E16gz2XPKM8DktAODFjl0=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/gui/PersistenceD
+ ialog.java
+SHA1-Digest: ZZYHlpr/J0fQlo/SmM9YkqpsEvA=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/painter/TreeImagePainte
+ r.java
+SHA1-Digest: MGFlrkdoozyiryzoK10e62b43Rc=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/XPBac
+ kgroundDecorator.java
+SHA1-Digest: Mpk7SEWiHGfEvRGyb/R599KxLa8=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractRowCommand.j
+ ava
+SHA1-Digest: vnF6XOHdeWeHw/tmqnIXmX/SMkc=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/action/ToggleCheckBoxCo
+ lumnAction.java
+SHA1-Digest: mSe2hNcjr1bKdmF0Z/CmoECIeHs=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/InvertedLayer.java
+SHA1-Digest: 0coce07i5f7TiZI+dYoRFd3TSCA=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/action/RowResizeCurso
+ rAction.java
+SHA1-Digest: G9U29FhiHMdJkELl3iUfTmP3qxo=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/ChooseColum
+ nsFromCategoriesCommandHandler.java
+SHA1-Digest: 85M/hC1N7e/PVTIRiHnms7mj2Hc=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/AbstractMou
+ seSelectionAction.java
+SHA1-Digest: Jt//mQTy6vn5JECsE8idkymF/GI=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumns
+ AndGroupsCommandHandler.java
+SHA1-Digest: JNorbx2wtE4QbZ3ZLnp5gw54Jhg=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/NumericDisplayC
+ onverter.java
+SHA1-Digest: iXvafNPbSrKdPWUMHGEKbepVeTQ=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/HorizontalAlign
+ mentPicker.java
+SHA1-Digest: EpjKRdfi3/lJYWWCDaM8ztOfB7g=
+
+Name: org/eclipse/nebula/widgets/nattable/search/config/DefaultSearchB
+ indings.java
+SHA1-Digest: okOsztk8eJ5Ef2/ztAwtAFmiEn8=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiRowSho
+ wCommandHandler.java
+SHA1-Digest: gCmUMyg0VILh8UrGKL9fYSXdkj4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/LineStylePicker
+ .java
+SHA1-Digest: Hf6RZizFYH7xbiJV6/HzOOkoGJc=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezePositio
+ nStrategy.java
+SHA1-Digest: Lnat1VEbiQllneteU0QdirjrHf8=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/MoveRowSelectionCo
+ mmandHandler.java
+SHA1-Digest: SCta+BpD9Zmn5TGjGeV5Q6X+Ur8=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/AbstractLayerCell
+ .java
+SHA1-Digest: 3kXRSqardVBvrkv7DcKtaU2kygk=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/action/KeyEditAction.ja
+ va
+SHA1-Digest: GR1CYV4uQdecbr8KatnkvmekLpM=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupCommandHandler.java
+SHA1-Digest: OLtD5uV5N7YgausCF/uT/WENmLE=
+
+Name: org/eclipse/nebula/widgets/nattable/serializing/ISerializer.java
+SHA1-Digest: 5uQLbi8NSqc77A6EtiF1ZE1455c=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/RowGroupExpand
+ CollapseCommandHandler.java
+SHA1-Digest: 1LntCa96THYR/IuSjCtH1zOsP2M=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IColumnIdAccessor.java
+SHA1-Digest: tV0M6HP0bZqr03wPwdvEFGi0zGE=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowRowInVi
+ ewportCommandHandler.java
+SHA1-Digest: NTh+sMj2g4+gJj68/YeWxVNylK4=
+
+Name: org/eclipse/nebula/widgets/nattable/export/command/ExportCommand
+ .java
+SHA1-Digest: e/xWIVxh2T5qWWtjezuy2VcbJNM=
+
+Name: org/eclipse/nebula/widgets/nattable/conflation/VisualChangeEvent
+ Conflater.java
+SHA1-Digest: EiGL8WmJr3U5OWsgGmn7sBjOYMs=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumns
+ AndGroupsCommand.java
+SHA1-Digest: dnTIB3/YVsNnhaoi4WROkDc8P+E=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/EditConfigHelper.java
+SHA1-Digest: VN8PKrAN1iF8xtVtvJgVaZKgqH4=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/RowSelectio
+ nDragMode.java
+SHA1-Digest: tuZiADbfWZovTuA9jLAR5OHOr/c=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/AbstractOverrider
+ .java
+SHA1-Digest: GyUkvCy1Yjpaw+wLdJuMkJ+TDzs=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/ScrollSele
+ ctionCommand.java
+SHA1-Digest: oH31TmUAtpVJ1i3fY+VQCdxcQ+w=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/ClientAreaResiz
+ eCommand.java
+SHA1-Digest: bj2hugPhWsWQ9mf7kIi2xNYGi2I=
+
+Name: org/eclipse/nebula/widgets/nattable/group/RowGroupExpandCollapse
+ Layer.java
+SHA1-Digest: 594HI6nK6G3HwLpVlW0ree+OoGQ=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/event/ViewportEvent
+ Handler.java
+SHA1-Digest: KVGZ5O7+ANpRHdAfT1UPJdi74Hg=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/RowSelectionModel.
+ java
+SHA1-Digest: MQJIILwkQebsVFUIUW9MxkyDisk=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/PopupMenuBuilder.jav
+ a
+SHA1-Digest: 1bnjCdU5aBwWS+FOU1l4Nt9MvAY=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/SelectAllAc
+ tion.java
+SHA1-Digest: Z8r4KD6vHqPKh93EqLA30h0ofE0=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/FilterRow
+ ComboUpdateEvent.java
+SHA1-Digest: 9/vaqPdQKP1GU8HEuOzE+HKhakg=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/EditTypeEnum.java
+SHA1-Digest: w43nYdQM9y7bx41xOiuqRactmfw=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupCommand.java
+SHA1-Digest: Bo7DC7LFhh7Dq2CEDaEd9zzCTZo=
+
+Name: org/eclipse/nebula/widgets/nattable/config/IEditableRule.java
+SHA1-Digest: VintnuZgnMQ0y1rbSnsVRbGFLIY=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/MoveSelecti
+ onAction.java
+SHA1-Digest: guTpQsO9LQxml3MXWHq0hFzv90s=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/GridRegion.java
+SHA1-Digest: ZVjI+amRucfAtRGH3drjAx2qQ7Y=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/ContextualData
+ Validator.java
+SHA1-Digest: o5/I+d3Bll5CskGkXm+dVxm0vKI=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiColumn
+ ShowCommandHandler.java
+SHA1-Digest: Ad2pnMxmvaS7orayjdTziX1vGxU=
+
+Name: org/eclipse/nebula/widgets/nattable/search/event/SearchEvent.jav
+ a
+SHA1-Digest: DQ477TydswTudDbH6X9pzOHah1E=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/Perce
+ ntageBarDecorator.java
+SHA1-Digest: CggLSWToEyVewfx+j0v0puVcn3Q=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/KeyStrategy.java
+SHA1-Digest: nwy6fYlvQyEIRQRR6H8AMjFpLv8=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupStartCommandHandler.java
+SHA1-Digest: UDg52UQ9C+16hY1A8AECda+84/4=
+
+Name: org/eclipse/nebula/widgets/nattable/images/table_icon.png
+SHA1-Digest: 3OCwi/b4CSPcLEz3Mt3IAZ7M0fc=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiRowHid
+ eCommand.java
+SHA1-Digest: F/aHWrIXbHbcSdzmUY/qOmt4svo=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupGroupHeader
+ Layer.java
+SHA1-Digest: zIBfSrMftgRI+Sj3L3duc0z+134=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/action/ClearAllFil
+ tersAction.java
+SHA1-Digest: lLMoiksZEsAgPwLJtug1nSCaU28=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/command/Displa
+ yColumnChooserCommand.java
+SHA1-Digest: yNOYxmfbt9cU4sJSQBKHlUTAmCk=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/ImagePainter.ja
+ va
+SHA1-Digest: X3DCmUjYGGq4gkZnIM7gqGTwe1U=
+
+Name: org/eclipse/nebula/widgets/nattable/data/AbstractFilterListDataP
+ rovider.java
+SHA1-Digest: dySZSbmyYxVmHf+n746AkA+MPkY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/IConfigLabelAccum
+ ulator.java
+SHA1-Digest: PUHApQpydTnCAp50HCjdQqZgTWk=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rStartCommand.java
+SHA1-Digest: ry8EVFVOR/vWduWnxg18tNTqv3Y=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/ReorderFrozen
+ AreaCommandHandler.java
+SHA1-Digest: 1EEkPTvRMvVzLLOKBGzzNDer03k=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/SortStatePersistor.java
+SHA1-Digest: qicJyb1KMQAi5Z9w+VKEDWk6WwA=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/Bevel
+ edBorderDecorator.java
+SHA1-Digest: 3RTPkC0ZsrBoWpBZf7QFmaz8Rmg=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/SelectionSea
+ rchStrategy.java
+SHA1-Digest: 7sv6FyXkB8E6xSThIFbj86woVB4=
+
+Name: org/eclipse/nebula/widgets/nattable/images/column.png
+SHA1-Digest: BCxl0DCnovcHoaCpH3LsrYMOdOM=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ShowAllRows
+ CommandHandler.java
+SHA1-Digest: mQo+E1dydRHOa9xZVlYEYBJZzYo=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/InitializeGridC
+ ommand.java
+SHA1-Digest: 9ICbVYQuIi8nh0Q5JwykTmhzvJI=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/ISearchStrat
+ egy.java
+SHA1-Digest: D+kn4j/1GyFZGycJ4m1Z+x02SDw=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/RenderErrorHandl
+ ing.java
+SHA1-Digest: P0IdU6sj1ZvkjCC1EnHChWPiIgc=
+
+Name: org/eclipse/nebula/widgets/nattable/group/model/IRowGroupModelLi
+ stener.java
+SHA1-Digest: ZarJjlj3/RibUt1DX6fmmqAQtyA=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/CellOverrideLabel
+ Accumulator.java
+SHA1-Digest: 9VcHZ4AapLo9+jRNrpPSEpH0nb0=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/InitializeAut
+ oResizeRowsCommand.java
+SHA1-Digest: EDRW1EdweTl3qye0uis23UI0vsA=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/ICellPainter.ja
+ va
+SHA1-Digest: 1LSlkfo20DgF5VGfLWj64sBBlYY=
+
+Name: org/eclipse/nebula/widgets/nattable/data/AutomaticSpanningDataPr
+ ovider.java
+SHA1-Digest: W4MolE3E4L8sxzDq0nvFhv+6C1A=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/event/ColumnSelect
+ ionEvent.java
+SHA1-Digest: +IffvqsDkXXVUuFvJBw3Fokr+zM=
+
+Name: org/eclipse/nebula/widgets/nattable/util/UpdateQueue.java
+SHA1-Digest: ZBs2+SX0R6Nd53uPjjxEVXd1xGQ=
+
+Name: OSGI-INF/l10n/bundle-src.properties
+SHA1-Digest: rgw4r03eJFBr4Ss+3LBE8phmFNI=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectionLayerPain
+ ter.java
+SHA1-Digest: x97Y8piQuXmEvr1wHtVnmNboZJw=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractContextFreeC
+ ommand.java
+SHA1-Digest: QMdn+thDMgtwjmcHg1WD1UeAEgo=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/RowReorderLayer.java
+SHA1-Digest: 3XQQ489XsgXHD2/Y2a382B9U5bQ=
+
+Name: org/eclipse/nebula/widgets/nattable/search/action/SearchAction.j
+ ava
+SHA1-Digest: hIexdsoDSEIlSFz2+5+cLjbqkT8=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/DefaultSele
+ ctionLayerConfiguration.java
+SHA1-Digest: rWsYma1zLPpSXuLSI63WoJfFPMs=
+
+Name: org/eclipse/nebula/widgets/nattable/widget/EditModeEnum.java
+SHA1-Digest: A5IfueIo9kf4CXAZaxHd1dZ/9vM=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/IFilterRo
+ wComboUpdateListener.java
+SHA1-Digest: C1w+bccYb2Gq37jaOznms9yi7AM=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/MoveCellSelectionC
+ ommandHandler.java
+SHA1-Digest: G4m6rogHNtvX1LFA5ZJ7JdGZUH8=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/event/RenameCol
+ umnHeaderEvent.java
+SHA1-Digest: QT9DCjo5CzrBvjsaB2BFUeJ+9F8=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/event/RowSelection
+ Event.java
+SHA1-Digest: RigsZG/YelC8d9+xGz2/a/B8w6g=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/event/BlinkEvent.java
+SHA1-Digest: k6pHPNGGJeiZShZvJvyENkkof/w=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/AbstractIndexLayerTran
+ sform.java
+SHA1-Digest: EWN1WUNdcGlFuxBnu5asmKxKv+U=
+
+Name: org/eclipse/nebula/widgets/nattable/summaryrow/SummaryRowLayer.j
+ ava
+SHA1-Digest: SlZZt4mPL53VwnbXPH6B8/UCoiY=
+
+Name: org/eclipse/nebula/widgets/nattable/style/SelectionStyleLabels.j
+ ava
+SHA1-Digest: h5OsJvtgMEA5WTMdMyjYnauGMOw=
+
+Name: org/eclipse/nebula/widgets/nattable/images/column_categories_cho
+ oser.png
+SHA1-Digest: 2LV5OZXZF2F5l7dfI06xMK4wI9M=
+
+Name: org/eclipse/nebula/widgets/nattable/summaryrow/ISummaryProvider.
+ java
+SHA1-Digest: f5+XrrOMKup0I01iP8LtUtephGU=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/KeyEventMatcher.j
+ ava
+SHA1-Digest: 8/zMttdWsdBb1my9dxFBQqZ/cMw=
+
+Name: org/eclipse/nebula/widgets/nattable/util/ComparatorChain.java
+SHA1-Digest: 4QYDeHnBJS2FlbprydxC3TT+vQ4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/BorderStyle.java
+SHA1-Digest: GyGixToEHvCSZNuuHnxciuVLI+M=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractMultiRowComm
+ and.java
+SHA1-Digest: afAzjuBwiLngJLwmAEWmZETeYIk=
+
+Name: org/eclipse/nebula/widgets/nattable/print/command/TurnViewportOn
+ Command.java
+SHA1-Digest: o/p64T2dXpJIf+Bg2l6VFFuzZRI=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/CellLabelMouseEve
+ ntMatcher.java
+SHA1-Digest: xpxUjXEGZRXX7/pC6ELg4LoWBLg=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/command/TickUpdat
+ eCommand.java
+SHA1-Digest: Lnnf3AKgm734u1ZsU1tB6Uq/904=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/config/DefaultColumn
+ ReorderLayerConfiguration.java
+SHA1-Digest: WxsQ77sKptz+QkIc52U4Zyvvqtw=
+
+Name: org/eclipse/nebula/widgets/nattable/images/editor.gif
+SHA1-Digest: Ql9hhtWhG5v+wnR1oFOjxgE/qvA=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/config/SingleClickSortC
+ onfiguration.java
+SHA1-Digest: jNF+EQj9g5jTk3qgqOcMsOyFmuk=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/NatEventData.java
+SHA1-Digest: 8sPqRrh7S9YPeqZKZ6aUvT6bisA=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/PersistenceHelpe
+ r.java
+SHA1-Digest: 5379ip2klPzH20PjSEhLdGXE0z4=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/RenameColumnHea
+ derCommandHandler.java
+SHA1-Digest: 64J/VYdpINKdfUUGz5ahyFxOic0=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/CellDisplayV
+ alueSearchUtil.java
+SHA1-Digest: acAxnol4ZoBMpP/BGjQkOkPtl0E=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/ILayerCell.java
+SHA1-Digest: QjNZQRQkw1E2v0ew9CwAM69Ikjs=
+
+Name: org/eclipse/nebula/widgets/nattable/style/IDisplayModeOrdering.j
+ ava
+SHA1-Digest: U+vhR+xC+YP3zWZvn/IucVl51Tg=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/ColumnStyleEdit
+ orDialog.java
+SHA1-Digest: 2eDb8FwMwLgL0LCv700rEkvw8WA=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/FilterRow
+ ComboBoxCellEditor.java
+SHA1-Digest: DvTqHHSj6gATtvKXuYxf36iBC54=
+
+Name: org/eclipse/nebula/widgets/nattable/export/config/DefaultExportB
+ indings.java
+SHA1-Digest: WjlLh189qzKVeWjCwbU2P3IQvHA=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/RowHideComm
+ andHandler.java
+SHA1-Digest: n/S2AvfJihmemn1evmPUw/aae2I=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/Range.java
+SHA1-Digest: aqREttlEi6owtaea89lk/EigYSo=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_left.gif
+SHA1-Digest: OaRMzdBXxP1wfZ39x84L+Z2P0ic=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/ComboBoxPainter
+ .java
+SHA1-Digest: 25BIl4fkPfg+KcucMX5YIC3GEC4=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/MultiColumnRe
+ sizeCommandHandler.java
+SHA1-Digest: yYW2LeXLjmTcrs8W7gMNGdQEMMs=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/UpdateEventsCache.java
+SHA1-Digest: r9FGsQTCbBCf4YkvXK/6WQp0ivE=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/UngroupColumnC
+ ommand.java
+SHA1-Digest: T2cMpVpUP05AZ++plIFWzMC8PWQ=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/command/IStateCh
+ angedListener.java
+SHA1-Digest: DszYj5AzYHssafP0gnMx6xhCvtE=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/TreeCheckBoxPai
+ nter.java
+SHA1-Digest: jvB2u4P9USVAnTkRtDAgiO0tYRA=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/gui/ColumnC
+ ategoriesDialog.java
+SHA1-Digest: d/651DqHfI5NFBQ9sfSmU+FVfDg=
+
+Name: org/eclipse/nebula/widgets/nattable/images/checked.gif
+SHA1-Digest: WLdIneJnHg9Rji6sj7mvvIjyddc=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/AbstractStyleEd
+ itorDialog.java
+SHA1-Digest: VM56cVP0TZCVfJunTfo6/VezGHY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/config/DefaultColumnHe
+ aderLayerConfiguration.java
+SHA1-Digest: VnsGLWnXCvL7vlG7a0tiVwcFBiI=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/IBlinkingCellResolver.
+ java
+SHA1-Digest: l3f3qAzuoEwWK/pGbme4XhlSe2M=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/ColumnLabelPane
+ l.java
+SHA1-Digest: SIX5YEJKdTt8YRxSB4O2JRxAR/Q=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/event/FreezeEvent.jav
+ a
+SHA1-Digest: 6h1mMGI5J4wtwPBtpwgt6P1ZJNY=
+
+Name: org/eclipse/nebula/widgets/nattable/style/DefaultDisplayModeOrde
+ ring.java
+SHA1-Digest: pJqknmU5k6dwHZvPedS5cDdwmyE=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/EditCellCommand
+ .java
+SHA1-Digest: ndZkpBXij1sx0OkrEyrynDF/axo=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rStartCommandHandler.java
+SHA1-Digest: 64B7qFcR0SJMpkOgpm47VfQR8o4=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/FreezeHelper.java
+SHA1-Digest: yyTKhNp58M7WLxwuABWU+Y/3KLk=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/stack/ColumnGroupBodyL
+ ayerStack.java
+SHA1-Digest: 9qHFAD7sjwQWxeLci4jzekDttMk=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/PageDownAct
+ ion.java
+SHA1-Digest: 3tmr+p0ePkZ3ho2bAJGssiUkJ+k=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/ClearCursorAction.
+ java
+SHA1-Digest: anaFRMYLWp0m24QLViGS+JO9AHM=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/MenuItemProviders.ja
+ va
+SHA1-Digest: I53007eyFFLQ5Z3WUnlloMMKN8Y=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultShortDis
+ playConverter.java
+SHA1-Digest: h46HezsthfOxpcF08Akf+DLr0Bc=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/AbstractCellEdit
+ or.java
+SHA1-Digest: DC1ED9BA0b5mmtNia7KOlXb/New=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/CheckBoxStateEnum.java
+SHA1-Digest: pdOdURW0Z7nU2Bd0mMXJcmuHYyM=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/CellPainterWrap
+ per.java
+SHA1-Digest: uBTYuRrcaSFmMYS5yQw+S+KD0zI=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeCommand
+ Handler.java
+SHA1-Digest: 9JwoDPQZSSyIz4yx1aMp6M66qDI=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportSel
+ ectColumnCommand.java
+SHA1-Digest: cY3ioRxKg8XaDodPTK+r00LcZB4=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/ColumnPositionCoo
+ rdinate.java
+SHA1-Digest: 1octxnrtLUEDFGiIrOYQuSnHkKo=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/FilterIconPainter.
+ java
+SHA1-Digest: NqUkonUZCTVLYyheFdQ69nvenUI=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/config/DefaultColumn
+ ReorderBindings.java
+SHA1-Digest: TkRA47iFHDAuNeo1Ykd7AHYe/70=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/DefaultColumnHead
+ erDataLayer.java
+SHA1-Digest: yH+AgwRem1wlF04zcZV6Thz1xzg=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DummyColumnHeaderD
+ ataProvider.java
+SHA1-Digest: 5FMHCRAcHr2bitQgsqYjjxjXn1A=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/binding/IUiBindingRegistr
+ y.java
+SHA1-Digest: NhFliCDCPuatRrsm/ty7dKjvYtE=
+
+Name: org/eclipse/nebula/widgets/nattable/export/excel/excelExportHead
+ er.txt
+SHA1-Digest: +fppkjQ70fVmEaVdYjCDhMNsytc=
+
+Name: org/eclipse/nebula/widgets/nattable/summaryrow/SummaryRowConfigA
+ ttributes.java
+SHA1-Digest: +B0q8lpIhkm/90fgc63lvZRppiA=
+
+Name: org/eclipse/nebula/widgets/nattable/style/CellStyleProxy.java
+SHA1-Digest: i5NOnNO/EH5AZgV6Y2kXBw6XRjo=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/ColumnGroupExpa
+ ndCollapseAction.java
+SHA1-Digest: kpqDoCFWqMJUphQkkJsFHdvh9bI=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/ColumnCateg
+ oriesModel.java
+SHA1-Digest: e/fclAuOyPhF2eynVtRQGGN0q2w=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/MoveToFirst
+ RowAction.java
+SHA1-Digest: Kqqqh9YBZyfBrNbTr2mMAjmKtx0=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/layer/ILayerPainter.
+ java
+SHA1-Digest: yRF9ZeHOEG5T+vGWoOKcDEAbVpM=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/event/FilterApplie
+ dEvent.java
+SHA1-Digest: fzRC40fpV78N30bk46Hh0yvj8V4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/GridStyleParame
+ terObject.java
+SHA1-Digest: LG2/1klj5YnL8NUgkLbKAs6CQjg=
+
+Name: org/eclipse/nebula/widgets/nattable/util/ConflationQueue.java
+SHA1-Digest: MN2s//Bl2834EXyObjUhHGboHsw=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/RowSearchStr
+ ategy.java
+SHA1-Digest: 1IMRlI0YMC+tYwS/ZaXnatSMBdc=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/event/RowResizeEventM
+ atcher.java
+SHA1-Digest: ToS0O3t8m297C/gnUmTOBM8xNN8=
+
+Name: org/eclipse/nebula/widgets/nattable/images/unchecked_disabled.gi
+ f
+SHA1-Digest: RGfXSmbveRgR72SJoNawZ5vMvuQ=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/ReorderFrozen
+ AreaCommand.java
+SHA1-Digest: LF1OH0Rx7Yf869VqVq8olDWk6bY=
+
+Name: org/eclipse/nebula/widgets/nattable/conflation/IEventConflater.j
+ ava
+SHA1-Digest: kkh+epnp9ZErUjh5UpYE/ntVhiI=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/event/ISelectionEv
+ ent.java
+SHA1-Digest: 6Okomg1G/F50WSz8fKTit50d/7U=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowCellInV
+ iewportCommand.java
+SHA1-Digest: zoPkOCnyXx/yqzYKfhYwCDJNR08=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/AbstractEditorP
+ anel.java
+SHA1-Digest: oIGCrrgwy7n8KEn6bP3hqR2VxXc=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/DefaultSele
+ ctionStyleConfiguration.java
+SHA1-Digest: xkvNT8ahvEyD9LtqU3JWNWaEkhM=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/MaxCellBoundsHelper.j
+ ava
+SHA1-Digest: L+dUSqFTUacvaduCi8OD639UpBo=
+
+Name: org/eclipse/nebula/widgets/nattable/group/model/IRowGroup.java
+SHA1-Digest: LBkVSQdmmmrUiQWSS0ghhcXWfB4=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultDateDisp
+ layConverter.java
+SHA1-Digest: RTU8ymIK8oS0OO/kNd/SUcFpArE=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/command/SortCommandHand
+ ler.java
+SHA1-Digest: HFwHacs3RyVVsNKiJxgWfxcUaB8=
+
+Name: org/eclipse/nebula/widgets/nattable/data/ReflectiveColumnPropert
+ yAccessor.java
+SHA1-Digest: 4kD0MDMs7mHBvgK/NUPnjleT4ww=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/config/ColumnStyleChoo
+ serConfiguration.java
+SHA1-Digest: YI5pBgII8FiTKB/uaicxIhOExVQ=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/RowSelectionPreser
+ ver.java
+SHA1-Digest: BfBeYDEd011Q8eAfqYWuFV9HnIk=
+
+Name: org/eclipse/nebula/widgets/nattable/group/gui/CreateColumnGroupD
+ ialog.java
+SHA1-Digest: kFdUwzOE/sylXaedAkIzZ5PmkHk=
+
+Name: org/eclipse/nebula/widgets/nattable/group/RowGroupHeaderLayer.ja
+ va
+SHA1-Digest: FY4kI53hqN3lJJwmgmDc21C3RTA=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_right.gif
+SHA1-Digest: JIm6OqJmwdSrGNw32tIX8AXxwis=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/IFreezeConfigAttribut
+ es.java
+SHA1-Digest: butPsT9XrjuI7OJp3Up7m0MtNgI=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ColumnHideC
+ ommandHandler.java
+SHA1-Digest: htdau3x9igBUNfFWtttpoqDtOeU=
+
+Name: org/eclipse/nebula/widgets/nattable/images/leaf.png
+SHA1-Digest: 7/r5sJxN+2Fc4VjCdJgz0p4TY48=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/ISelectionTree
+ Listener.java
+SHA1-Digest: ViLIGldG9MUW70PLCPIZCtU+NDM=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/config/DefaultColumnR
+ esizeBindings.java
+SHA1-Digest: w6AEMWGQaSaicVGfG+YT7LsNGDs=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/command/Display
+ ColumnStyleEditorCommand.java
+SHA1-Digest: Yql7J/AZvEHudIVgze8ZJTOxttU=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/DefaultDataVal
+ idator.java
+SHA1-Digest: 6xJvjYqzfsd5YAg476dvss8GIV0=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/TextMatchingMode.j
+ ava
+SHA1-Digest: B64bfczTJIi1+AjOGIw1/kyX8SU=
+
+Name: org/eclipse/nebula/widgets/nattable/images/unchecked.gif
+SHA1-Digest: eoN/RSl1jnoe7F7rPlDd+5LhXeQ=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/action/ToggleFilte
+ rRowAction.java
+SHA1-Digest: gAYlsPzbmmFrL28Xw7EiAD8gmng=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/CellDragMode.java
+SHA1-Digest: E74B2N+F1clrlsuoCD5p3agjiIk=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportSel
+ ectRowCommand.java
+SHA1-Digest: GwSiErynQk8rNyumFXRLMAcq470=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/ZoomLayer.java
+SHA1-Digest: ioMqSFn+1RgfOw59z6gg3X/J6cc=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/util/CellEdgeDetectUtil.j
+ ava
+SHA1-Digest: JzITRo5Xe3hXzdOnT51NA+WhUoU=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IColumnPropertyAccessor
+ .java
+SHA1-Digest: HXdjlf6B8ySgRs/oNcLnsYrkVOw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/ModeSupport.java
+SHA1-Digest: ev06PwQ6we3VU6gZWwAm3C12CyQ=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupEndCommandHandler.java
+SHA1-Digest: dsfkZpDKfpAaWrkwy+jQ7vJ2KQE=
+
+Name: org/eclipse/nebula/widgets/nattable/images/column_header.png
+SHA1-Digest: svOKrWawm3f//3ppyHs2vUXjP0A=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/MultiRowReor
+ derCommand.java
+SHA1-Digest: sKIzSCdBL5ZCGMClhupoxBmOrB4=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/AbstractSe
+ lectionCommand.java
+SHA1-Digest: mquedJ1g/ZS+dPikovzws5hpZY0=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/AbstractLayer.java
+SHA1-Digest: VA8xlbi5k46wyOcWScB9yy1ht4k=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/CellP
+ ainterDecorator.java
+SHA1-Digest: W8pvbNffILV9EhM4O7/F4Wq7URU=
+
+Name: org/eclipse/nebula/widgets/nattable/print/command/PrintCommand.j
+ ava
+SHA1-Digest: j2+wM/nKxGw+40THpqDwSX2Bswc=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/painter/SortableHeaderT
+ extPainter.java
+SHA1-Digest: dEsiUyiBkC2tvmVFIVtK1DnhLLg=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/gui/AbstractCo
+ lumnChooserDialog.java
+SHA1-Digest: 3rVm4VLK+eNNI6pdEu9Ik6WaDMo=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/SizeConfig.java
+SHA1-Digest: G4Vi8YKuxuuryt/dd9n3GL5yOaE=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectCellCommandH
+ andler.java
+SHA1-Digest: H037EOGj5BToMKWjI+tKdxfE5sc=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowColumnI
+ nViewportCommandHandler.java
+SHA1-Digest: jsiSntQMRFhIZYIiPT5KTXjWkZE=
+
+Name: org/eclipse/nebula/widgets/nattable/config/NullComparator.java
+SHA1-Digest: jFw2TEy42xs90QpNKGBDnmNZDtc=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/LayoutCoordinate.java
+SHA1-Digest: KsvNvjedAMqrRagvozXFy/wqfuU=
+
+Name: org/eclipse/nebula/widgets/nattable/style/StyleProxy.java
+SHA1-Digest: 4xVrXh8bsdVizsfUVK/YIudtD9o=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/config/DefaultColumnHe
+ aderStyleConfiguration.java
+SHA1-Digest: VEnAW4sLBFO2ypZLNquUZiUzIBs=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/RowHideComm
+ and.java
+SHA1-Digest: H8KM0CzFhfjvapgFexA16i1wc+w=
+
+Name: org/eclipse/nebula/widgets/nattable/images/left.png
+SHA1-Digest: LTH+tdvRqHbs+Nxgcq2inEpTcDA=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/StylePersistor.j
+ ava
+SHA1-Digest: Kcen0aRUQXY9TUhV3JTtscASOBQ=
+
+Name: org/eclipse/nebula/widgets/nattable/images/up_2.png
+SHA1-Digest: Nk4BywPwQViqfSl2M0y7YOy1sNg=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/PercentageBarCe
+ llPainter.java
+SHA1-Digest: pKQmg0vrm6cco9gog0beznJWwYE=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/RowResizeComm
+ andHandler.java
+SHA1-Digest: X1XHHETNJQMoWFRpwSl5d2QBkX8=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/PageUpActio
+ n.java
+SHA1-Digest: uUJyWOmKZTaiApsZfgaFQsew7pQ=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupHeaderLayer
+ .java
+SHA1-Digest: q0nxncQenAQ4frRPHRuJFTzsuvU=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/PasswordCellEdit
+ or.java
+SHA1-Digest: RdbkIRntXwh856MR+smy78l47Cw=
+
+Name: org/eclipse/nebula/widgets/nattable/config/DefaultNatTableStyleC
+ onfiguration.java
+SHA1-Digest: osAOebSPn7HwTi1/iP7+BHSDTus=
+
+Name: org/eclipse/nebula/widgets/nattable/images/show_row.png
+SHA1-Digest: 9cUWLIjenu/lb6tbroxMmo8Awz0=
+
+Name: org/eclipse/nebula/widgets/nattable/export/excel/ExcelExporter.j
+ ava
+SHA1-Digest: 8xY4qyqEQMqgXYeucwA8QGx70jQ=
+
+Name: org/eclipse/nebula/widgets/nattable/images/plus.png
+SHA1-Digest: A3iwMuLgClbnr7qhRVDleLeturs=
+
+Name: org/eclipse/nebula/widgets/nattable/copy/command/CopyDataToClipb
+ oardCommand.java
+SHA1-Digest: NbBz7AEmr3d+4OjfPFFTO4zy014=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/CellPainterMouseE
+ ventMatcher.java
+SHA1-Digest: +s+h1bida9omozBDLw7iXypDbvI=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/ViewportLayer.java
+SHA1-Digest: uRpaU9vxQp3bOnnEBbXoXllB924=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/SelectRowG
+ roupsCommand.java
+SHA1-Digest: dROtfbcBA7/JsetOZ23C0fH869I=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/GraphicsUtils.j
+ ava
+SHA1-Digest: 8rCaVOg5T5jfdjpA+d61NhdedbE=
+
+Name: org/eclipse/nebula/widgets/nattable/messages.properties
+SHA1-Digest: ca2QMgYsvX7HCCm6uuGWKYVkzlg=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/event/ColumnHeaderClick
+ EventMatcher.java
+SHA1-Digest: kltH3wFp16XViLzuhCb+iWWwt/U=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/GridSearchSt
+ rategy.java
+SHA1-Digest: 22cRfuhADOz4LXneGgpGFbqbxWI=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/AutoResizeRow
+ sCommand.java
+SHA1-Digest: JA1S0UXo9paM2IGqRcIwzqXlQxw=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/command/Displa
+ yColumnChooserCommandHandler.java
+SHA1-Digest: Y4jq7/gAN21e9c4TS1fW4kr3Yzg=
+
+Name: org/eclipse/nebula/widgets/nattable/images/checked_disabled.gif
+SHA1-Digest: nhd9xLsMZcmznOYw5nq6Qu3JNm4=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/OpenCreateColu
+ mnGroupDialog.java
+SHA1-Digest: B2c2BsN78KGIzNN7lWhBkb6vneY=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowCellInV
+ iewportCommandHandler.java
+SHA1-Digest: iyBm2xp5vCp/0ZN+dii7YC3TNmc=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/stack/DefaultBodyLayer
+ Stack.java
+SHA1-Digest: tJJ2q6GIEwwI9vLDEpxvs944Low=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderEn
+ dCommand.java
+SHA1-Digest: cjROVPlu1QZbUB/whyJegE/EzKY=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/ColumnHeaderReo
+ rderDragMode.java
+SHA1-Digest: A8L5WuXmGxSIRIHD8Z4oZSLkSjM=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/RowPostSelectionPr
+ ovider.java
+SHA1-Digest: d5CIoCaP1ZZmJg/kVTVH/sCmzVc=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/IDisplayConvert
+ er.java
+SHA1-Digest: VTRCaBRCwJ4i4Ql+EndyJ1QOVZ8=
+
+Name: org/eclipse/nebula/widgets/nattable/command/AbstractColumnComman
+ d.java
+SHA1-Digest: 5p2Ry9aHEdfk6O9zsXtDkTmlvFo=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/GradientBackgro
+ undPainter.java
+SHA1-Digest: IjfnCRewcOruRyIeuErQPqqsgaI=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/command/Display
+ ColumnStyleEditorCommandHandler.java
+SHA1-Digest: QH+p3uiBalC/WrNiO4M7fob1yyA=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/DisplayColumnRe
+ nameDialogCommandHandler.java
+SHA1-Digest: MY5RaXJIrXXs8aaSH65vZogAjas=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/DefaultNumeric
+ DataValidator.java
+SHA1-Digest: hGH4bCzRK+BUXNfdJbV5uDwTFI4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/GridColorsEdito
+ rPanel.java
+SHA1-Digest: f01EhpRuYZdsrlI5JlmiyhGciJI=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/Paddi
+ ngDecorator.java
+SHA1-Digest: AAHQtyC5NGbjfNbWgzjxTM/Gwlg=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/cell/AlternatingRowConf
+ igLabelAccumulator.java
+SHA1-Digest: JZtn9kuVtIYogK8yS09FSwYZbr0=
+
+Name: org/eclipse/nebula/widgets/nattable/messages_de.properties
+SHA1-Digest: QATLl0+n5Pq/01AxRRvVcO7lNTQ=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/MoveToLastR
+ owAction.java
+SHA1-Digest: POlzl/6vxpkfSBUvbPjhzgSFPBM=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/layer/GridLineCellLa
+ yerPainter.java
+SHA1-Digest: kxi+OUWK244ZRmLQmzjiQWR90aM=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/StructuralDiff.j
+ ava
+SHA1-Digest: 8NgxkKpzbqcFSWpQAY8BzwzDOqs=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rEndCommand.java
+SHA1-Digest: xRCH6aMylN2+p5VYGO2W1BopWlU=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/layer/NatLayerPainte
+ r.java
+SHA1-Digest: AfLvMHkxYaRgZYtGTq6iUwQy2Ng=
+
+Name: org/eclipse/nebula/widgets/nattable/widget/NatCombo.java
+SHA1-Digest: KEXjRKiZrwMFtrvTE6KSa+/uMZ8=
+
+Name: org/eclipse/nebula/widgets/nattable/images/down_2.png
+SHA1-Digest: Qun920NdOm2Jl7vC3bBJix6X15M=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/AbstractDialogCellE
+ ditor.java
+SHA1-Digest: SMPzmSel8iNne4BNFQP0E1w06t8=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/LayerCell.java
+SHA1-Digest: rdzXLUZU3XEw03OStg7Pdo5r6ho=
+
+Name: org/eclipse/nebula/widgets/nattable/command/LayerCommandUtil.jav
+ a
+SHA1-Digest: 0ACDSjvSEz91NG1cF1JNKjN30n4=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/ClearAllSe
+ lectionsCommand.java
+SHA1-Digest: uRE1/QaYZLoaK7RbQwjhbwtSnPk=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultDisplayC
+ onverter.java
+SHA1-Digest: WMZYVjrHkYhnqx99IJWmJmdl394=
+
+Name: org/eclipse/nebula/widgets/nattable/export/excel/DefaultExportFo
+ rmatter.java
+SHA1-Digest: CRAgs59nbky4msLybTmZsipGzHw=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/ColumnOverrideLab
+ elAccumulator.java
+SHA1-Digest: szlSxEVGxB1icaUuxwKBL6ddcAM=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/GroupColumnReo
+ rderCommandHandler.java
+SHA1-Digest: W9sfQP1p7o4VF7xo9ReRmIcua6s=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/DebugMenuConfigurati
+ on.java
+SHA1-Digest: YXoGXPAe9SJjgFVjquQAKuXOJSk=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/UnFreezeGridC
+ ommand.java
+SHA1-Digest: PVA96H9vjwox1Zky9xYuUm/b5rQ=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/BlinkConfigAttributes.
+ java
+SHA1-Digest: H919XOD4qGh5t2/x3VWFZPekp9M=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/InitializeAut
+ oResizeColumnsCommand.java
+SHA1-Digest: Em42OjgXo/32HPk+9QZeBxeY4dY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ILayerEvent.java
+SHA1-Digest: vrFXYBv6Oi4QIMTrzZvCrm54wiw=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/action/FreezeGridActi
+ on.java
+SHA1-Digest: CgnuHLEdJEPbmxlU6zXIr8COESw=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/config/DefaultSortConfi
+ guration.java
+SHA1-Digest: /VraM4NMg18GZOSA2/gnIOf5sHY=
+
+Name: org/eclipse/nebula/widgets/nattable/group/RowGroupHeaderTextPain
+ ter.java
+SHA1-Digest: +DNwo0BzmaLK1h8XD977E7XBIc4=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/BorderThickness
+ Picker.java
+SHA1-Digest: 7zYikm3cciMMmFxY3J2PcRJGXr0=
+
+Name: org/eclipse/nebula/widgets/nattable/summaryrow/DefaultSummaryRow
+ Configuration.java
+SHA1-Digest: UVB+PrQrrt2CQ4gy869HZRO/f0I=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/Recalculate
+ ScrollBarsCommandHandler.java
+SHA1-Digest: SSplVD0qedoS9gllWyfISBGHdxU=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/ScrollSelectionCom
+ mandHandler.java
+SHA1-Digest: s6Yt+OGAJ66SJCsw6SldwKVvCzg=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/command/TreeExpandColla
+ pseCommandHandler.java
+SHA1-Digest: UCV5nl1qRCa5Dpw8t07mEiQKcQY=
+
+Name: org/eclipse/nebula/widgets/nattable/images/semichecked.gif
+SHA1-Digest: Y3L6VPWl8yfbOBt9AD61+zTcq4g=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/IKeyAction.java
+SHA1-Digest: d6+pmKmdnlrTOY9HY5mzl//8PwU=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/AutoResizeRowCo
+ mmandHandler.java
+SHA1-Digest: EGuuvPWj9o/KuAfJZNtMJuKA4BA=
+
+Name: org/eclipse/nebula/widgets/nattable/style/Style.java
+SHA1-Digest: Q4ND+4wARSwoUj/G9CB9O3/2Lt8=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/MultiRowResiz
+ eCommandHandler.java
+SHA1-Digest: HSnasTmwUGuQ+W1Qkd9lKbrFi2k=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/event/ShowRowPositi
+ onsEvent.java
+SHA1-Digest: f9Sy4GqkVKWL3F7XBQAubyVLgB0=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/RowSelectionProvid
+ er.java
+SHA1-Digest: kHorYfnDD1gqVS74eAoKVndHkzs=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportDra
+ gCommand.java
+SHA1-Digest: PDXc7GKFd6xKSfEqxXC5hkf2ip0=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/binding/KeyBinding.java
+SHA1-Digest: vMRbRTVfH8Tf/bWeVUdjrPWDUVc=
+
+Name: org/eclipse/nebula/widgets/nattable/images/red_button.PNG
+SHA1-Digest: v4uNFNkZK0cTn5z79rgQkMj8y2k=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/SingleRowSe
+ lectionDragMode.java
+SHA1-Digest: 5kdatQHcUD/LmAr2jkUe0EQLsvs=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/MultiColumnRe
+ sizeCommand.java
+SHA1-Digest: upilwVv490T552/7rzm7jof3dNA=
+
+Name: org/eclipse/nebula/widgets/nattable/group/config/DefaultRowGroup
+ HeaderLayerConfiguration.java
+SHA1-Digest: q2DDyRFolSjgk3EZ+5mSIHpJo9Y=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/ILayerListener.java
+SHA1-Digest: rr7xYTK/lg06xXSMoUeDP0RMVlI=
+
+Name: org/eclipse/nebula/widgets/nattable/config/AggregateConfiguratio
+ n.java
+SHA1-Digest: h9uv0/RT9AsMyaoW4UN2TCiO9JI=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportSel
+ ectColumnCommandHandler.java
+SHA1-Digest: BrezIr3M7pW6BKawcBh3PeU9nOc=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DefaultColumnHeade
+ rDataProvider.java
+SHA1-Digest: uSqvy8gBXZ01CdcKScVs/gWVCiI=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiRowSho
+ wCommand.java
+SHA1-Digest: wkgYpEPAKNDUriNNEsom7YjAoiA=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/ControlDecoratio
+ nProvider.java
+SHA1-Digest: Rw9BTVNYAHVOOIW2enZ1xeGKklA=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/FilterRow
+ ComboBoxDataProvider.java
+SHA1-Digest: 1m6ZDD+lrAO1+v939N/Q7OggU3U=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/ICellEditor.java
+SHA1-Digest: Y+vXbp3NmhNZoLyn4Q7qXHClMko=
+
+Name: org/eclipse/nebula/widgets/nattable/images/up_1.png
+SHA1-Digest: FJWlIb1JzmIwduGw7Z5q2U3rvtw=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/command/ToggleFilt
+ erRowCommand.java
+SHA1-Digest: U81MP6Ij8fJXy9+knl9m8mYwdYk=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rEndCommandHandler.java
+SHA1-Digest: Ys2n8phBXaxlSRNM+ht9husOItM=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupStartCommand.java
+SHA1-Digest: uXO9+UqR4+FPLphToMQBxCBeFCQ=
+
+Name: org/eclipse/nebula/widgets/nattable/config/DefaultComparator.jav
+ a
+SHA1-Digest: kYmkkaQBUGjJ+6lsNqfjycwjWqE=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/AbstractHeaderMenuCo
+ nfiguration.java
+SHA1-Digest: ux7lDeAIss5UcIMdrrxUWicW3Bw=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeSelecti
+ onCommand.java
+SHA1-Digest: qmhuxf1YUkJvCeHO3x0gAlJGWP8=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/RowOnlySele
+ ctionConfiguration.java
+SHA1-Digest: SLZIpGjhj5W3cAHywUmmFKWb56I=
+
+Name: org/eclipse/nebula/widgets/nattable/style/VerticalAlignmentEnum.
+ java
+SHA1-Digest: 4ciyJemzDJxz4FJXUlYTkrbk4oQ=
+
+Name: org/eclipse/nebula/widgets/nattable/search/strategy/ColumnSearch
+ Strategy.java
+SHA1-Digest: nZnMwP1UgL2/sEWbumczSoXv6Xc=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/ITreeRowModel.java
+SHA1-Digest: oo9TGRnX/buo1MeCz7yHKoKZYWY=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/RowPositionCoordi
+ nate.java
+SHA1-Digest: XPXtp7ZI9mRk74PTN04g1CFxJ0o=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DummyModifiableBod
+ yDataProvider.java
+SHA1-Digest: 8sN3FC+njgQmgpKllzxDMfDhGNM=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/command/SortColumnComma
+ nd.java
+SHA1-Digest: //50D0gNTuKRwiN/ErHIwH0dsRU=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/LetterOrDigitKeyE
+ ventMatcher.java
+SHA1-Digest: 7ZWzx6ap+duNgoQP8LuM6hine2M=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/CompositeFreezeLayer.
+ java
+SHA1-Digest: FknxvLMTdxgjgpgTn2PUBjQDeys=
+
+Name: org/eclipse/nebula/widgets/nattable/search/gui/SearchDialog.java
+SHA1-Digest: ++AXF886+aQfilSOjM61w0z++6I=
+
+Name: org/eclipse/nebula/widgets/nattable/images/toggle_filter.png
+SHA1-Digest: SzlfVj1XFBmCiwSNtPVpBtyRn3w=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/SortConfigAttributes.ja
+ va
+SHA1-Digest: 50WjNh+olz+/3yqwpcQnzZ/f5y8=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/action/ViewportSele
+ ctColumnAction.java
+SHA1-Digest: 0J3hP2nKKbnbO0x9U6tTWsk/H5U=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultCharacte
+ rDisplayConverter.java
+SHA1-Digest: bJxV0ZCPq73Clsd+sPynikdCf1U=
+
+Name: org/eclipse/nebula/widgets/nattable/search/command/SearchCommand
+ .java
+SHA1-Digest: pcXmJpFHe6zBSHQHVfVAUoaAH3I=
+
+Name: org/eclipse/nebula/widgets/nattable/images/arrow_up_top.png
+SHA1-Digest: xnYMkTJ+dQ0UwDkhC1oQXKbGT7M=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/config/DefaultFilt
+ erRowConfiguration.java
+SHA1-Digest: V6rN0OY/K4LPk2XBFtlh/8tdAXY=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/SelectRowGr
+ oupsAction.java
+SHA1-Digest: Uqq4C2SGTJGEaO5pmHqQ7EUVhrE=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/mode/ColumnResizeDrag
+ Mode.java
+SHA1-Digest: LyDsK88hIExfoGmuXwDYaRn3iI8=
+
+Name: org/eclipse/nebula/widgets/nattable/config/IConfiguration.java
+SHA1-Digest: qOqJPzWkKE/s5dVYeCZv278+k54=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/InvertedLayerCell
+ .java
+SHA1-Digest: zRbbde1uwHWSUdj0e0sbZG9EAVE=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiRowHid
+ eCommandHandler.java
+SHA1-Digest: SfLKSSzqWLU7tw9jzQSMB8G98QE=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/TickUpdateCellEditD
+ ialog.java
+SHA1-Digest: bNv611ufKWr2AVzAg9KsKnIl/e8=
+
+Name: META-INF/eclipse.inf
+SHA1-Digest: QdryQvJlVywlE0MGLuwYCkmkyWk=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/FilterRowDataProvi
+ der.java
+SHA1-Digest: f9XWCZ2UwWQ/333vG5brZEetfVc=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/gui/ColumnChoo
+ serDialog.java
+SHA1-Digest: cXNqyUP9J6sTo010BpgCvjvnPO4=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/gui/Visible
+ ColumnsProvider.java
+SHA1-Digest: UlSCwTpcOLSnrPcNLUJVmetbDoo=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderSt
+ artCommand.java
+SHA1-Digest: 3JwlsIiif5BtqYftwqhe5qMxP9Y=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeColumnC
+ ommand.java
+SHA1-Digest: gcSC+PdYaie8ugnEpUUuHeiQkEs=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/RowGroupExpandC
+ ollapseAction.java
+SHA1-Digest: pN8DJJc/mR+69uiwl1XzIiSVGNM=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IColumnAccessor.java
+SHA1-Digest: J6xFxx+PVt2ZnkX8+h43YE2TRVo=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/IFreezeComman
+ d.java
+SHA1-Digest: tePXyjDqQ6xhz06pZTBojWVwQrc=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/BackgroundImage
+ Painter.java
+SHA1-Digest: u0vPmWOqhDmO6YXBQwVB6XQD8ug=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/SelectCell
+ Command.java
+SHA1-Digest: 6wcUHtbt6Ffc99flWLzs3JgACF8=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/event/InlineCellEditEve
+ nt.java
+SHA1-Digest: TOHPOzuDb2KJyBAWH8VihxoHous=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/config/FilterRowCo
+ nfigAttributes.java
+SHA1-Digest: 91I6D5WJbieGCbpX8chcaTicOPM=
+
+Name: org/eclipse/nebula/widgets/nattable/config/IConfigRegistry.java
+SHA1-Digest: eGJUOEfHaBJCw12ryg7Kne9lsaI=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowInsertEvent.j
+ ava
+SHA1-Digest: MUBpa+M9lQuY9g+IDpPuW+Xxvy4=
+
+Name: org/eclipse/nebula/widgets/nattable/summaryrow/SummationSummaryP
+ rovider.java
+SHA1-Digest: sKQrqAAySoVBdkigkVfz0/nSGQo=
+
+Name: org/eclipse/nebula/widgets/nattable/config/ContextualEditableRul
+ e.java
+SHA1-Digest: aEz8e1Lcw6ABvf7lVpmbgBeI6g4=
+
+Name: org/eclipse/nebula/widgets/nattable/print/GridLayerPrinter.java
+SHA1-Digest: 7rnGixupqlfTwzQRs7KZ3slx5wQ=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultDoubleDi
+ splayConverter.java
+SHA1-Digest: ePx3bCPcl3oJnpg3/J4cTW4a6bo=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/RenameColumnHea
+ derCommand.java
+SHA1-Digest: 3rsF3WC+DhRgEIycndMXBaLJch4=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/config/DefaultRowReo
+ rderLayerConfiguration.java
+SHA1-Digest: QVJORaQQJ6ZYi/A7S7QY+eYLoa4=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/Recalculate
+ ScrollBarsCommand.java
+SHA1-Digest: +kWb/bufGcYIJHkUHiKIX3N91DY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/ColumnLabelAccumu
+ lator.java
+SHA1-Digest: lwHwSOuYV0RnX3vTVaq5C4ruXvg=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/action/UnFreezeGridAc
+ tion.java
+SHA1-Digest: P1JX37YpDiI7l29ptfqV4fBjZIU=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/RowKeyStrategyImpl.jav
+ a
+SHA1-Digest: zTU77cdTexINak36auEsz/iQkiE=
+
+Name: org/eclipse/nebula/widgets/nattable/images/down_1.png
+SHA1-Digest: vwpwRt5hj7l9WHaMMTLrk9WUSFM=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/DisplayColumnG
+ roupRenameDialogCommand.java
+SHA1-Digest: 77wJ/l7SXoZFh/+2Y7syBpyM+4Q=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/CheckBoxPainter
+ .java
+SHA1-Digest: pp3OdP61dIVG52gHZAVGRdZaGUo=
+
+Name: org/eclipse/nebula/widgets/nattable/export/IExportFormatter.java
+SHA1-Digest: RV8r1XFzfAYCuI2ONAIItKez2h4=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/IFilterStrategy.ja
+ va
+SHA1-Digest: QMf0jb43gFuIzMILZGAwlvnh0WY=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiColumn
+ HideCommandHandler.java
+SHA1-Digest: vFXujKodLxf+jabRdzyLdrM5zYw=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/command/ClearFilte
+ rCommand.java
+SHA1-Digest: +5heEA1XZzaEi1v5OkPpL8Bbbx8=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/MultiRowResiz
+ eCommand.java
+SHA1-Digest: AdIYxYqoiR1KpkzYnSUz2XfwalI=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/CornerLayer.java
+SHA1-Digest: 0oeOk02REBhgPiG7+HiLvtcgmZk=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/BackgroundPaint
+ er.java
+SHA1-Digest: 0nk2742n6uM4ljeChDWPBHCG1nQ=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/DefaultEditConfi
+ guration.java
+SHA1-Digest: ASJfqe/tpTJ0KgiBnK1kw+hLgo8=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/IMouseAction.java
+SHA1-Digest: fPgofhhiLPfOUYLmtJS13/hwOl4=
+
+Name: org/eclipse/nebula/widgets/nattable/command/StructuralRefreshCom
+ mandHandler.java
+SHA1-Digest: 9zErUjh3fBsKN6L27y6JYg2Z/CQ=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultBigDecim
+ alDisplayConverter.java
+SHA1-Digest: qOe9S0T3izHcIKlhHSO7PrAiLmE=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/InitializeAutoR
+ esizeRowsCommandHandler.java
+SHA1-Digest: 5UQnSJdRIPf1uPrVNAedkO2UWVw=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ColumnInsertEven
+ t.java
+SHA1-Digest: jKtva3vqkHdxa/2nDThsdxOiEhA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/RowObjectIndexHold
+ er.java
+SHA1-Digest: vnhc+vTcEk/5GOFB6G+0v01qfS8=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/command/TickUpdat
+ eCommandHandler.java
+SHA1-Digest: n5XxhegCXjKOklS5LKeCmvjggg4=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/event/HideRowPositi
+ onsEvent.java
+SHA1-Digest: jEwHkbsMRCAhhUdWvYRod4BCVWs=
+
+Name: org/eclipse/nebula/widgets/nattable/copy/serializing/CopyDataToC
+ lipboardSerializer.java
+SHA1-Digest: O+Fm/vXIaSDOWIztHK8li0W1WpA=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/combobox/FilterNat
+ Combo.java
+SHA1-Digest: wRcK9sHXib3JCtwhj+xCxnF72G0=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/VerticalTextPai
+ nter.java
+SHA1-Digest: OItsWf6e5x5a5S6CefzLKONQalQ=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/ColumnHeaderChe
+ ckBoxPainter.java
+SHA1-Digest: Ru4ZVAh7yygkz9H6/5BCOpi738g=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/VerticalScrollBarHa
+ ndler.java
+SHA1-Digest: gies2GeofKIKU8vx1hbmQ+YSAbs=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderCo
+ mmandHandler.java
+SHA1-Digest: eWQNDj9ZO2CqvON6oRPK4cQWRf8=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/command/DisplayP
+ ersistenceDialogCommandHandler.java
+SHA1-Digest: gWg0f09Mn4jp1Ocql8skn0JzgCs=
+
+Name: org/eclipse/nebula/widgets/nattable/style/HorizontalAlignmentEnu
+ m.java
+SHA1-Digest: IOZU3Y0Dpv5afBtQj8dFfJM3kn8=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/RenameColumnHel
+ per.java
+SHA1-Digest: 9IJm/kmJk6+5oWPIrBdKthaVzPU=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/action/SortColumnAction
+ .java
+SHA1-Digest: GVSZrSogYSfbCR9Bu5i4Ib9w5IA=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/VisualRefreshEve
+ nt.java
+SHA1-Digest: KtZykiW4RWjigjGClpygB9MDOh0=
+
+Name: org/eclipse/nebula/widgets/nattable/images/up_0.png
+SHA1-Digest: /K3wmYvC8NelSjVjidnpoZuf6Q4=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/event/RowResizeEvent.
+ java
+SHA1-Digest: O0KQjbYtqFL/Gn8oamccGgIXn6M=
+
+Name: org/eclipse/nebula/widgets/nattable/conflation/EventConflaterCha
+ in.java
+SHA1-Digest: Z7HmBchI28Qq2vVsG9RZZJb8AhI=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/StructuralRefres
+ hEvent.java
+SHA1-Digest: RHl5N7vGUxVBn98Y9O4kOy1NzXo=
+
+Name: org/eclipse/nebula/widgets/nattable/util/ArrayUtil.java
+SHA1-Digest: U7TxPxaUYKGe3TndZGDNb5vfAPQ=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IRowIdAccessor.java
+SHA1-Digest: bxhJtc/59PzSmF2X5uYUtCCyxa4=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/config/DefaultFreezeG
+ ridBindings.java
+SHA1-Digest: S8qIKUVp9VeoT55pjI46S7x+4yY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/CellVisualChange
+ Event.java
+SHA1-Digest: VVnQoaamMPVegTvaN13UPYmt/3E=
+
+Name: org/eclipse/nebula/widgets/nattable/config/AbstractLayerConfigur
+ ation.java
+SHA1-Digest: GPOzJyMtUNWAEs6A0YD01gYduE8=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/mode/RowResizeDragMod
+ e.java
+SHA1-Digest: LHQNGkns4R2NCLpJuWtgAndXm6M=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/ComboBoxCellEdit
+ or.java
+SHA1-Digest: RcaaWkiVixzQcIY6DS1f20jq9iU=
+
+Name: org/eclipse/nebula/widgets/nattable/style/CellStyleUtil.java
+SHA1-Digest: IRiW4UR/rLM6QunI1n9t/z02S50=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/ColumnHeaderLayer
+ .java
+SHA1-Digest: 5Z/Ppk2tfoHWRywCXt27TVX+TqA=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowRowInVi
+ ewportCommand.java
+SHA1-Digest: CKIhbnOaah6pjzw53OhxZa28zCA=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/event/InlineCellEditEve
+ ntHandler.java
+SHA1-Digest: lL87U49P0A1DIuQaJON9tcxrIj8=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/GridLayer.java
+SHA1-Digest: nCrUtrO30j3rs9AbKazIePQwUSA=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/MultiColumn
+ HideCommand.java
+SHA1-Digest: 3hcWhkiX3ZmlzpTlJHhKOUzC1fc=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/SelectCellA
+ ction.java
+SHA1-Digest: rBlhOWIY2bTgzDtbLz8tNyBZF6s=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/command/BlinkTimerEnab
+ leCommand.java
+SHA1-Digest: c0E0hgBagjv+/OHIRC8Zp9TSSqo=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/ColumnReorde
+ rCommand.java
+SHA1-Digest: 4ndZZbgjAhTzK7K28b85LzSX/yY=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/EditConfigAttributes.ja
+ va
+SHA1-Digest: d0TCVeEjgLL7551vFm12ybuU2BY=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/event/ShowColumnPos
+ itionsEvent.java
+SHA1-Digest: o2P6EcUhU0+vfO3+QTwrYw5PKfw=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DummySpanningBodyD
+ ataProvider.java
+SHA1-Digest: ZXVDWtF8zyQZGQpxVHjEIoyh470=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultBigInteg
+ erDisplayConverter.java
+SHA1-Digest: acjcOSTH1BXFEb3BJjycbOBfw2g=
+
+Name: org/eclipse/nebula/widgets/nattable/copy/serializing/CopyFormatt
+ edTextToClipboardSerializer.java
+SHA1-Digest: LJilQLeohHV6YuspgpTa1v/OMh4=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/ITickUpdateHandle
+ r.java
+SHA1-Digest: x6XWzDFofg8raUHOgp8tyeE1Vkk=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ShowAllRows
+ Command.java
+SHA1-Digest: a2cP7Q+Ooin7+BGNuRImZu0PRTk=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/VerticalAlignme
+ ntPicker.java
+SHA1-Digest: xWPqPdj8EtQj3TS1aRgw3uFpuiY=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/BodyMenuConfiguratio
+ n.java
+SHA1-Digest: vYUqERncrUuFTxdctZoJ45RAfA8=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/config/LoggingErrorHand
+ ling.java
+SHA1-Digest: Ylrd0LiGWi25iLlqtC7mrZqIHS4=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/IPersistable.jav
+ a
+SHA1-Digest: cOq59MK91eJUHuNDguwlFae6IEA=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/TreeRowModel.java
+SHA1-Digest: di7UJxHVyQDq6o1fOciFhn7G3Wo=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/ColumnGroupEnt
+ ry.java
+SHA1-Digest: rFXrVPcViXwxj51tJr+gKIKVNx0=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/util/CellEdgeEnum.java
+SHA1-Digest: k3vXABXDpKFGJ4ckEAH6OiImVmA=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/action/ClearFilter
+ Action.java
+SHA1-Digest: OPVDGf4B310sB03XMbfG3UZOqso=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/TransformedLayerC
+ ell.java
+SHA1-Digest: XqJSa8uabYOO96+ECcH5/mnOmNk=
+
+Name: org/eclipse/nebula/widgets/nattable/group/config/DefaultColumnGr
+ oupHeaderLayerConfiguration.java
+SHA1-Digest: m+vrLAHTjz9jMaZpGffITM5HUmU=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/IMenuItemProvider.ja
+ va
+SHA1-Digest: TMzsujh7W11LXkaBIAX3gCuRAmE=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/decorator/Custo
+ mLineBorderDecorator.java
+SHA1-Digest: +Sq/BIAITuJsbl8RosGVL8nE4Lk=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/GroupMultiColu
+ mnReorderCommandHandler.java
+SHA1-Digest: 0toX5MpfzgMTlQWEW/bzhG11kZ4=
+
+Name: org/eclipse/nebula/widgets/nattable/search/ISearchDirection.java
+SHA1-Digest: fVdEKdNlW/g+ou2Vp0Z5aJq6evE=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/EditSelectionCo
+ mmand.java
+SHA1-Digest: BDU+LznY+4gFTjZShcrtKJMBVPk=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowDeleteEvent.j
+ ava
+SHA1-Digest: PnShmfd7fHKhb1Zlk5jOYmOXFJg=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/MouseEventMatcher
+ .java
+SHA1-Digest: BBKkfbpTwZRKWtrdXN7U7ROUtSo=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/FileDialogCellEdito
+ r.java
+SHA1-Digest: fjp3yr00GzjvkRCJw8xNR7HY0bw=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IDataProvider.java
+SHA1-Digest: JkSUHKV+SOCdKyDyWYkbE2gWS4s=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/event/ColumnReorderE
+ vent.java
+SHA1-Digest: AQPJOntG8BYEZ0qWhK5jMHdMPJw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/MouseModeEventHandle
+ r.java
+SHA1-Digest: RbYM7YbwBQlKAxhMPW+5WTGDaYg=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/IRowHideShowCommand
+ Layer.java
+SHA1-Digest: n1R+0tgMQU2r6GQ6EUdMn/TnBeI=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/MoveToLastC
+ olumnAction.java
+SHA1-Digest: hWbk5rn0Qt8lpTs9vvmEm5/Xp9s=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupUtils.java
+SHA1-Digest: irtVzd8m5gPPMT0bLSbwO1D3vTU=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/EditSelectionCo
+ mmandHandler.java
+SHA1-Digest: NCZMkE/6kou7OhOvT7Do9iJxGYE=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/IStructuralChang
+ eEvent.java
+SHA1-Digest: uj07e/UUgtTfiWj5NrCOTPj5fhU=
+
+Name: org/eclipse/nebula/widgets/nattable/search/command/SearchGridCel
+ lsCommandHandler.java
+SHA1-Digest: Zkb53vYS5jyVtedaGJhweS9aj84=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/ColumnChooserU
+ tils.java
+SHA1-Digest: 4W0W6cOGY34Tjv0lEFl8HL8LmTY=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/AbstractContextF
+ reeEvent.java
+SHA1-Digest: 87tRJXADwIlAhwTRhXRdN2B4XGs=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/IDataValidator
+ .java
+SHA1-Digest: Qkumr9oj5deBiMhue7cRJZ6NJEs=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/config/DefaultTic
+ kUpdateConfiguration.java
+SHA1-Digest: QOH97NZqRX3terNoyq/EhGotE7E=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/LabelStack.java
+SHA1-Digest: 0ROa3PwH/IAEE+kNd4B3ClFmbe8=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/Tree.java
+SHA1-Digest: E26ecd139eWqB06RKNKN1LvD3bU=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/ICellEditHandler.java
+SHA1-Digest: mhzyIcRkOrkV/4QsWc/FJHSe/QY=
+
+Name: org/eclipse/nebula/widgets/nattable/images/column_chooser.png
+SHA1-Digest: jIEpPP8fxe7VYGcyj4Qq2ZElAFI=
+
+Name: org/eclipse/nebula/widgets/nattable/tickupdate/action/TickUpdate
+ Action.java
+SHA1-Digest: crCkLhP6UG1Ucq8APgAkJ3EmNvk=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/LayerUtil.java
+SHA1-Digest: Qi8+jK/jGrzLBS/NJcW8exD28dI=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/menu/HeaderMenuConfigurat
+ ion.java
+SHA1-Digest: kT8ZVOo9kyu19nzPOmPahmkJ3UY=
+
+Name: org/eclipse/nebula/widgets/nattable/images/down_0.png
+SHA1-Digest: egVxi2vtdwj/qcqqcHvymZUyKGI=
+
+Name: org/eclipse/nebula/widgets/nattable/data/validate/DataValidator.
+ java
+SHA1-Digest: FSjcK7nt9FHyxaR9nCR7mzXkN/E=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/AbstractColumnHideS
+ howLayer.java
+SHA1-Digest: 1aHzCnoSsnQ+Xt8aFMWtOB21Ujg=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/ClassNameConfigLa
+ belAccumulator.java
+SHA1-Digest: Nxih18TgEEmcaC2pf3sw1yjozw4=
+
+Name: org/eclipse/nebula/widgets/nattable/export/command/ExportCommand
+ Handler.java
+SHA1-Digest: DokC0omwGa0CfPNGuEKKBo9Fx+s=
+
+Name: org/eclipse/nebula/widgets/nattable/export/action/ExportAction.j
+ ava
+SHA1-Digest: E/j77WHl31JrhovxIQvZ7y5v1sw=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/event/RowReorderEven
+ t.java
+SHA1-Digest: GIZl/keSwAQ9m4thVvnHh3ABWoc=
+
+Name: org/eclipse/nebula/widgets/nattable/group/IColumnGroupModelListe
+ ner.java
+SHA1-Digest: GACvVo4OXoUEhJxkopuV88zy/6E=
+
+Name: org/eclipse/nebula/widgets/nattable/config/ConfigRegistry.java
+SHA1-Digest: vDENcWbbyqknpEp75ElsAgPwr8U=
+
+Name: org/eclipse/nebula/widgets/nattable/images/hide_row.png
+SHA1-Digest: 1x50HSksmuH4IQbp1WrH5JyYTdk=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/SelectRowAc
+ tion.java
+SHA1-Digest: DAK9PjjtYcF5UDckMWUrGUde+9M=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/StructuralChange
+ EventHelper.java
+SHA1-Digest: Dhu6tqQdpiFYTGHkFxpOUub21g8=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ColumnDeleteEven
+ t.java
+SHA1-Digest: ycXjd6a0kJDa2CoYBHg00MpeGgQ=
+
+Name: org/eclipse/nebula/widgets/nattable/group/action/ColumnGroupHead
+ erReorderDragMode.java
+SHA1-Digest: e14e36GpDlNsh2/COhcr+6H5Dx0=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeRowComm
+ and.java
+SHA1-Digest: RKSgga5s+lnxJm4LsWQKiGyG4/w=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderEn
+ dCommandHandler.java
+SHA1-Digest: /5IEmGJgONGl6Urkv5MakuTO9p8=
+
+Name: org/eclipse/nebula/widgets/nattable/columnCategories/Node.java
+SHA1-Digest: oYvtQEaar2gku5KowvFo9SZU2QA=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/TextPainter.jav
+ a
+SHA1-Digest: 02R3TARFEkl4OyOakmKJ1XWfrjM=
+
+Name: org/eclipse/nebula/widgets/nattable/data/ListDataProvider.java
+SHA1-Digest: YnE8J4z8QSu97W3QHCiUcCIzA0M=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/action/ColumnResizeCu
+ rsorAction.java
+SHA1-Digest: kvI5CotAr92mpF2SUNMa+LCUdrI=
+
+Name: org/eclipse/nebula/widgets/nattable/copy/command/CopyDataCommand
+ Handler.java
+SHA1-Digest: NvGCskacQD+aPUhHvYZKTMYpijM=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupExpandColla
+ pseLayer.java
+SHA1-Digest: 7+oRYIGwACF+N55mqfhWxZggUDg=
+
+Name: org/eclipse/nebula/widgets/nattable/images/remove_filter.png
+SHA1-Digest: BIgw0Ps98AYuKk9yDEMeRylfO8o=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/MoveSelectionComma
+ ndHandler.java
+SHA1-Digest: /VnnGz9/DCTgRaaBAlKj4TjY698=
+
+Name: org/eclipse/nebula/widgets/nattable/NatTable.java
+SHA1-Digest: vkZLArhmveLolDslnF5J5Qkcgzg=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/BorderStyleEdit
+ orPanel.java
+SHA1-Digest: 7GnlxKLAG7cbIU1hXEcGMqmM5Rc=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/BlendedBackgrou
+ ndPainter.java
+SHA1-Digest: 2fVwSqA/I+H8Dd9yMiMNZz2777E=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/CompositeLayer.java
+SHA1-Digest: AJlkci+2qCK9VtMH94CzaMgO9Wk=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectionLayer.jav
+ a
+SHA1-Digest: FjTfoK0SUSsiIDfvTjUi2NOsv1Y=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/RowReorderCo
+ mmand.java
+SHA1-Digest: qhEzpt74JfuZBb1wTLGBRQW49wA=
+
+Name: org/eclipse/nebula/widgets/nattable/persistence/command/DisplayP
+ ersistenceDialogCommand.java
+SHA1-Digest: RPENeSPjmuZ5X8Vxn1HbBE/lVOo=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowStructuralCha
+ ngeEvent.java
+SHA1-Digest: lghRhDMfgCHoQ5VgOWdeXpLsMuY=
+
+Name: org/eclipse/nebula/widgets/nattable/images/right.png
+SHA1-Digest: A4ibeXGm6B9dpmE09qN9P2gLbVA=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/painter/IndentedTreeIma
+ gePainter.java
+SHA1-Digest: 9348etBJ8o/laHI+S80y7WeQu60=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/RowGroupExpand
+ CollapseCommand.java
+SHA1-Digest: igue8NLi04fMZL5onef0YuNbc/U=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ShowColumnI
+ nViewportCommand.java
+SHA1-Digest: 95y3PHDGf38ITB65FU6eI7qer1E=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/PropertyUpdateEv
+ ent.java
+SHA1-Digest: N8iTcEXI9U5HRlThaJ2LK3q27rw=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/layer/CellLayerPaint
+ er.java
+SHA1-Digest: QZt0UrbI/q96owOwj00yZWJVUbU=
+
+Name: org/eclipse/nebula/widgets/nattable/viewport/command/ViewportDra
+ gCommandHandler.java
+SHA1-Digest: hUSm55qnAYoYoua6Spe6ZrKx30c=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/AbstractLayerTransform
+ .java
+SHA1-Digest: UEo56DsL0dnHQ5lO8L3egN878gI=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/RowStructuralRef
+ reshEvent.java
+SHA1-Digest: Z6Qi6cKtznyaSf8wiU6YMe+sNFE=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/config/DefaultRowReo
+ rderBindings.java
+SHA1-Digest: vWH23lkEt7N20FVpCZtnzW8VU+Y=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/IOverlayPainter.java
+SHA1-Digest: cbrvniDtWYZVzx6esxgWvLjrMQE=
+
+Name: org/eclipse/nebula/widgets/nattable/command/ILayerCommand.java
+SHA1-Digest: sdUCa3EaKBHJt+rUAEzsu2lmvio=
+
+Name: org/eclipse/nebula/widgets/nattable/util/PersistenceUtils.java
+SHA1-Digest: TdKCtT0j6IwnzZVp3wXwQHY0x6c=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IColumnPropertyResolver
+ .java
+SHA1-Digest: 3pjpBVChq9dzxC/3tQkxt64rQJI=
+
+Name: org/eclipse/nebula/widgets/nattable/sort/SortHeaderLayer.java
+SHA1-Digest: jj/cxanZ0GR+Oq3GflpRaFsRv+E=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/SortableTreeComparator.
+ java
+SHA1-Digest: WY0RjJj6vWfbQfebr8hktPU0R2k=
+
+Name: org/eclipse/nebula/widgets/nattable/group/RowGroupUtils.java
+SHA1-Digest: zb7ObzOwRLLDMa3OhBgNyQW5+Zo=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/DefaultMove
+ SelectionConfiguration.java
+SHA1-Digest: achnow4s5AtUX/QR+tefpUHIid8=
+
+Name: org/eclipse/nebula/widgets/nattable/print/command/PrintEntireGri
+ dCommand.java
+SHA1-Digest: eP+Wt4FDRH8XPkIGo/q/c7tXS14=
+
+Name: org/eclipse/nebula/widgets/nattable/style/editor/ColorPicker.jav
+ a
+SHA1-Digest: Lt+QEIoz/CPhl3Mhp/f9CX6jmk4=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/AggregrateConfigL
+ abelAccumulator.java
+SHA1-Digest: GsgHAl1wm6uUfiRXT4hGHJ9VPyY=
+
+Name: org/eclipse/nebula/widgets/nattable/command/ILayerCommandHandler
+ .java
+SHA1-Digest: gtyWk+3C90KCxpMLgBxIdC2FT4c=
+
+Name: org/eclipse/nebula/widgets/nattable/export/NatExporter.java
+SHA1-Digest: W4jhX0tQY2F0M2odwf9fXoDzzKY=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/AutoResizeCol
+ umnsCommand.java
+SHA1-Digest: AXMumnZKcCodWeNlSTeb665vo0k=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupReorderLaye
+ r.java
+SHA1-Digest: 7pA8+PeEw11vPyTQxcSqeV0qZF8=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/DisabledCheckbo
+ xPainter.java
+SHA1-Digest: A2Xqli7XSFGse8uvvXavaMergiY=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ShowAllColu
+ mnsCommandHandler.java
+SHA1-Digest: dyF9462ouPk6kUvmy+D3EPRY9qM=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/ColumnResizeC
+ ommand.java
+SHA1-Digest: EESX79a6zhMj59wDovAApCDR7y8=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/command/ShowAllColu
+ mnsCommand.java
+SHA1-Digest: xGUzcIt7kxbN15u590lpLbH8lZM=
+
+Name: org/eclipse/nebula/widgets/nattable/widget/WaitDialog.java
+SHA1-Digest: NobZT1qdmma7Gnq4+fF7jXfPj2M=
+
+Name: org/eclipse/nebula/widgets/nattable/print/config/DefaultPrintBin
+ dings.java
+SHA1-Digest: KsGLNFelT5Ga5hw2YSTfNe0NtdY=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/config/DefaultSele
+ ctionBindings.java
+SHA1-Digest: FucedUccqm+zwip/PHdFLZpP6Mo=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/command/MoveSelect
+ ionCommand.java
+SHA1-Digest: EXSatYq1gMHQPs06UzXyg6+XwII=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/MultiRowReor
+ derCommandHandler.java
+SHA1-Digest: KlzbJpRLeE97PQtm8e5Ys3Wf+s8=
+
+Name: org/eclipse/nebula/widgets/nattable/command/DisposeResourcesComm
+ and.java
+SHA1-Digest: Yk+Pe4/ECVGvNonyGAvyMz37UNQ=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DisplayConverte
+ r.java
+SHA1-Digest: nmO8xLx7u8/5vV0+LIAFGJ/gRU0=
+
+Name: org/eclipse/nebula/widgets/nattable/painter/cell/AbstractTextPai
+ nter.java
+SHA1-Digest: 8g3ldFGPx2xeZ8z3XfHeCfLv4Lo=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/command/RowResizeComm
+ and.java
+SHA1-Digest: ElFCxK90V+5JFuzZhSXYh2Hz6vw=
+
+Name: org/eclipse/nebula/widgets/nattable/group/model/IRowGroupModel.j
+ ava
+SHA1-Digest: How8oqSXUbXrcZ7RcnDA+yc7KTA=
+
+Name: org/eclipse/nebula/widgets/nattable/command/StructuralRefreshCom
+ mand.java
+SHA1-Digest: mYHBR7u2u3FPrDyIklUIDF9sw6Q=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/config/DefaultRowHeade
+ rLayerConfiguration.java
+SHA1-Digest: ep2c89k9uHL8nHuLC6teJa+29uo=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/UpdateDataComma
+ nd.java
+SHA1-Digest: O8IlryF3tg0Sx96huvrTENpUWTQ=
+
+Name: org/eclipse/nebula/widgets/nattable/columnRename/ColumnRenameDia
+ log.java
+SHA1-Digest: gVWcLJk2CLkHnVju90eZGTGHuuA=
+
+Name: org/eclipse/nebula/widgets/nattable/images/show_column.png
+SHA1-Digest: K9sF7180iS8BRbNKOXPSwg3PJHU=
+
+Name: org/eclipse/nebula/widgets/nattable/data/IRowDataProvider.java
+SHA1-Digest: 26nn6F/iuMXFnrx88cVqQ0Tdcjw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/AbstractModeEventHan
+ dler.java
+SHA1-Digest: Acv4dcn819+7IbQGJW33I9NH21E=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectRowGroupComm
+ andHandler.java
+SHA1-Digest: RYz5V+V5uZbNYuHOVYupMsU6gcw=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ResizeStructural
+ RefreshEvent.java
+SHA1-Digest: cClN7Dv/acz1HWkpTVLg0IXdpNU=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/ITreeData.java
+SHA1-Digest: +z8vBgJXAA6Ksh962r4UZMrLJ3g=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/command/InitializeAutoR
+ esizeColumnsCommandHandler.java
+SHA1-Digest: 40/jpN1/q/VODz5EeNVAtwc0nS0=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/binding/MouseBinding.java
+SHA1-Digest: Bp4LWPFhGDjPWrAwx/czhBAA+wU=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/RemoveColumnGr
+ oupCommand.java
+SHA1-Digest: PCcz+JT/ap5cj0cbqMN7AGbWyWA=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/action/MoveToFirst
+ ColumnAction.java
+SHA1-Digest: Ukt7W23fXvL2q1XOst2mvPN+Ew8=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultLongDisp
+ layConverter.java
+SHA1-Digest: h3OjHInYqtOG7p5cweAAh/4gxGg=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DefaultSummaryRowH
+ eaderDataProvider.java
+SHA1-Digest: uk/G5RInHa7HIwycPMWD9T9nDQo=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/CellEditorMouseEv
+ entMatcher.java
+SHA1-Digest: o3NCMJqGAKqIduSq/N6N1vz9K30=
+
+Name: org/eclipse/nebula/widgets/nattable/group/event/UngroupColumnsEv
+ ent.java
+SHA1-Digest: PTYNNgM6CdF/oPLIm6PLXeLLFg0=
+
+Name: org/eclipse/nebula/widgets/nattable/group/command/ReorderColumnG
+ roupEndCommand.java
+SHA1-Digest: 5mHkXKO8NZt8DSwPIKm531Esodo=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/FilterRowDataLayer
+ .java
+SHA1-Digest: w92oqgXXAwNO0PkwjB/E5bqC3lA=
+
+Name: org/eclipse/nebula/widgets/nattable/images/minus.png
+SHA1-Digest: 8NYhsDeT0ygYCGsHxZuHjrxodu4=
+
+Name: org/eclipse/nebula/widgets/nattable/columnChooser/ColumnChooser.
+ java
+SHA1-Digest: xiBSSL0Gtqj12AVSw/iIVd4P2sQ=
+
+Name: org/eclipse/nebula/widgets/nattable/group/ColumnGroupModel.java
+SHA1-Digest: thMaAET1rDZy5NT9VNcvu2g4u7s=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/DefaultFloatDis
+ playConverter.java
+SHA1-Digest: rFQw6ZYUObcNqKVAwwtc0vRQWIk=
+
+Name: org/eclipse/nebula/widgets/nattable/images/save_state.png
+SHA1-Digest: GImzgwJvQJYlJdRI9UX3SNHq2Do=
+
+Name: org/eclipse/nebula/widgets/nattable/config/AbstractRegistryConfi
+ guration.java
+SHA1-Digest: G37ejMrf9HEyaV2vcrD4pQPm61o=
+
+Name: org/eclipse/nebula/widgets/nattable/images/preferences.png
+SHA1-Digest: 679L8sGdRQO5pIAN2umgcACAHeY=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/action/MouseEditAction.
+ java
+SHA1-Digest: IPCG6ZI3VZ7eJQhwPzdUR8NxW0Q=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/RowHeaderLayer.ja
+ va
+SHA1-Digest: Y3HhmA8jSbYNnTK9qKuaGNsj2a4=
+
+Name: org/eclipse/nebula/widgets/nattable/data/convert/ContextualDispl
+ ayConverter.java
+SHA1-Digest: guCXzdZ0X80kIxeplcR6UHo6Wbc=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/ILayer.java
+SHA1-Digest: 8NQYS4B/0NxLNl3y2ZbpPxcJuFU=
+
+Name: org/eclipse/nebula/widgets/nattable/style/IStyle.java
+SHA1-Digest: gt1Dh6t7lczepi6GTTEDrcBNd/g=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ColumnStructural
+ RefreshEvent.java
+SHA1-Digest: 9PHgnaoJhujC1ID12mNR5weHfVA=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/gui/ICellEditDialog.jav
+ a
+SHA1-Digest: QrtIjTYiKLOatVdw6A4t9pz7A04=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/config/DefaultRow
+ StyleConfiguration.java
+SHA1-Digest: pd2jI66kXUaE7YWzFDwRR+/1y18=
+
+Name: org/eclipse/nebula/widgets/nattable/reorder/command/MultiColumnR
+ eorderCommandHandler.java
+SHA1-Digest: BFQ5rSirA+F/NXBwEfCdxSvgQko=
+
+Name: org/eclipse/nebula/widgets/nattable/blink/BlinkingCellResolver.j
+ ava
+SHA1-Digest: J9hQcG+tC6A5VK76q7xhc8tjD1g=
+
+Name: org/eclipse/nebula/widgets/nattable/search/CellValueAsStringComp
+ arator.java
+SHA1-Digest: sHiV5IGiUSnsNFlt/pnSNlcxWec=
+
+Name: org/eclipse/nebula/widgets/nattable/tree/config/DefaultTreeLayer
+ Configuration.java
+SHA1-Digest: sJIlzwEB6Ytmo06wBj/GyupTM4g=
+
+Name: org/eclipse/nebula/widgets/nattable/style/CellStyleAttributes.ja
+ va
+SHA1-Digest: jPlrIx0cWVwkps+a9D3ANoRaKNg=
+
+Name: org/eclipse/nebula/widgets/nattable/group/config/ColumnGroupMenu
+ ItemProviders.java
+SHA1-Digest: 6YizBxKOdvRIv+Oy80HBoaEv0Bw=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/DefaultRowHeaderD
+ ataLayer.java
+SHA1-Digest: A2jLcf/OwB3KvB1OjfhsCz3vu+U=
+
+Name: org/eclipse/nebula/widgets/nattable/coordinate/PositionUtil.java
+SHA1-Digest: uqZzdM0Ic7ePEIK3SzhVOZYlezY=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/layer/ColumnHeaderSelec
+ tionListener.java
+SHA1-Digest: gPg1dQBJ0e+pp7OV9GkvuXDcr6Y=
+
+Name: org/eclipse/nebula/widgets/nattable/command/VisualRefreshCommand
+ .java
+SHA1-Digest: qKo6+ZFMCdHFo8Pl5Rtn8aV9VPw=
+
+Name: org/eclipse/nebula/widgets/nattable/freeze/command/FreezeSelecti
+ onStrategy.java
+SHA1-Digest: PjpXTA+W0wrkZpJgntezDBGHNu4=
+
+Name: org/eclipse/nebula/widgets/nattable/grid/data/DefaultCornerDataP
+ rovider.java
+SHA1-Digest: dLLfOoezWIFr4uuosrUUKfiM1Lc=
+
+Name: org/eclipse/nebula/widgets/nattable/images/load_state.png
+SHA1-Digest: 168sGD7Y93V9MoAEQdvJQ0TpmME=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/InlineEditHandler.java
+SHA1-Digest: yQyUlG3yA6vgVefRKFYNcCVZbGg=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/CellDisplayConver
+ sionUtils.java
+SHA1-Digest: wGrSxsm6av+Fl9eVWRb2x5G04fE=
+
+Name: org/eclipse/nebula/widgets/nattable/resize/event/ColumnResizeEve
+ nt.java
+SHA1-Digest: rn3GA8x4d0jmvbhRvhJemfCPeEE=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/command/EditUtils.java
+SHA1-Digest: 1QeVF45PZFAL4yhZl/DDg61VLOw=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/mode/ConfigurableModeEven
+ tHandler.java
+SHA1-Digest: nuwY1lcPjiOlmBQ4O/WokS8NxYs=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/IKeyEventMatcher.
+ java
+SHA1-Digest: hf0R9Yzi1nVlMUG+U8LB8Zd3sGA=
+
+Name: org/eclipse/nebula/widgets/nattable/print/command/PrintCommandHa
+ ndler.java
+SHA1-Digest: r7C0SZ4uDH4JmyeuDqw7u2XuAuY=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/EditorSelectionE
+ num.java
+SHA1-Digest: nVk+nso1tmMh9pypRneHvSANO+A=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/action/CellEditDragMode
+ .java
+SHA1-Digest: Gamkc4vWaUtRyDHMZC3H05u8Igs=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/event/ColumnVisualChan
+ geEvent.java
+SHA1-Digest: ObLomrI99VLokMWobRLAW08bsWg=
+
+Name: org/eclipse/nebula/widgets/nattable/filterrow/command/ClearAllFi
+ ltersCommand.java
+SHA1-Digest: ahFLSP1L/C7JPA2/MAY5pkWr+mY=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/matcher/BodyCellEditorMou
+ seEventMatcher.java
+SHA1-Digest: tEZFIKgx+J7T3hZObgVT8yVqRqM=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/cell/DataCell.java
+SHA1-Digest: 0tVYtUJjb/nfEaBQSPud4xkryXc=
+
+Name: org/eclipse/nebula/widgets/nattable/selection/SelectRowCommandHa
+ ndler.java
+SHA1-Digest: 7Dk9WVtfkt7OdyslNPGooMjgVoU=
+
+Name: org/eclipse/nebula/widgets/nattable/layer/config/DefaultRowHeade
+ rStyleConfiguration.java
+SHA1-Digest: 091dk6JBIuN2NHr/PVbJcymgH+g=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/CheckBoxCellEdit
+ or.java
+SHA1-Digest: rdCcjQqMSkwnsKtac3F3p4yX0Og=
+
+Name: org/eclipse/nebula/widgets/nattable/ui/action/AggregateDragMode.
+ java
+SHA1-Digest: RcWQsOPQAg7TL2R3xaomuAJbvWU=
+
+Name: org/eclipse/nebula/widgets/nattable/edit/editor/IEditErrorHandle
+ r.java
+SHA1-Digest: L0NlaFq/dZbEHNKrqwRQpZ/fYvg=
+
+Name: org/eclipse/nebula/widgets/nattable/command/VisualRefreshCommand
+ Handler.java
+SHA1-Digest: aSeKeX2vucA4lIXp9YuUW87eGz0=
+
+Name: org/eclipse/nebula/widgets/nattable/hideshow/ColumnHideShowLayer
+ .java
+SHA1-Digest: cHkEI5Zrx2Cvd8TjCKACvl9Vjcs=
+
