@@ -21,8 +21,8 @@ import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
 
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.sales.MessageResources;
 import com.topsun.posclient.sales.ui.table.CashierModelItemCellModify;
@@ -37,7 +37,7 @@ import com.topsun.posclient.sales.ui.table.CashierModelTableLableProvider;
  */
 public class SalesPayDialog extends Dialog{
 	CashierModelItemCellModify cashierModelItemCellModify;
-	ICommonService commonService = new CommonServiceImpl();
+	IBaseService commonService  = new BaseServiceImpl();
 	
 	public TableViewer tableViewer;
 	
@@ -183,9 +183,9 @@ public class SalesPayDialog extends Dialog{
 			}
 			List<CashierModel> cashierModeList = null;
 			try {
-				cashierModeList = commonService.getAllCashierMode();
-			} catch (POSException e) {
-				MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e.getErrorMessage());
+				cashierModeList = (List<CashierModel>) commonService.getAllCashierMode();
+			} catch (Exception e) {
+				MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e.getMessage());
 			}
 			tableViewer.setInput(cashierModeList);
 		}

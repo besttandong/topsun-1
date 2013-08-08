@@ -46,8 +46,6 @@ import com.topsun.posclient.common.core.BarcodeListenetManager;
 import com.topsun.posclient.common.core.IBarcodeListener;
 import com.topsun.posclient.common.listener.IKeyListener;
 import com.topsun.posclient.common.listener.KeyListenerManager;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
 import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
@@ -69,7 +67,6 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 	
 	
 	public IPartSaleService partSaleService = new PartSaleServiceImpl();
-	public ICommonService commonService = new CommonServiceImpl();
 	
 	List<Item> itemsList = new ArrayList<Item>();
 		
@@ -590,7 +587,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 		
 		String no = "";
 		try {
-			no = commonService.createNo();
+			no = partSaleService.createNo();
 		} catch (POSException e1) {
 			MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e1.getErrorMessage());
 		}

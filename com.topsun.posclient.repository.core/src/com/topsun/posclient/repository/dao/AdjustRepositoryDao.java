@@ -1,6 +1,5 @@
 package com.topsun.posclient.repository.dao;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +15,9 @@ import com.topsun.posclient.webservice.dto.QueryReturnRepositoryReq;
 import com.topsun.posclient.webservice.dto.QueryReturnRepositoryReqCondition;
 import com.topsun.posclient.webservice.dto.QueryReturnRepositoryResponse;
 import com.topsun.posclient.webservice.dto.QueryReturnRepositoryResult;
+import com.topsun.posclient.webservice.dto.SaveReturnRepository;
+import com.topsun.posclient.webservice.dto.SaveReturnRepositoryReq;
+import com.topsun.posclient.webservice.dto.UserCredential;
 
 /**
  * 回仓数据处理
@@ -30,13 +32,41 @@ public class AdjustRepositoryDao extends BaseDao {
 	 * @param adjustRepositoryDTO 回仓信息
 	 * @throws Exception
 	 */
-	public void saveAdjustRepository(AdjustRepositoryDTO adjustRepositoryDTO) throws Exception {
+	public void saveAdjustRepository(AdjustRepositoryInfo data) throws Exception {
+		
+		AdjustRepositoryDTO adjustRepositoryDTO = new AdjustRepositoryDTO();
+		List<AdjustRepositoryInfo> list = new ArrayList<AdjustRepositoryInfo>();
+		list.add(data);
+		
 		if (checkConnection()) {
 			//保存本地备份数据
-			File file = this.getLocalProcessor().createXmlFileFromObject(adjustRepositoryDTO, "data_adjustRepository", AppConstants.DATA_ADJUSTREPOSITORY_PATH_BACK);
-			String saveData = this.getLocalProcessor().getDataFileContent(file);
-//			IPosWebService webservice = this.getServerCaller().getWebService();
-//			webservice.saveShopPay(saveData);
+			this.getLocalProcessor().createXmlFileFromObject(adjustRepositoryDTO, "data_adjustRepository", AppConstants.DATA_ADJUSTREPOSITORY_PATH_BACK);
+
+			BackWarehouse[] bws = new BackWarehouse[1];
+			
+			BackWarehouse bw = new BackWarehouse();
+			bw.setBackWHID(data.getReceiveRepositoryId());
+			bw.setConsignorID(data.getDeliver());
+			bw.setDocNum(data.getOrderNo());
+			bw.setDocNumPos("POS01");
+			bw.setDocState("1");
+			bw.setMakerID(data.getApplyUser());
+			bw.setMemo(data.getRemark());
+			bw.setShopID(data.getBackShopId());
+			bw.setWarehouseID(data.getChecker());
+			bws[0] = bw;
+				
+			UserCredential userCredential = POSServerCaller.getDefaultUserCredential();
+			ArrayOfbackWarehouse aow = new ArrayOfbackWarehouse();
+			aow.setBackWarehouse(bws);
+			SaveReturnRepositoryReq req = new SaveReturnRepositoryReq();
+			req.setUserCredential(userCredential);
+			req.setBackWarehouses(aow);
+			SaveReturnRepository saveReturnRepository = new SaveReturnRepository();
+			saveReturnRepository.setSaveReturnRepositoryReq(req);
+			POSServerCaller.getWebService().saveReturnRepository(saveReturnRepository);
+			System.out.println("--------->>> Call webservice saveReturnRepository finished!");
+			
 		}else{
 			this.getLocalProcessor().createXmlFileFromObject(adjustRepositoryDTO, "data_adjustRepository", AppConstants.DATA_ADJUSTREPOSITORY_PATH);
 		}
@@ -50,7 +80,7 @@ public class AdjustRepositoryDao extends BaseDao {
 	 */
 	public List<AdjustRepositoryInfo> queryAdjustRepository(AdjustRepositoryInfo adjustRepositoryInfo) throws Exception {
 		List<AdjustRepositoryInfo> resultList = null;
-		if (checkConnection()) {
+		try{
 			//设置查询条件
 			QueryReturnRepositoryReqCondition condition = new QueryReturnRepositoryReqCondition();
 			
@@ -61,7 +91,7 @@ public class AdjustRepositoryDao extends BaseDao {
 			QueryReturnRepository queryReturnRepository = new QueryReturnRepository();
 			queryReturnRepository.setQueryReturnRepositoryReq(req);
 			QueryReturnRepositoryResponse response = POSServerCaller.getWebService().queryReturnRepository(queryReturnRepository);
-			System.out.println("--------->>> Call webservice finished!");
+			System.out.println("--------->>> Call webservice queryReturnRepository finished!");
 			// 处理查询结果
 			QueryReturnRepositoryResult result = response.getQueryReturnRepositoryResult();
 			if(result.getResult().getFlag().equals("0")){
@@ -72,21 +102,21 @@ public class AdjustRepositoryDao extends BaseDao {
 				for(int i=0; i<bws.length; i++){
 					BackWarehouse bw = bws[i];
 					AdjustRepositoryInfo ari = new AdjustRepositoryInfo();
-					ari.setApplyUser(this.getEmployeeNameById(bw.getMakerID()));
+					ari.setApplyUser(bw.getMakerID());
 					ari.setBackReason(String.valueOf(bw.getBackWHID()));
-					ari.setShopName(this.getShopNameById(bw.getShopID()));
+					ari.setBackShopId(bw.getShopID());
 					ari.setRemark(bw.getMemo());
-					ari.setReceiveRepository(String.valueOf(bw.getWarehouseID()));
+					ari.setReceiveRepositoryId(bw.getWarehouseID());
 					ari.setOrderNo(bw.getDocNum());
-					ari.setDeliver(this.getEmployeeNameById(bw.getConsignorID()));
+					ari.setDeliver(bw.getConsignorID());
 					resultList.add(ari);
 				}
 			}else{
 				throw new Exception(result.getResult().getMsg());
 			}
 			return resultList;
-		}else{
-			throw new Exception("联机失败！");
+		}catch(Exception e){
+			throw new Exception("查询失败！");
 		}
 	}
 }

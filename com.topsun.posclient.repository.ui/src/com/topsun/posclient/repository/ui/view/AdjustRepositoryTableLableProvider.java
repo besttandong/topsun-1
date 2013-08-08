@@ -5,10 +5,14 @@ import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 import com.topsun.posclient.common.ProjectUtil;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
 
 public class AdjustRepositoryTableLableProvider implements ITableLabelProvider {
 
+	IBaseService baseService = new BaseServiceImpl();
+	
 	public void addListener(ILabelProviderListener listener) {
 
 	}
@@ -34,16 +38,31 @@ public class AdjustRepositoryTableLableProvider implements ITableLabelProvider {
 			AdjustRepositoryInfo ari = (AdjustRepositoryInfo) element;
 			String backDate = ProjectUtil.getDateString(ari.getBackDate());
 			String orderNo = ari.getOrderNo();
-			String shopName = ari.getShopName();
-			String receiveRepository = ari.getReceiveRepository();
-			int num = ari.getNum();
-			String backReason = ari.getBackReason();
-			String applyUser = ari.getApplyUser();
-			String checker = ari.getChecker();
-			String reChecker = ari.getReChecker();
-			String remark = ari.getRemark();
-			String checkDate = ProjectUtil.getDateString(ari.getCheckDate());
-			String recheckDate = ProjectUtil.getDateString(ari.getReCheckDate());
+			String shopName = "";
+			String receiveRepository = "";
+			String backReason = "";
+			String applyUser = "";
+			String checker = "";
+			String reChecker = "";
+			String remark = "";
+			String checkDate = "";
+			String recheckDate = "";
+			int num = 0;
+			try {
+				shopName = baseService.getShopNameById(ari.getBackShopId());
+				receiveRepository = baseService.getShopNameById(ari.getReceiveRepositoryId());
+				num = ari.getNum();
+				backReason = ari.getBackReason();
+				applyUser = baseService.getEmployeeNameById(ari.getApplyUser());
+				checker = baseService.getEmployeeNameById(ari.getChecker());
+				reChecker = baseService.getEmployeeNameById(ari.getReChecker());
+				remark = ari.getRemark();
+				checkDate = ProjectUtil.getDateString(ari.getCheckDate());
+				recheckDate = ProjectUtil.getDateString(ari.getReCheckDate());
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			switch (columnIndex) {
 			case 0:
 				return backDate;

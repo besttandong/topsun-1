@@ -30,8 +30,8 @@ import org.eclipse.ui.part.ViewPart;
 import com.topsun.posclient.common.MockDataFactory;
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.common.ui.table.ItemTableContentProvider;
 import com.topsun.posclient.common.ui.table.ItemTableLableProvider;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
@@ -53,7 +53,6 @@ import com.topsun.widget.calendar.CalendarCombo;
 public class AdjustRepositoryView extends ViewPart {
 
 	User loginUser = POSClientApp.get().getLoginUser();
-	public ICommonService commonService = new CommonServiceImpl();
 	public IAdjustRepositoryService repositoryService = new AdjustRepositoryServiceImpl();
 
 	List<Item> items = null;
@@ -200,31 +199,25 @@ public class AdjustRepositoryView extends ViewPart {
 				public void widgetSelected(SelectionEvent e) {
 					Button button = (Button)e.getSource();
 					AdjustRepositoryInfo adjustRepositoryInfo = new AdjustRepositoryInfo();
-					adjustRepositoryInfo.setApplyUser(applyUser.getText());
+					adjustRepositoryInfo.setApplyUser(1);
 					adjustRepositoryInfo.setBackDate(backDate.getDate().getTime());
 					adjustRepositoryInfo.setBackReason(backReason.getText());
 					adjustRepositoryInfo.setCheckDate(checkDate.getDate().getTime());
-					adjustRepositoryInfo.setChecker(checker.getText());
-					adjustRepositoryInfo.setDeliver(deliver.getText());
-			//		adjustRepositoryInfo.setId(id);
+					adjustRepositoryInfo.setChecker(1);
+					adjustRepositoryInfo.setDeliver(1);
 					adjustRepositoryInfo.setOrderNo(orderNo.getText());
-					adjustRepositoryInfo.setReceiveRepository(receiveRepository.getText());
+					adjustRepositoryInfo.setReceiveRepositoryId(1);
 					adjustRepositoryInfo.setReCheckDate(reCheckDate.getDate().getTime());
 					adjustRepositoryInfo.setRemark(remark.getText());
-					adjustRepositoryInfo.setShopName(storeName.getText());
+					adjustRepositoryInfo.setBackShopId(1);
 					
 					if (recordViewer.getInput() instanceof List) {
 						List list = (List) recordViewer.getInput();
 						adjustRepositoryInfo.setItemList(list);
 					};
 
-					List<AdjustRepositoryInfo> repList = new ArrayList<AdjustRepositoryInfo>();
-					repList.add(adjustRepositoryInfo);
-					
-					AdjustRepositoryDTO  repDTO = new AdjustRepositoryDTO();
-					repDTO.setAdjustRepositoryInfos(repList);
 					try {
-						repositoryService.saveAdjustRepositoryInfo(repDTO);
+						repositoryService.saveAdjustRepositoryInfo(adjustRepositoryInfo);
 						MessageDialog.openInformation(button.getShell(), "提示", "保存成功");
 					} catch (POSException e1) {
 						MessageDialog.openError(button.getShell(), "错误", e1.getErrorMessage());
@@ -705,7 +698,7 @@ public class AdjustRepositoryView extends ViewPart {
 			orderNo.setLayoutData(data);
 			
 			try {
-				orderNo.setText(commonService.createNo());
+				orderNo.setText(repositoryService.createNo());
 			} catch (POSException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -753,12 +746,11 @@ public class AdjustRepositoryView extends ViewPart {
 		{
 			List<String> shopNames = new ArrayList<String>();
 			try {
-				List<Shop> shops = commonService.getAllShop();
+				List<Shop> shops = repositoryService.getAllShop().getShopList();
 				for (Shop shop : shops) {
 					shopNames.add(shop.getShpName());
 				}
-			} catch (POSException e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			receiveRepository = new Combo(leftComposite, SWT.NONE|SWT.READ_ONLY);

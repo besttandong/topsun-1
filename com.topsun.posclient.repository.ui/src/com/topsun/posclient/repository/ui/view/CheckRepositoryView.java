@@ -30,8 +30,6 @@ import org.eclipse.ui.part.ViewPart;
 import com.topsun.posclient.common.MockDataFactory;
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
 import com.topsun.posclient.datamodel.AdjustShopInfo;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.Shop;
@@ -56,7 +54,6 @@ import com.topsun.widget.calendar.CalendarCombo;
 public class CheckRepositoryView extends ViewPart {
 	public User loginUser = POSClientApp.get().getLoginUser();
 	public ICheckRepositoryService checkRepositoryService = new CheckRepositoryServiceImpl();
-	public ICommonService commonService = new CommonServiceImpl();
 	List<Item> items = null;
 
 	public StockCheck stockCheck;
@@ -632,7 +629,7 @@ public class CheckRepositoryView extends ViewPart {
 			data.horizontalSpan = 3;
 			docNum.setLayoutData(data);
 			try {
-				docNum.setText(commonService.createNo());
+				docNum.setText(checkRepositoryService.createNo());
 			} catch (POSException e) {
 				MessageDialog.openError(docNum.getShell(), "错误", e.getErrorMessage());
 			}
@@ -646,14 +643,13 @@ public class CheckRepositoryView extends ViewPart {
 		}
 		List<String> shopNames = new ArrayList<String>();
 		{
-			ICommonService commonService = new CommonServiceImpl();
 			try {
-				List<Shop> shops = commonService.getAllShop();
+				List<Shop> shops = checkRepositoryService.getAllShop().getShopList();
 				for (Shop shop : shops) {
 					shopNames.add(shop.getShpName());
 				}
-			} catch (POSException e) {
-				MessageDialog.openError(checkRange.getShell(), "错误", e.getErrorMessage());
+			} catch (Exception e) {
+				MessageDialog.openError(checkRange.getShell(), "错误", e.getMessage());
 			}
 			checkRange = new Combo(leftComposite, SWT.NONE|SWT.READ_ONLY);
 			GridData data = new GridData();

@@ -6,7 +6,6 @@ import com.topsun.posclient.common.LoggerUtil;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
-import com.topsun.posclient.datamodel.dto.AdjustRepositoryDTO;
 import com.topsun.posclient.repository.RepositoryActivator;
 import com.topsun.posclient.repository.dao.AdjustRepositoryDao;
 import com.topsun.posclient.repository.service.IAdjustRepositoryService;
@@ -32,10 +31,10 @@ public class AdjustRepositoryServiceImpl extends BaseServiceImpl implements
 	 * saveAdjustRepositoryInfo
 	 * (com.topsun.posclient.repository.dto.AdjustRepositoryDTO)
 	 */
-	public void saveAdjustRepositoryInfo(AdjustRepositoryDTO adjustRepositoryDTO)
+	public void saveAdjustRepositoryInfo(AdjustRepositoryInfo adjustRepositoryInfo)
 			throws POSException {
 		try {
-			adjustRepositoryDao.saveAdjustRepository(adjustRepositoryDTO);
+			adjustRepositoryDao.saveAdjustRepository(adjustRepositoryInfo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			LoggerUtil.logError(RepositoryActivator.PLUGIN_ID, e);

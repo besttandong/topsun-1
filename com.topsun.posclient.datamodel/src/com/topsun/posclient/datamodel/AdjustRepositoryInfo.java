@@ -13,15 +13,15 @@ public class AdjustRepositoryInfo {
 	
 	private String id; //标识
 	
-	private String shopName; //回仓店铺
+	private int backShopId; //回仓店铺
 	
 	private String orderNo; //单据编号
 	
-	private String deliver; //发货人
+	private int deliver; //发货人
 	
 	private Date backDate; //调仓日期
 	
-	private String receiveRepository; // 收获仓库
+	private int receiveRepositoryId; // 收获仓库
 	
 	private Date checkDate;//审核日期
 	
@@ -35,11 +35,11 @@ public class AdjustRepositoryInfo {
 	
 	private List<Item> itemList; // 商品列表
 	
-	private String applyUser;//制单人
+	private int applyUser;//制单人
 	
-	private String checker;//审核人
+	private int checker;//审核人
 	
-	private String reChecker;//复核人
+	private int reChecker;//复核人
 	
 	public int getNum() {
 		return num;
@@ -47,30 +47,6 @@ public class AdjustRepositoryInfo {
 
 	public void setNum(int num) {
 		this.num = num;
-	}
-
-	public String getApplyUser() {
-		return applyUser;
-	}
-
-	public void setApplyUser(String applyUser) {
-		this.applyUser = applyUser;
-	}
-
-	public String getChecker() {
-		return checker;
-	}
-
-	public void setChecker(String checker) {
-		this.checker = checker;
-	}
-
-	public String getReChecker() {
-		return reChecker;
-	}
-
-	public void setReChecker(String reChecker) {
-		this.reChecker = reChecker;
 	}
 
 	public String getId() {
@@ -89,14 +65,6 @@ public class AdjustRepositoryInfo {
 		this.itemList = itemList;
 	}
 
-	public String getShopName() {
-		return shopName;
-	}
-
-	public void setShopName(String shopName) {
-		this.shopName = shopName;
-	}
-
 	public String getOrderNo() {
 		return orderNo;
 	}
@@ -105,28 +73,12 @@ public class AdjustRepositoryInfo {
 		this.orderNo = orderNo;
 	}
 
-	public String getDeliver() {
-		return deliver;
-	}
-
-	public void setDeliver(String deliver) {
-		this.deliver = deliver;
-	}
-
 	public Date getBackDate() {
 		return backDate;
 	}
 
 	public void setBackDate(Date backDate) {
 		this.backDate = backDate;
-	}
-
-	public String getReceiveRepository() {
-		return receiveRepository;
-	}
-
-	public void setReceiveRepository(String receiveRepository) {
-		this.receiveRepository = receiveRepository;
 	}
 
 	public Date getCheckDate() {
@@ -159,5 +111,53 @@ public class AdjustRepositoryInfo {
 
 	public void setRemark(String remark) {
 		this.remark = remark;
+	}
+
+	public final int getBackShopId() {
+		return backShopId;
+	}
+
+	public final void setBackShopId(int backShopId) {
+		this.backShopId = backShopId;
+	}
+
+	public final int getDeliver() {
+		return deliver;
+	}
+
+	public final void setDeliver(int deliver) {
+		this.deliver = deliver;
+	}
+
+	public final int getReceiveRepositoryId() {
+		return receiveRepositoryId;
+	}
+
+	public final void setReceiveRepositoryId(int receiveRepositoryId) {
+		this.receiveRepositoryId = receiveRepositoryId;
+	}
+
+	public final int getApplyUser() {
+		return applyUser;
+	}
+
+	public final void setApplyUser(int applyUser) {
+		this.applyUser = applyUser;
+	}
+
+	public final int getChecker() {
+		return checker;
+	}
+
+	public final void setChecker(int checker) {
+		this.checker = checker;
+	}
+
+	public final int getReChecker() {
+		return reChecker;
+	}
+
+	public final void setReChecker(int reChecker) {
+		this.reChecker = reChecker;
 	}
 }

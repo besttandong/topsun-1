@@ -3,6 +3,7 @@ package com.topsun.posclient.repository.service;
 import java.util.List;
 
 import com.topsun.posclient.common.POSException;
+import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.StockCheck;
 import com.topsun.posclient.datamodel.dto.StockCheckDTO;
 
@@ -10,7 +11,7 @@ import com.topsun.posclient.datamodel.dto.StockCheckDTO;
  * @author Dong
  *
  */
-public interface ICheckRepositoryService {
+public interface ICheckRepositoryService extends IBaseService {
 	
 	/**
 	 * @param stockCheckDTO

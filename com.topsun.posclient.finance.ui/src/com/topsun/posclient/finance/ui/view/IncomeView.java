@@ -20,8 +20,8 @@ import org.eclipse.ui.part.ViewPart;
 
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.finance.ui.table.IncomeInfoContentProvider;
 import com.topsun.posclient.finance.ui.table.IncomeInfoLableProvider;
@@ -33,7 +33,7 @@ import com.topsun.widget.calendar.DefaultSettings;
 public class IncomeView extends ViewPart {
 	
 	User loginUser = POSClientApp.get().getLoginUser();
-	public ICommonService commonService = new CommonServiceImpl();
+	IBaseService commonService  = new BaseServiceImpl();
 	
 	Combo category = null;//类别
 	Text shopName = null;//店铺名称

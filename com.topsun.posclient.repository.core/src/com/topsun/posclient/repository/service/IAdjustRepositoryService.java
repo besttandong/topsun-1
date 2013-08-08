@@ -5,7 +5,6 @@ import java.util.List;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
-import com.topsun.posclient.datamodel.dto.AdjustRepositoryDTO;
 
 /**
  * 调仓信息服务接口
@@ -21,7 +20,7 @@ public interface IAdjustRepositoryService extends IBaseService {
 	 * @param adjustRepositoryDTO 回仓信息
 	 * @throws POSException
 	 */
-	public void saveAdjustRepositoryInfo(AdjustRepositoryDTO adjustRepositoryDTO) throws POSException;
+	public void saveAdjustRepositoryInfo(AdjustRepositoryInfo adjustRepositoryInfo) throws POSException;
 	
 	/**
 	 * 查询回仓信息

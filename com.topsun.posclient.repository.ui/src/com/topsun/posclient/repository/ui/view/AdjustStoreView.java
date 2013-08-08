@@ -31,8 +31,8 @@ import org.eclipse.ui.part.ViewPart;
 import com.topsun.posclient.common.MockDataFactory;
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.AdjustShopInfo;
 import com.topsun.posclient.datamodel.AllotStyle;
 import com.topsun.posclient.datamodel.Item;
@@ -58,7 +58,7 @@ import com.topsun.widget.calendar.DefaultSettings;
 public class AdjustStoreView extends ViewPart {
 	public User loginUser = POSClientApp.get().getLoginUser();
 	public IAdjustShopService adjShopSerivice = new AdjustShopServiceImpl();
-	public ICommonService commonService = new CommonServiceImpl();
+	public IBaseService baseService = new BaseServiceImpl();
 	List<Item> items = null;
 
 	public AdjustShopInfo adjustShopInfo;
@@ -691,7 +691,7 @@ public class AdjustStoreView extends ViewPart {
 			data.horizontalSpan = 3;
 			orderNo.setLayoutData(data);
 			try {
-				orderNo.setText(commonService.createNo());
+				orderNo.setText(baseService.createNo());
 			} catch (POSException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -706,14 +706,12 @@ public class AdjustStoreView extends ViewPart {
 		}
 		List<String> shopNames = new ArrayList<String>();
 		{
-			ICommonService commonService = new CommonServiceImpl();
 			try {
-				List<Shop> shops = commonService.getAllShop();
+				List<Shop> shops = baseService.getAllShop().getShopList();
 				for (Shop shop : shops) {
 					shopNames.add(shop.getShpName());
 				}
-			} catch (POSException e) {
-				// TODO Auto-generated catch block
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			inStoreName = new Combo(leftComposite, SWT.NONE|SWT.READ_ONLY);
@@ -754,9 +752,8 @@ public class AdjustStoreView extends ViewPart {
 			data.widthHint = 155;
 			data.horizontalSpan = 3;
 			adjustType.setLayoutData(data);
-			ICommonService commonService = new CommonServiceImpl();
 			try {
-				List<AllotStyle> allotStyles = commonService.getAllotStyle();
+				List<AllotStyle> allotStyles = baseService.getAllotStyle();
 				String [] types = new String[allotStyles.size()];
 				for (int i = 0; i <allotStyles.size();i++) {
 					types[i] = allotStyles.get(i).getStyleName();

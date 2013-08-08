@@ -5,8 +5,8 @@ import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.swt.widgets.TableItem;
 
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.Item;
 
 public class AdjustStoreCellModify implements ICellModifier {
@@ -45,7 +45,7 @@ public class AdjustStoreCellModify implements ICellModifier {
 			TableItem item = (TableItem)element;
 			Item saleItem = (Item)item.getData();
 			if("itemName".equals(property)){
-				ICommonService commonService  = new CommonServiceImpl();
+				IBaseService commonService  = new BaseServiceImpl();
 				try {
 					if(value.toString().equals("")){
 						saleItem.setItemName("");

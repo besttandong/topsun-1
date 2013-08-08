@@ -32,8 +32,8 @@ import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.ViewSite;
 
 import com.topsun.posclient.common.POSClientApp;
-import com.topsun.posclient.common.service.ICommonService;
-import com.topsun.posclient.common.service.impl.CommonServiceImpl;
+import com.topsun.posclient.common.service.IBaseService;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.common.ui.model.TopSunMenuModel;
 import com.topsun.posclient.common.ui.model.TopSunTreeModel;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
@@ -155,8 +155,7 @@ public class MenuTreeManagerFacede {
 
 					}
 				}
-				
-				ICommonService commonService  = new CommonServiceImpl();
+				IBaseService commonService  = new BaseServiceImpl();
 				User loginUser = POSClientApp.get().getLoginUser();
 				String deptName = loginUser.getDeptName();
 				String userName = loginUser.getUserName();

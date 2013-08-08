@@ -3,6 +3,7 @@ package com.topsun.posclient.repository.service.impl;
 import java.util.List;
 
 import com.topsun.posclient.common.POSException;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.StockCheck;
 import com.topsun.posclient.datamodel.dto.StockCheckDTO;
 import com.topsun.posclient.repository.dao.CheckRepositoryDao;
@@ -12,7 +13,7 @@ import com.topsun.posclient.repository.service.ICheckRepositoryService;
  * @author Dong
  *
  */
-public class CheckRepositoryServiceImpl implements ICheckRepositoryService {
+public class CheckRepositoryServiceImpl extends BaseServiceImpl implements ICheckRepositoryService {
 
 	CheckRepositoryDao checkRepositoryDao = new CheckRepositoryDao();
 	
