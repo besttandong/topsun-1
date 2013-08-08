@@ -6,10 +6,10 @@ import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AllotStyle;
+import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
-import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
 import com.topsun.posclient.datamodel.dto.UserDTO;
@@ -45,7 +45,7 @@ public class BaseServiceImpl implements IBaseService {
 	 * @return
 	 * @throws Exception
 	 */
-	public CashierModeDTO getAllCashierMode() throws Exception {
+	public List<CashierModel> getAllCashierMode() throws Exception {
 		return baseDao.getAllCashierMode();
 	}
 	

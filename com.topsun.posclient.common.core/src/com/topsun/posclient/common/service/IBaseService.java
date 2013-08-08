@@ -21,7 +21,7 @@ public interface IBaseService {
 	
 	public String getEmployeeNameById(int userId) throws Exception;
 
-	public CashierModeDTO getAllCashierMode() throws Exception;
+	public List<CashierModel> getAllCashierMode() throws Exception;
 	
 	public AllotStyleDTO getAllAllotStyle() throws Exception;
 	
