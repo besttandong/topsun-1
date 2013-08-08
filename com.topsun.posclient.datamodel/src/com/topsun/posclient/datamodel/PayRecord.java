@@ -43,7 +43,7 @@ public class PayRecord implements Serializable {
 	}
 
 	public String getBankName() {
-		return bankName;
+		return DataModel.convert(bankName);
 	}
 
 	public void setBankName(String bankName) {

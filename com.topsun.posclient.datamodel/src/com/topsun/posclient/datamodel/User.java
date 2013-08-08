@@ -1,6 +1,7 @@
 package com.topsun.posclient.datamodel;
 
 import java.io.Serializable;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 /**
@@ -51,7 +52,7 @@ public class User implements Serializable {
 	}
 
 	public String getUserName() {
-		return userName;
+		return DataModel.convert(userName);
 	}
 
 	public void setUserName(String userName) {
@@ -75,7 +76,7 @@ public class User implements Serializable {
 	}
 
 	public String getEmployeeName() {
-		return employeeName;
+		return DataModel.convert(employeeName);
 	}
 
 	public void setEmployeeName(String employeeName) {
@@ -91,9 +92,9 @@ public class User implements Serializable {
 	}
 
 	public String getDeptName() {
-		return deptName;
+		return DataModel.convert(deptName);
 	}
-
+	
 	public void setDeptName(String deptName) {
 		this.deptName = deptName;
 	}

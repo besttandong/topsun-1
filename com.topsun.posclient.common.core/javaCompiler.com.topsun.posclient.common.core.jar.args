@@ -32,5 +32,5 @@
 #ADAPTER#ACCESS#devtools/eclipse-rcp-helios-SR2-win32/plugins/org.eclipse.core.variables_3.2.400.v20100505.jar[?**/*]
 #ADAPTER#ACCESS#devtools/eclipse-rcp-helios-SR2-win32/plugins/org.eclipse.core.filesystem_1.3.1.R36x_v20100727-0745.jar[?**/*]
 #ADAPTER#ACCESS#devtools/eclipse-rcp-helios-SR2-win32/plugins/org.eclipse.core.filesystem.win32.x86_64_1.1.201.R36x_v20100727-0745.jar[?**/*]
-#ADAPTER#ACCESS#com.topsun.posclient.datamodel/bin[+com/topsun/posclient/*;+com/topsun/posclient/datamodel/*;+com/topsun/posclient/datamodel/dto/*;+com/topsun/posclient/datamodel/dto/webservice/*;?**/*]
-#ADAPTER#ACCESS#com.topsun.posclient.datamodel/com.topsun.posclient.datamodel.jar[+com/topsun/posclient/*;+com/topsun/posclient/datamodel/*;+com/topsun/posclient/datamodel/dto/*;+com/topsun/posclient/datamodel/dto/webservice/*;?**/*]
+#ADAPTER#ACCESS#com.topsun.posclient.datamodel/bin[+com/topsun/posclient/*;+com/topsun/posclient/datamodel/*;+com/topsun/posclient/datamodel/dto/*;?**/*]
+#ADAPTER#ACCESS#com.topsun.posclient.datamodel/com.topsun.posclient.datamodel.jar[+com/topsun/posclient/*;+com/topsun/posclient/datamodel/*;+com/topsun/posclient/datamodel/dto/*;?**/*]
