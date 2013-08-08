@@ -213,8 +213,15 @@ public class MenuTreeManagerFacede {
 			item.setImage(ImageUtils.createImage(menuModel.getPluginID(),
 					menuModel.getIcon()));
 			compsite.setBackground(color);
-			compsite.setLayout(new GridLayout(1, false));
-
+			
+			GridLayout gridLayout = new GridLayout(1, false);
+			gridLayout.marginBottom = 0;
+			gridLayout.marginHeight = 0;
+			gridLayout.marginLeft = 0;
+			gridLayout.marginRight = 0 ;
+			gridLayout.marginTop = 0;
+			gridLayout.marginWidth = 0;
+			compsite.setLayout(gridLayout);
 			// Create Tree Viewer
 			createTree(compsite, menuModel);
 		}
