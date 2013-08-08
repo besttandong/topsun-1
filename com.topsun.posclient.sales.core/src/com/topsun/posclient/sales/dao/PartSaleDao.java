@@ -1,6 +1,5 @@
 package com.topsun.posclient.sales.dao;
 
-import java.io.File;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -20,7 +19,6 @@ import com.topsun.posclient.webservice.dto.Retail_M;
 import com.topsun.posclient.webservice.dto.Retail_P;
 import com.topsun.posclient.webservice.dto.SavePartSales;
 import com.topsun.posclient.webservice.dto.SavePartSalesReq;
-import com.topsun.posclient.webservice.dto.SavePartSalesResponse;
 
 /**
  * @author Dong
@@ -32,14 +30,11 @@ public class PartSaleDao extends BaseDao {
 	 * @throws Exception
 	 */
 	public void saveSalesData(PartSalesDTO salesData) throws Exception {
-		//在线调用Server端webservice
-		if(1 == 1){
-			//保存本地备份数据
-			File file = this.getLocalProcessor().createXmlFileFromObject(salesData, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
+		
+		if(checkConnection()){
+			this.getLocalProcessor().createXmlFileFromObject(salesData, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
 			
-			String saveData = this.getLocalProcessor().getDataFileContent(file);
-			PartSalesDTO dto = (PartSalesDTO)this.getLocalProcessor().getObjectFromXml(saveData, PartSalesDTO.class);
-			List<PartSales> salesList = dto.getPartSalesList();
+			List<PartSales> salesList = salesData.getPartSalesList();
 			Retail[] localRetail = new Retail[salesList.size()];
 			for(int i=0; i<salesList.size(); i++){
 				PartSales sales = salesList.get(i);
@@ -77,8 +72,9 @@ public class PartSaleDao extends BaseDao {
 			
 			SavePartSales savePartSales12 = new SavePartSales();
 			savePartSales12.setSavePartSalesReq(req);
-			SavePartSalesResponse response = POSServerCaller.getWebService().savePartSales(savePartSales12);
-			System.out.println(response.getSavePartSalesResult().getResult().getMsg());
+			POSServerCaller.getWebService().savePartSales(savePartSales12);
+			System.out.println("--------->>> Call webservice savePartSales finished!");
+			
 		}else{
 			this.getLocalProcessor().createXmlFileFromObject(salesData, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
 		}
@@ -87,7 +83,6 @@ public class PartSaleDao extends BaseDao {
 	private ArrayOfRetail_P getArrayOfRetail_P(List<PartSalesCashier> cashierList){
 		Retail_P[] retail_PArray = new Retail_P[cashierList.size()];
 		for(int i=0; i<cashierList.size(); i++){
-			System.out.println("-------->> 结算方式 ");
 			PartSalesCashier pCashier = cashierList.get(i);
 			Retail_P p = new Retail_P();
 			p.setPayModeID(pCashier.getPayModelId());
@@ -103,7 +98,6 @@ public class PartSaleDao extends BaseDao {
 		
 		Retail_M[] retail_MArray = new Retail_M[itemList.size()];
 		for(int i=0; i<itemList.size(); i++){
-			System.out.println("-------->> 商品明细 ");
 			Item item = itemList.get(i);
 			Retail_M m = new Retail_M();
 			m.setItemId(item.getId());
