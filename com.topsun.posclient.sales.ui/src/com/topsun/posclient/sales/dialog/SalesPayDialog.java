@@ -24,6 +24,7 @@ import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.CashierModel;
+import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 import com.topsun.posclient.sales.MessageResources;
 import com.topsun.posclient.sales.ui.table.CashierModelItemCellModify;
 import com.topsun.posclient.sales.ui.table.CashierModelTableContentProvider;
@@ -183,9 +184,12 @@ public class SalesPayDialog extends Dialog{
 			}
 			List<CashierModel> cashierModeList = null;
 			try {
-				cashierModeList = (List<CashierModel>) commonService.getAllCashierMode();
-			} catch (Exception e) {
-				MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e.getMessage());
+				CashierModeDTO dto = commonService.getAllCashierMode();
+				if(null != dto){
+					cashierModeList = dto.getCashierModeList();
+				}
+			} catch (POSException e) {
+				MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e.getErrorMessage());
 			}
 			tableViewer.setInput(cashierModeList);
 		}

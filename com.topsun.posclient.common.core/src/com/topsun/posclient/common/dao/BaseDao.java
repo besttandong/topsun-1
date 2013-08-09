@@ -5,11 +5,8 @@ import java.util.List;
 
 import com.topsun.posclient.common.AppConstants;
 import com.topsun.posclient.common.LocalDataProcessor;
-import com.topsun.posclient.common.LoggerUtil;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ProjectUtil;
-import com.topsun.posclient.common.core.CommonCoreActivator;
-import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
@@ -98,13 +95,12 @@ public class BaseDao {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<CashierModel> getAllCashierMode() throws Exception {
+	public CashierModeDTO getAllCashierMode() throws Exception {
 		File file = new File(ProjectUtil.getRuntimeClassPath()
 				+ AppConstants.DATA_CASHIERMODE_FILENAME);
 		CashierModeDTO cashierModeDTO = (CashierModeDTO) getLocalProcessor()
 				.getObjectFromXml(getLocalProcessor().getDataFileContent(file),CashierModeDTO.class);
-		LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, new Exception("hahahahahhahahah999999"));
-		return cashierModeDTO.getCashierModeList();
+		return cashierModeDTO;
 	}
 	
 	/**

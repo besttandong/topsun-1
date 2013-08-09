@@ -6,10 +6,10 @@ import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AllotStyle;
-import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
+import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
 import com.topsun.posclient.datamodel.dto.UserDTO;
@@ -43,20 +43,18 @@ public class BaseServiceImpl implements IBaseService {
 	/**
 	 * 获取所有结算方式
 	 * @return
+	 * @throws POSException 
 	 * @throws Exception
 	 */
-	public List<CashierModel> getAllCashierMode() throws Exception {
-		return baseDao.getAllCashierMode();
+	public CashierModeDTO getAllCashierMode() throws POSException {
+		try {
+			return baseDao.getAllCashierMode();
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw new POSException("查询结算方式出错!"+e.getStackTrace());
+		}
 	}
 	
-	/**
-	 * 获取所有调拨类型
-	 * @return
-	 * @throws Exception
-	 */
-	public AllotStyleDTO getAllAllotStyle() throws Exception {
-		return baseDao.getAllAllotStyle();
-	}
 	
 	/**
 	 * 获取所有商品信息
@@ -150,5 +148,11 @@ public class BaseServiceImpl implements IBaseService {
 
 	public String createNo() throws POSException {
 		return String.valueOf(System.currentTimeMillis());
+	}
+
+	@Override
+	public AllotStyleDTO getAllAllotStyle() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
