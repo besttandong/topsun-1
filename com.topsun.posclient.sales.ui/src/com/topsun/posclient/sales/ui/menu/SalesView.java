@@ -70,7 +70,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 	public IPartSaleService partSaleService = new PartSaleServiceImpl();
 	public User user = POSClientApp.get().getLoginUser();
 	List<Item> itemsList = new ArrayList<Item>();
-		
+	BaseServiceImpl baseService = new BaseServiceImpl();
 	public PartSales partSales;
 	
 	public Combo shopName;
@@ -359,11 +359,11 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 						return;
 					}
 					
-					BaseServiceImpl base = new BaseServiceImpl();
+					
 					
 					Receipts receipts = new Receipts();
 					try {
-						Shop shop = base.getShopById(user.getDeptId());
+						Shop shop = baseService.getShopById(user.getDeptId());
 						receipts.setTitle(shopName.getText());
 						receipts.setAddress(shop.getAddress());
 						receipts.setTelephone(shop.getShopTel());
@@ -957,13 +957,20 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 							tableViewer.setSelection(new StructuredSelection(selectedItem));
 							tableViewer.editElement(selectedItem, 2);
 						}else{
-							Item addItem = new Item();
-							addItem.setItemCode(operationType);
-							addItem.setNum(1);
-							items.add(addItem);
-							tableViewer.setInput(items);
-							tableViewer.editElement(addItem, 2);
-							tableViewer.setSelection(new StructuredSelection(addItem));
+//							Item addItem = new Item();
+							try {
+								Item addItem = 	baseService.getItemByCode(operationType);
+//								addItem.setItemCode(operationType);
+								addItem.setNum(1);
+								items.add(addItem);
+								tableViewer.setInput(items);
+								tableViewer.editElement(addItem, 2);
+								tableViewer.setSelection(new StructuredSelection(addItem));
+							} catch (POSException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+							
 						}
 						
 					}else{
