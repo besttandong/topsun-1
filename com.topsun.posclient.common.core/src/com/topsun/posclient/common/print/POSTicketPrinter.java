@@ -85,7 +85,7 @@ public class POSTicketPrinter {
 			}
 			printer.dispose();// printer对象没用后要手动dispose掉
 		}
-		display.dispose();
+//		display.dispose();
 	}
 
 	/**

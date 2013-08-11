@@ -46,6 +46,16 @@ public class Application implements IApplication{
 	      {
 	    	  KeyListenerManager.getInstance().fireChange("INSERT");
 	      }
+	      
+	      if (e.keyCode == SWT.ESC)
+	      {
+	    	  KeyListenerManager.getInstance().fireChange("ESC");
+	      }
+	      
+	      if (e.keyCode == SWT.END)
+	      {
+	    	  KeyListenerManager.getInstance().fireChange("END");
+	      }
 	     }
 	    });;
 		try {

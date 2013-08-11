@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
+
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ISelection;
@@ -41,11 +43,15 @@ import com.topsun.posclient.common.core.BarcodeListenetManager;
 import com.topsun.posclient.common.core.IBarcodeListener;
 import com.topsun.posclient.common.listener.IKeyListener;
 import com.topsun.posclient.common.listener.KeyListenerManager;
+import com.topsun.posclient.common.print.POSTicketPrinter;
+import com.topsun.posclient.common.print.printdata.Receipts;
+import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
 import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.PartSales;
 import com.topsun.posclient.datamodel.PartSalesCashier;
+import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.PartSalesDTO;
 import com.topsun.posclient.sales.MessageResources;
@@ -249,7 +255,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 		buildOperation(parent);
 	}
 	
-	private void buildOperation(Composite parent){
+	private void buildOperation(final Composite parent){
 	
 		Composite operation = new Composite(parent, SWT.NONE);
 		operation.setLayout(new GridLayout(2,true));
@@ -299,8 +305,6 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					}catch(Exception eeee){
 						eeee.printStackTrace();
 					}
-					
-					
 					partSales = new PartSales();
 					int userId = user.getId();
 					partSales.setApplyUser(userId);
@@ -350,8 +354,32 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					try {
 						partSaleService.saveSaleData(salesDTO);
 					} catch (Exception e1) {
+						MessageDialog.openError(parent.getShell(), "", e1.getMessage());
+						e1.printStackTrace();
+						return;
+					}
+					
+					BaseServiceImpl base = new BaseServiceImpl();
+					
+					Receipts receipts = new Receipts();
+					try {
+						Shop shop = base.getShopById(user.getDeptId());
+						receipts.setTitle(shopName.getText());
+						receipts.setAddress(shop.getAddress());
+						receipts.setTelephone(shop.getShopTel());
+						receipts.setCashier(user.getUserName());
+						receipts.setDate(Calendar.getInstance().getTime().toString());
+						receipts.setNetAddress("www.topsun.com");
+						receipts.setBootString("021-678987888");
+						
+						POSTicketPrinter print = new POSTicketPrinter(receipts);
+						print.printReceipts();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
 						e1.printStackTrace();
 					}
+					
+					
 				}
 				
 				public void widgetDefaultSelected(SelectionEvent e) {

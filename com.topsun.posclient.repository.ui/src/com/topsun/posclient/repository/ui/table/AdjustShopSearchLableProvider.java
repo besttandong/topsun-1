@@ -3,6 +3,7 @@ package com.topsun.posclient.repository.ui.table;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.datamodel.AdjustShopInfo;
@@ -26,7 +27,8 @@ public class AdjustShopSearchLableProvider implements ITableLabelProvider {
 	}
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		return null;
+		Image image = new Image(Display.getDefault(), 1, 30); 
+		return image;
 	}
 
 	public String getColumnText(Object element, int columnIndex) {

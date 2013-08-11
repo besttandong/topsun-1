@@ -3,6 +3,7 @@ package com.topsun.posclient.repository.ui.table;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 import com.topsun.posclient.datamodel.Item;
 
@@ -34,8 +35,8 @@ public class AdjustStoreLableProvider implements ITableLabelProvider {
 
 	@Override
 	public Image getColumnImage(Object element, int columnIndex) {
-		// TODO Auto-generated method stub
-		return null;
+		Image image = new Image(Display.getDefault(), 1, 30); 
+		return image;
 	}
 
 	@Override

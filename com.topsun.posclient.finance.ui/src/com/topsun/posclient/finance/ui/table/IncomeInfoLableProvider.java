@@ -3,6 +3,7 @@ package com.topsun.posclient.finance.ui.table;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 import com.topsun.posclient.datamodel.AdjustShopInfo;
 
@@ -25,7 +26,8 @@ public class IncomeInfoLableProvider implements ITableLabelProvider {
 	}
 
 	public Image getColumnImage(Object element, int columnIndex) {
-		return null;
+		Image image = new Image(Display.getDefault(), 1, 30); 
+		return image;
 	}
 
 	public String getColumnText(Object element, int columnIndex) {

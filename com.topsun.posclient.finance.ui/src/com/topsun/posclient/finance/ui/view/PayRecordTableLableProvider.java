@@ -3,6 +3,7 @@ package com.topsun.posclient.finance.ui.view;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.widgets.Display;
 
 import com.topsun.posclient.datamodel.PayRecord;
 
@@ -25,7 +26,8 @@ public class PayRecordTableLableProvider implements ITableLabelProvider {
 	}
 
 	public Image getColumnImage(Object arg0, int arg1) {
-		return null;
+		Image image = new Image(Display.getDefault(), 1, 30); 
+		return image;
 	}
 
 	public String getColumnText(Object element, int columnIndex) {
