@@ -22,11 +22,11 @@ import com.topsun.posclient.datamodel.Receipts;
  * @author Dong
  *
  */
-public class POSPrinter {
+public class POSTicketPrinter {
 
 	private Receipts receipts;
 
-	public POSPrinter(Receipts receipts) {
+	public POSTicketPrinter(Receipts receipts) {
 		this.receipts = receipts;
 	}
 
@@ -41,15 +41,14 @@ public class POSPrinter {
 		buffer.append("地址："+receipts.getAddress()+"\n");
 		buffer.append("收银员："+receipts.getCashier()+"\n");
 		buffer.append("日期："+receipts.getDate()+"\n");
-		buffer.append("-------------------------------\n");
+		buffer.append("-------------------------------\n\n");
 		for(Item item : receipts.getItems()){
-			buffer.append(item.getItemName()+"\t\t");
-			buffer.append(item.getRetailPrice()+"X"+item.getNum()+"\t"+item.getRetailPrice()*item.getNum()+"\n");
+			buffer.append(item.getItemName()+"\t"+item.getRetailPrice()+"X"+item.getNum()+"\t"+item.getRetailPrice()*item.getNum()+"\n");
 		}
-		buffer.append("-------------------------------\n");
+		buffer.append("-------------------------------\n\n");
 		buffer.append("加盟热线："+receipts.getBootString()+"\n");
 		buffer.append("网址："+receipts.getNetAddress()+"\n");
-		buffer.append("欢迎您的再次光顾"+"\n");
+		buffer.append("欢迎您的再次光顾\n");
 		return buffer.toString();
 	}
 
@@ -79,7 +78,6 @@ public class POSPrinter {
 	 * 自定义的打印实现类，将所需参数传入，调用print方法即可打印
 	 */
 	private class MyPrinter {
-		
 		private Printer printer; // 打印对象
 
 		private String contents; // 文件名对应的文件内容
@@ -93,6 +91,8 @@ public class POSPrinter {
 		private StringBuffer buf; // Holds a word at a time
 
 		private int lineHeight; // The height of a line of text
+		
+		private int colWidth = 10; //第一列宽度
 
 		/**
 		 * 构造函数
@@ -115,8 +115,6 @@ public class POSPrinter {
 				gc = new GC(printer);
 				// 设定线的高度
 				lineHeight = gc.getFontMetrics().getHeight();
-				// 设定tab键的空格数
-				int tabWidth = gc.stringExtent("   ").x;
 				// 开始打印
 				printer.startPage();
 				buf = new StringBuffer();
@@ -131,7 +129,13 @@ public class POSPrinter {
 					}
 					// 如果读到\t，表示要跳过一定的空格
 					else if (c == '\t') {
-						xPos += tabWidth;
+						// 检查是否有空间，如果则打印
+						if (Character.isWhitespace(c))
+						{
+							gc.drawString(buf.toString(), xPos, yPos, false);
+							xPos += colWidth;
+							buf.setLength(0);
+						}
 					} else {
 						buf.append(c);// 将字符添加进buf变量
 						// 检查是否有空间，如果则打印
@@ -152,9 +156,9 @@ public class POSPrinter {
 		private void printBuffer() {
 			// 取得缓存中的字符宽度
 			int width = gc.stringExtent(buf.toString()).x;
-			
-			xPos = (bounds.width - width)/2;
-			
+			if(width > colWidth){
+				colWidth = width;
+			}
 			// 如果宽度不够，则换行
 			if (xPos + width > bounds.x + bounds.width)
 				printNewline();
@@ -216,9 +220,21 @@ public class POSPrinter {
 		item2.setRetailPrice(20.5);
 		item2.setNum(2);
 		
+		Item item3 = new Item();
+		item3.setItemName("清风原木纯品");
+		item3.setRetailPrice(20.5);
+		item3.setNum(1);
+		
+		Item item4 = new Item();
+		item4.setItemName("洁云抽取式面纸\n原木纯朴");
+		item4.setRetailPrice(20.5);
+		item4.setNum(2);
+		
 		List<Item> items = new ArrayList<Item>();
 		items.add(item1);
 		items.add(item2);
+		items.add(item3);
+		items.add(item4);
 		
 		Receipts receipts = new Receipts();
 		receipts.setTitle("城隍庙豫园小吃");
@@ -230,7 +246,7 @@ public class POSPrinter {
 		receipts.setBootString("021-678987888");
 		receipts.setNetAddress("www.yuyuan.com");
 		
-		POSPrinter printer = new POSPrinter(receipts);
+		POSTicketPrinter printer = new POSTicketPrinter(receipts);
 		printer.printReceipts();
 	}
 }
