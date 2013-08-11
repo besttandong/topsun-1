@@ -1,9 +1,11 @@
 package com.topsun.posclient.common.print;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
@@ -13,8 +15,8 @@ import org.eclipse.swt.printing.PrinterData;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
+import com.topsun.posclient.common.print.printdata.Receipts;
 import com.topsun.posclient.datamodel.Item;
-import com.topsun.posclient.datamodel.Receipts;
 
 /**
  * POS小票打印
@@ -36,20 +38,32 @@ public class POSTicketPrinter {
 	
 	private String getPrintContent(){
 		StringBuffer buffer = new StringBuffer();
-		buffer.append(receipts.getTitle()+"\n");
-		buffer.append("电话："+receipts.getTelephone()+"\n");
+		buffer.append("title"+receipts.getTitle()+"\n\n");
 		buffer.append("地址："+receipts.getAddress()+"\n");
+		buffer.append("电话："+receipts.getTelephone()+"\n");
 		buffer.append("收银员："+receipts.getCashier()+"\n");
-		buffer.append("日期："+receipts.getDate()+"\n");
-		buffer.append("-------------------------------\n\n");
+		buffer.append("序：00923\t机：08\n");
+		buffer.append(receipts.getDate()+"\n");
+		buffer.append("----------------------------------\n");
+		BigDecimal countAmount = new BigDecimal(0.00);
 		for(Item item : receipts.getItems()){
-			buffer.append(item.getItemName()+"\t"+item.getRetailPrice()+"X"+item.getNum()+"\t"+item.getRetailPrice()*item.getNum()+"\n");
+			countAmount = countAmount.add(new BigDecimal(item.getRetailPrice()*item.getNum()));
+			buffer.append(formatItemName(item.getItemName())+"（"+item.getRetailPrice()+"x"+item.getNum()+"）\t"+item.getRetailPrice()*item.getNum()+"\n\n");
 		}
-		buffer.append("-------------------------------\n\n");
+		buffer.append("合计：\t"+countAmount+"\n");
+		buffer.append("----------------------------------\n");
 		buffer.append("加盟热线："+receipts.getBootString()+"\n");
 		buffer.append("网址："+receipts.getNetAddress()+"\n");
 		buffer.append("欢迎您的再次光顾\n");
 		return buffer.toString();
+	}
+	
+	private String formatItemName(String name){
+		if(name.length() > 7){
+			return name.substring(0,7)+"\n"+name.substring(7,name.length());
+		}else{
+			return name;
+		}
 	}
 
 	public void printReceipts() {
@@ -162,8 +176,15 @@ public class POSTicketPrinter {
 			// 如果宽度不够，则换行
 			if (xPos + width > bounds.x + bounds.width)
 				printNewline();
+			String pStr = buf.toString();
+			if(pStr.startsWith("title")){
+				pStr = pStr.replace("title", "");
+				gc.setFont(new Font(printer, "微软雅黑", 12, SWT.NORMAL));
+			}else{
+				gc.setFont(new Font(printer, "微软雅黑", 7, SWT.NORMAL));
+			}
 			// 打印缓存buf变量中的字符
-			gc.drawString(buf.toString(), xPos, yPos, false);
+			gc.drawString(pStr, xPos, yPos, false);
 			xPos += width;
 			buf.setLength(0);
 		}
@@ -205,7 +226,8 @@ public class POSTicketPrinter {
 			int bottom = (rect.height + trim.y + trim.height) - dpi.y;
 			if (bottom > rect.height)
 				bottom = rect.height;
-			return new Rectangle(left, top, right - left, bottom - top);
+			return rect;
+//			return new Rectangle(left, right, right - left, bottom - top);
 		}
 	}
 	
@@ -226,22 +248,40 @@ public class POSTicketPrinter {
 		item3.setNum(1);
 		
 		Item item4 = new Item();
-		item4.setItemName("洁云抽取式面纸\n原木纯朴");
+		item4.setItemName("洁云抽取式面纸原木纯朴");
 		item4.setRetailPrice(20.5);
 		item4.setNum(2);
+		
+		Item item5 = new Item();
+		item5.setItemName("中华香烟");
+		item5.setRetailPrice(45.00);
+		item5.setNum(1);
+		
+		Item item6 = new Item();
+		item6.setItemName("可口可乐");
+		item6.setRetailPrice(5.0);
+		item6.setNum(1);
+		
+		Item item7 = new Item();
+		item7.setItemName("Tommy");
+		item7.setRetailPrice(2000.5);
+		item7.setNum(1);
 		
 		List<Item> items = new ArrayList<Item>();
 		items.add(item1);
 		items.add(item2);
 		items.add(item3);
 		items.add(item4);
+		items.add(item5);
+		items.add(item6);
+		items.add(item7);
 		
 		Receipts receipts = new Receipts();
 		receipts.setTitle("城隍庙豫园小吃");
 		receipts.setTelephone("021-23456789");
 		receipts.setAddress("上海市豫园");
 		receipts.setCashier("张三");
-		receipts.setDate(new Date());
+		receipts.setDate("2013/09/23 14:34");
 		receipts.setItems(items);
 		receipts.setBootString("021-678987888");
 		receipts.setNetAddress("www.yuyuan.com");
