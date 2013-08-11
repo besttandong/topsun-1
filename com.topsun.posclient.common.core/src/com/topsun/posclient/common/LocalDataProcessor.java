@@ -1,11 +1,15 @@
 package com.topsun.posclient.common;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.StringReader;
 
 import javax.xml.bind.JAXBContext;
@@ -36,30 +40,70 @@ public class LocalDataProcessor {
 		this.id = id;
 	}
 	
-	public boolean copyFileToBack(File file, boolean needDel) throws IOException{
-		String backPath = file.getAbsolutePath().replace("upload", "back");
+	/**
+	 * @param file
+	 * @param backPath
+	 * @param needDel
+	 * @return
+	 * @throws IOException
+	 */
+	public boolean copyFileToBack(File file,String backPath, boolean needDel) throws IOException{
 		File backFile = new File(backPath);
-		if(!backFile.exists()){
-			backFile.createNewFile();
+		if(backFile.exists()){
+			backFile.delete();
 		}
+		copyFile(file, backFile);
 		if(needDel){
 			file.delete();
 		}
 		return true;
 	}
 	
+	// 复制文件
+    private static void copyFile(File sourceFile, File targetFile) throws IOException {
+        BufferedInputStream inBuff = null;
+        BufferedOutputStream outBuff = null;
+        try {
+            // 新建文件输入流并对它进行缓冲
+            inBuff = new BufferedInputStream(new FileInputStream(sourceFile));
+
+            // 新建文件输出流并对它进行缓冲
+            outBuff = new BufferedOutputStream(new FileOutputStream(targetFile));
+
+            // 缓冲数组
+            byte[] b = new byte[1024 * 5];
+            int len;
+            while ((len = inBuff.read(b)) != -1) {
+                outBuff.write(b, 0, len);
+            }
+            // 刷新此缓冲的输出流
+            outBuff.flush();
+        } finally {
+            // 关闭流
+            if (inBuff != null)
+                inBuff.close();
+            if (outBuff != null)
+            	outBuff.close();
+        }
+    }
+	
+	/**
+	 * @param file
+	 * @return
+	 */
 	public String getDataFileContent(File file){
 		StringBuffer fileData = new StringBuffer();
 		BufferedReader reader = null;
 		try {
-			reader = new BufferedReader(new FileReader(file));
+			InputStreamReader read = new InputStreamReader(new FileInputStream(file),"UTF-8");
+			reader = new BufferedReader(read);
 			String tempString = null;
 			int line = 1;
 			while ((tempString = reader.readLine()) != null) {
 				fileData.append(tempString);
 				line++;
 			}
-			reader.close();
+//			reader.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
@@ -110,6 +154,27 @@ public class LocalDataProcessor {
 		marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 		marshaller.marshal(data, fos);
 		return file;
+	}
+	
+	/**
+	 * 更新本地数据文件
+	 * @param fileName 文件名，包含文件路径
+	 * @throws JAXBException 
+	 * @throws FileNotFoundException 
+	 */
+	public void updateLocalDataFile(Object data,String backPath, String fileName) throws IOException, JAXBException{
+		String filePath = ProjectUtil.getRuntimeClassPath();
+		File file = new File(filePath + fileName);
+		if (file.exists()) {
+			// 将旧文件拷贝到备份目录，删除原文件
+			this.copyFileToBack(file, filePath+backPath, true);
+		}
+		//创建新的本地数据文件
+		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+		JAXBContext context = JAXBContext.newInstance(data.getClass());
+		Marshaller marshaller = context.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+		marshaller.marshal(data, fos);
 	}
 	
 	public String getStringFromObject(Object data) throws JAXBException, IOException {

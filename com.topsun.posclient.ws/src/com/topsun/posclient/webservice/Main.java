@@ -2,6 +2,8 @@ package com.topsun.posclient.webservice;
 
 import java.rmi.RemoteException;
 
+import javax.xml.namespace.QName;
+
 import org.apache.axis2.AxisFault;
 
 import com.topsun.posclient.webservice.dto.ArrayOfuser;
@@ -45,6 +47,8 @@ public class Main {
 				System.out.println(userArray[i].getUserName() + " ---- "
 						+ userArray[i].getDeptName());
 			}
+			
+//			users.serialize(new QName("http://www.topsunit.com/rms","users"), xmlWriter, true);
 
 		} catch (AxisFault e) {
 			e.printStackTrace();

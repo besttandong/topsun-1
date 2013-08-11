@@ -6,27 +6,26 @@ import java.io.FileOutputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import com.topsun.posclient.datamodel.dto.PartSalesDTO;
+import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 
 public class DataAndXMLConvertTest {
 
 	public static void main(String[] args) throws Exception {
 
 		//生成所有结算方式数据文件
-//		CashierModeDTO cashierModeDTO = new CashierModeDTO();
-//		cashierModeDTO.setCashierModeList(MockDataFactory.createCashierModelList());
-//
-//		String filePath = DataAndXMLConvertTest.class.getClassLoader()
-//				.getResource("").getFile();
-//		File file = new File(filePath + AppConstants.DATA_CASHIERMODE_FILENAME);
-//
-//		if (!file.exists()) {
-//			file.createNewFile();
-//		}
-//		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
-//		JAXBContext context = JAXBContext.newInstance(CashierModeDTO.class);
-//		Marshaller marshaller = context.createMarshaller();
-//		marshaller.marshal(cashierModeDTO, fos);
+		CashierModeDTO cashierModeDTO = new CashierModeDTO();
+		cashierModeDTO.setCashierModeList(MockDataFactory.createCashierModelList());
+
+		String filePath = DataAndXMLConvertTest.class.getClassLoader().getResource("").getFile();
+		File file = new File(filePath + AppConstants.DATA_CASHIERMODE_FILENAME);
+
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+		JAXBContext context = JAXBContext.newInstance(CashierModeDTO.class);
+		Marshaller marshaller = context.createMarshaller();
+		marshaller.marshal(cashierModeDTO, fos);
 		
 //		AdjustRepositoryDTO adjustRepositoryDTO = new AdjustRepositoryDTO();
 //		adjustRepositoryDTO.setAdjustRepositoryInfos(MockDataFactory.createAdjustRepositoryInfoList());
@@ -104,17 +103,17 @@ public class DataAndXMLConvertTest {
 //		marshaller.marshal(adjustShopDTO, fos);
 		
 		
-		PartSalesDTO partSalesDTO = MockDataFactory.createPartSalesDTO();
-		String filePath = DataAndXMLConvertTest.class.getClassLoader().getResource("").getFile();
-		File file = new File(filePath + AppConstants.DATA_PARTSALES_PATH+ "data_PartSales"+ System.currentTimeMillis() + ".xml");
-		System.out.println(file.getPath());
-		if (!file.exists()) {
-			file.createNewFile();
-		}
-		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
-		JAXBContext context = JAXBContext.newInstance(PartSalesDTO.class);
-		Marshaller marshaller = context.createMarshaller();
-		marshaller.marshal(partSalesDTO, fos);
+//		PartSalesDTO partSalesDTO = MockDataFactory.createPartSalesDTO();
+//		String filePath = DataAndXMLConvertTest.class.getClassLoader().getResource("").getFile();
+//		File file = new File(filePath + AppConstants.DATA_PARTSALES_PATH+ "data_PartSales"+ System.currentTimeMillis() + ".xml");
+//		System.out.println(file.getPath());
+//		if (!file.exists()) {
+//			file.createNewFile();
+//		}
+//		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+//		JAXBContext context = JAXBContext.newInstance(PartSalesDTO.class);
+//		Marshaller marshaller = context.createMarshaller();
+//		marshaller.marshal(partSalesDTO, fos);
 		
 	}
 

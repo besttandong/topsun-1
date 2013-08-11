@@ -56,7 +56,7 @@ public class AdjustShopDao extends BaseDao {
 			sa.setOutShpId(info.getOutShop());
 			sa.setMemo(info.getRemark());
 			sa.setMakerID(info.getApplyUser());
-			sa.setItems(getItemArray(info.getItemList()));
+			sa.setItems(POSServerCaller.getItemArray(info.getItemList()));
 			
 			shopAllots[0] = sa;
 			
@@ -141,21 +141,21 @@ public class AdjustShopDao extends BaseDao {
 		return resultList;
 	}
 	
-	private static ArrayOfitem getItemArray(List<Item> itemList){
-		ArrayOfitem arrayOfitem = new ArrayOfitem();
-		com.topsun.posclient.webservice.dto.Item[] itemArray = new com.topsun.posclient.webservice.dto.Item[itemList.size()];;
-		for(int i=0; i<itemList.size(); i++){
-			Item ee = itemList.get(i);
-			com.topsun.posclient.webservice.dto.Item iii = new com.topsun.posclient.webservice.dto.Item();
-			iii.setItemId(ee.getId());
-			iii.setLineNum(Integer.valueOf(ee.getItemCode()));
-			iii.setMemo(ee.getDescription());
-			iii.setQuantity(ee.getNum());
-			itemArray[i] = iii;
-		}
-		arrayOfitem.setItem(itemArray);
-		return arrayOfitem;
-	}
+//	private static ArrayOfitem getItemArray(List<Item> itemList){
+//		ArrayOfitem arrayOfitem = new ArrayOfitem();
+//		com.topsun.posclient.webservice.dto.Item[] itemArray = new com.topsun.posclient.webservice.dto.Item[itemList.size()];;
+//		for(int i=0; i<itemList.size(); i++){
+//			Item ee = itemList.get(i);
+//			com.topsun.posclient.webservice.dto.Item iii = new com.topsun.posclient.webservice.dto.Item();
+//			iii.setItemId(ee.getId());
+//			iii.setLineNum(Integer.valueOf(ee.getItemCode()));
+//			iii.setMemo(ee.getDescription());
+//			iii.setQuantity(ee.getNum());
+//			itemArray[i] = iii;
+//		}
+//		arrayOfitem.setItem(itemArray);
+//		return arrayOfitem;
+//	}
 
 	private static List<Item> getItemList(ArrayOfitem itemArray) {
 		List<Item> items = new ArrayList<Item>();

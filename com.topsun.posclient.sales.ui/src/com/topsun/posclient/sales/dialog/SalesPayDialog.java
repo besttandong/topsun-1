@@ -37,6 +37,7 @@ import com.topsun.posclient.sales.ui.table.CashierModelTableLableProvider;
  *
  */
 public class SalesPayDialog extends Dialog{
+	
 	CashierModelItemCellModify cashierModelItemCellModify;
 	IBaseService commonService  = new BaseServiceImpl();
 	
@@ -189,6 +190,7 @@ public class SalesPayDialog extends Dialog{
 					cashierModeList = dto.getCashierModeList();
 				}
 			} catch (POSException e) {
+				e.printStackTrace();
 				MessageDialog.openError(parent.getShell(), MessageResources.message_ui_tips, e.getErrorMessage());
 			}
 			tableViewer.setInput(cashierModeList);

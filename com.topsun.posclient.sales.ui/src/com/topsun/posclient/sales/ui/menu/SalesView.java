@@ -296,11 +296,15 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					String price = priceTotal.getText();
 					SalesPayDialog dialog = new SalesPayDialog(saveButton.getShell());
 					dialog.setPrice(price);
-					int retrunType =dialog.open();
-					
-					if(retrunType == 1){
-						return;
+					try{
+						int retrunType =dialog.open();
+						if(retrunType == 1){
+							return;
+						}
+					}catch(Exception eeee){
+						eeee.printStackTrace();
 					}
+					
 					
 					partSales = new PartSales();
 					int userId = user.getId();

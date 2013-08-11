@@ -3,6 +3,9 @@ package com.topsun.posclient.system.dao;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.ProgressBar;
@@ -11,9 +14,40 @@ import org.eclipse.swt.widgets.Text;
 import com.topsun.posclient.common.AppConstants;
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.common.dao.BaseDao;
+import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
+import com.topsun.posclient.datamodel.AdjustShopInfo;
+import com.topsun.posclient.datamodel.Item;
+import com.topsun.posclient.datamodel.PartSales;
+import com.topsun.posclient.datamodel.dto.AdjustRepositoryDTO;
+import com.topsun.posclient.datamodel.dto.AdjustShopDTO;
+import com.topsun.posclient.datamodel.dto.ItemDTO;
+import com.topsun.posclient.datamodel.dto.PartSalesDTO;
 import com.topsun.posclient.system.MessageResources;
 import com.topsun.posclient.system.SyncProgress;
 import com.topsun.posclient.system.service.SyncDataListenerManager;
+import com.topsun.posclient.webservice.POSServerCaller;
+import com.topsun.posclient.webservice.dto.ArrayOfRetail;
+import com.topsun.posclient.webservice.dto.ArrayOfbackWarehouse;
+import com.topsun.posclient.webservice.dto.ArrayOfshopAllot;
+import com.topsun.posclient.webservice.dto.ArrayOfsyncItemDataResultItem;
+import com.topsun.posclient.webservice.dto.BackWarehouse;
+import com.topsun.posclient.webservice.dto.Retail;
+import com.topsun.posclient.webservice.dto.SavePartSales;
+import com.topsun.posclient.webservice.dto.SavePartSalesReq;
+import com.topsun.posclient.webservice.dto.SavePartSalesResponse;
+import com.topsun.posclient.webservice.dto.SaveReturnRepository;
+import com.topsun.posclient.webservice.dto.SaveReturnRepositoryReq;
+import com.topsun.posclient.webservice.dto.SaveReturnRepositoryResponse;
+import com.topsun.posclient.webservice.dto.SaveShopAllot;
+import com.topsun.posclient.webservice.dto.SaveShopAllotReq;
+import com.topsun.posclient.webservice.dto.SaveShopAllotResponse;
+import com.topsun.posclient.webservice.dto.ShopAllot;
+import com.topsun.posclient.webservice.dto.SyncItemData;
+import com.topsun.posclient.webservice.dto.SyncItemDataReq;
+import com.topsun.posclient.webservice.dto.SyncItemDataReqCondition;
+import com.topsun.posclient.webservice.dto.SyncItemDataResponse;
+import com.topsun.posclient.webservice.dto.SyncItemDataResult;
+import com.topsun.posclient.webservice.dto.SyncItemDataResultItem;
 
 /**
  * 数据同步处理
@@ -72,13 +106,57 @@ public class SyncDataDao extends BaseDao {
 				public void run() {
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_startsyncitem);
 					try {
-//						GetUserInfo getUserInfo = getServerCaller().buildGetUserInfo();
-//						String userInfoReqStr = getLocalProcessor().getStringFromObject(getUserInfo);
-//						IPosWebService webservice = getServerCaller().getWebService();
-//						String returnVal = webservice.downloadItemData(userInfoReqStr);
-//						
-//						saveLocalFile(AppConstants.DATA_ITEM_FILENAME, returnVal);
+						SyncItemDataReqCondition condition = new SyncItemDataReqCondition();
+						
+						SyncItemDataReq req = new SyncItemDataReq();
+						req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+						req.setCondition(condition);
+						
+						SyncItemData syncItemData0 = new SyncItemData();
+						syncItemData0.setSyncItemDataReq(req);
+						SyncItemDataResponse response = POSServerCaller.getWebService().syncItemData(syncItemData0);
+						
+						SyncItemDataResult result = response.getSyncItemDataResult();
+						String flag = result.getResult().getFlag();
+						if(null == flag || flag.equals("false")){
+							return;
+						}
+						
+						List<Item> itemList = new ArrayList<Item>(); 
+						ItemDTO itemDTO = new ItemDTO();
+						ArrayOfsyncItemDataResultItem responseData = result.getItems();
+						SyncItemDataResultItem[] itemArray = responseData.getSyncItemDataResultItem();
+						for(int i=0; i<itemArray.length; i++){
+							Item item = new Item();
+							SyncItemDataResultItem sd = itemArray[i];
+							item.setId(sd.getId());
+							item.setArea(sd.getAreaId());
+//							item.setAreaName(sidri.getAreaId());
+							item.setBrandId(sd.getBrandId());
+							item.setChannelPrice(sd.getChannelPrice().doubleValue());
+							item.setClassId(sd.getClassId());
+							item.setDivisionId(sd.getDivisionId());
+							item.setDescription(sd.getDescription());
+							item.setGuidePrice(sd.getGuidePrice().doubleValue());
+							item.setItemCode(sd.getItemCode());
+							item.setItemName(sd.getItemName());
+							item.setNum(sd.getUnitId());
+							item.setPurchasePrice(sd.getPurchasePrice().doubleValue());
+							item.setRetailPrice(sd.getRetailPrice().doubleValue());
+							item.setSectionId(sd.getSectionId());
+							item.setStdId(sd.getStdId());
+							item.setSupplierId(sd.getSupplierId());
+							item.setUnitId(sd.getUnitId());
+							item.setWholesalePrice(sd.getWholesalePrice().doubleValue());
+							itemList.add(item);
+						}
+						itemDTO.setItemList(itemList);
+						
+						// 更新本地数据文件
+						getLocalProcessor().updateLocalDataFile(itemDTO, AppConstants.DATA_ITEM_FILENAME_BACK, AppConstants.DATA_ITEM_FILENAME);
+						
 					} catch (Exception e) {
+						e.printStackTrace();
 						throw new RuntimeException();
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncitem,count);
@@ -118,11 +196,49 @@ public class SyncDataDao extends BaseDao {
 						File[] dataFiles = file.listFiles();
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
-							if(dataFile.isFile()){
-//								String saveData = getLocalProcessor().getDataFileContent(dataFile);
-//								IPosWebService webservice = getServerCaller().getWebService();
-//								webservice.savePartSales(saveData);
+							if(!dataFile.isFile()){
+								return;
 							}
+							PartSalesDTO dto = (PartSalesDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), PartSalesDTO.class) ;
+							List<PartSales> list = dto.getPartSalesList();
+							if(null == list || list.size() <= 0){
+								return;
+							}
+							Retail[] retailArray = new Retail[list.size()];
+							for(int j = 0; j<list.size(); j++){
+								PartSales asi = list.get(j);
+								Retail sa = new Retail();
+								sa.setAddPoint(10);
+								sa.setAuditDate(ProjectUtil.getCalendar(asi.getCheckDate()));
+								sa.setAuditID(asi.getChecker());
+								sa.setBillNo(asi.getBallotNo());
+								sa.setSalesDate(ProjectUtil.getCalendar(asi.getSalesDate()));
+								sa.setShopID(asi.getShopId());
+								sa.setCashierID(asi.getUserId());
+								sa.setDocNum(asi.getNo());
+								sa.setEmployeeID(asi.getUserId());
+								sa.setMemo(asi.getRemark());
+								sa.setDiscount(new BigDecimal(1));
+								sa.setIsReturn(0);
+								sa.setEnablePoint(Integer.valueOf(asi.getEnablePoint()));
+								sa.setEnableBalance(new BigDecimal(asi.getEnableBalance()));
+								sa.setRetail_Ms(POSServerCaller.getArrayOfRetail_M(asi.getItemList()));
+								sa.setRetail_Ps(POSServerCaller.getArrayOfRetail_P(asi.getPsCashierList()));
+								retailArray[i] = sa;
+							}
+							
+							ArrayOfRetail arrayOfRetail = new ArrayOfRetail();
+							arrayOfRetail.setRetail(retailArray);
+							
+							SavePartSalesReq req = new SavePartSalesReq();
+							req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+							req.setRetails(arrayOfRetail);
+							
+							SavePartSales savePartSales12 = new SavePartSales();
+							savePartSales12.setSavePartSalesReq(req);
+							SavePartSalesResponse response = POSServerCaller.getWebService().savePartSales(savePartSales12);
+							String flag = response.getSavePartSalesResult().getResult().getFlag();
+							System.out.println("----------->> Call webservice savePartSales finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
 						throw new RuntimeException();
@@ -142,12 +258,40 @@ public class SyncDataDao extends BaseDao {
 						File file = new File(ProjectUtil.getRuntimeClassPath()+AppConstants.DATA_SHOPPAY_PATH);
 						File[] dataFiles = file.listFiles();
 						for(int i=0; i<dataFiles.length; i++){
-							File dataFile = dataFiles[i];
-							if(dataFile.isFile()){
-//								String saveData = getLocalProcessor().getDataFileContent(dataFile);
-//								IPosWebService webservice = getServerCaller().getWebService();
-//								webservice.saveShopPay(saveData);
-							}
+//							File dataFile = dataFiles[i];
+//							if(!dataFile.isFile()){
+//								return;
+//							}
+//							AdjustShopDTO dto = (AdjustShopDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustShopDTO.class) ;
+//							List<AdjustShopInfo> list = dto.getAdjustShopList();
+//							if(null == list || list.size() <= 0){
+//								return;
+//							}
+//							ShopAllot[] shopAllotArray = new ShopAllot[list.size()];
+//							for(int j = 0; j<list.size(); j++){
+//								AdjustShopInfo asi = list.get(j);
+//								ShopAllot sa = new ShopAllot();
+//								sa.setAllotDate(ProjectUtil.getCalendar(asi.getCallDate()));
+//								sa.setAllotTypeId(sa.getAllotTypeId());
+//								sa.setDocNum(asi.getVoucherNo());
+//								sa.setDocNumPOS("POS09");
+//								sa.setInShpId(asi.getIntoShop());
+//								sa.setOutShpId(asi.getOutShop());
+//								sa.setMakerID(asi.getApplyUser());
+//								sa.setMemo(asi.getRemark());
+//								sa.setItems(POSServerCaller.getItemArray(asi.getItemList()));
+//								shopAllotArray[i] = sa;
+//							}
+//							ArrayOfshopAllot arrayOfshopAllot = new ArrayOfshopAllot();
+//							arrayOfshopAllot.setShopAllot(shopAllotArray);
+//							SaveShopAllotReq req = new SaveShopAllotReq();
+//							req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+//							req.setShopAllots(arrayOfshopAllot);
+//							SaveShopAllot saveShopAllot6 = new SaveShopAllot();
+//							saveShopAllot6.setSaveShopAllotReq(req);
+//							POSServerCaller.getWebService().sa(saveShopAllot6);
+//							
+//							System.out.println("----------->> Call webservice saveShopAllot finished!");
 						}
 					} catch (Exception e) {
 						throw new RuntimeException();
@@ -160,7 +304,6 @@ public class SyncDataDao extends BaseDao {
 	public void uploadAdjustShopData(SyncProgress progress,final int count) throws Exception{
 	
 			Display.getDefault().asyncExec(new Runnable() {
-				@Override
 				public void run() {
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_startsyncadjustshop);
 					try {
@@ -168,11 +311,39 @@ public class SyncDataDao extends BaseDao {
 						File[] dataFiles = file.listFiles();
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
-							if(dataFile.isFile()){
-//								String saveData = getLocalProcessor().getDataFileContent(dataFile);
-//								IPosWebService webservice = getServerCaller().getWebService();
-//								webservice.saveAdjustShop(saveData);
+							if(!dataFile.isFile()){
+								return;
 							}
+							AdjustShopDTO dto = (AdjustShopDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustShopDTO.class) ;
+							List<AdjustShopInfo> list = dto.getAdjustShopList();
+							if(null == list || list.size() <= 0){
+								return;
+							}
+							ShopAllot[] shopAllotArray = new ShopAllot[list.size()];
+							for(int j = 0; j<list.size(); j++){
+								AdjustShopInfo asi = list.get(j);
+								ShopAllot sa = new ShopAllot();
+								sa.setAllotDate(ProjectUtil.getCalendar(asi.getCallDate()));
+								sa.setAllotTypeId(sa.getAllotTypeId());
+								sa.setDocNum(asi.getVoucherNo());
+								sa.setDocNumPOS("POS09");
+								sa.setInShpId(asi.getIntoShop());
+								sa.setOutShpId(asi.getOutShop());
+								sa.setMakerID(asi.getApplyUser());
+								sa.setMemo(asi.getRemark());
+								sa.setItems(POSServerCaller.getItemArray(asi.getItemList()));
+								shopAllotArray[i] = sa;
+							}
+							ArrayOfshopAllot arrayOfshopAllot = new ArrayOfshopAllot();
+							arrayOfshopAllot.setShopAllot(shopAllotArray);
+							SaveShopAllotReq req = new SaveShopAllotReq();
+							req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+							req.setShopAllots(arrayOfshopAllot);
+							SaveShopAllot saveShopAllot6 = new SaveShopAllot();
+							saveShopAllot6.setSaveShopAllotReq(req);
+							SaveShopAllotResponse response = POSServerCaller.getWebService().saveShopAllot(saveShopAllot6);
+							String flag = response.getSaveShopAllotResult().getResult().getFlag();
+							System.out.println("----------->> Call webservice saveShopAllot finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
 						throw new RuntimeException();
@@ -185,7 +356,6 @@ public class SyncDataDao extends BaseDao {
 	public void uploadAdjustRepositoryData(SyncProgress progress,final int count) throws Exception{
 		
 			Display.getDefault().asyncExec(new Runnable() {
-				@Override
 				public void run() {
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_startsyncadjustrepository);
 					try {
@@ -193,11 +363,34 @@ public class SyncDataDao extends BaseDao {
 						File[] dataFiles = file.listFiles();
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
-							if(dataFile.isFile()){
-//								String saveData = getLocalProcessor().getDataFileContent(dataFile);
-//								IPosWebService webservice = getServerCaller().getWebService();
-//								webservice.saveAdjustRepository(saveData);
+							if(!dataFile.isFile()){
+								return;
 							}
+							AdjustRepositoryDTO dto = (AdjustRepositoryDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustRepositoryDTO.class) ;
+							List<AdjustRepositoryInfo> list = dto.getAdjustRepositoryInfos();
+							if(null == list || list.size() <= 0){
+								return;
+							}
+							BackWarehouse[] backWarehouseArray = new BackWarehouse[list.size()];
+							for(int j = 0; j<list.size(); j++){
+								AdjustRepositoryInfo asi = list.get(j);
+								BackWarehouse bw = new BackWarehouse();
+								bw.setBackWarehouseItems(POSServerCaller.getBackWarehouseItemArray(asi.getItemList()));
+								backWarehouseArray[i] = bw;
+							}
+							
+							ArrayOfbackWarehouse arrayOfbackWarehouse = new ArrayOfbackWarehouse();
+							arrayOfbackWarehouse.setBackWarehouse(backWarehouseArray);
+							
+							SaveReturnRepositoryReq req = new SaveReturnRepositoryReq();
+							req.setUserCredential(POSServerCaller.getDefaultUserCredential());
+							req.setBackWarehouses(arrayOfbackWarehouse);
+							
+							SaveReturnRepository saveReturnRepository14 = new SaveReturnRepository();
+							saveReturnRepository14.setSaveReturnRepositoryReq(req);
+							SaveReturnRepositoryResponse response = POSServerCaller.getWebService().saveReturnRepository(saveReturnRepository14);
+							String flag = response.getSaveReturnRepositoryResult().getResult().getFlag();
+							System.out.println("----------->> Call webservice saveReturnRepository finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
 						throw new RuntimeException();
