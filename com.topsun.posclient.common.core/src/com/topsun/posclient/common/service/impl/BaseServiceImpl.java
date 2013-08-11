@@ -125,6 +125,7 @@ public class BaseServiceImpl implements IBaseService {
 				}
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new POSException("查询商品信息出错！");
 		}
 		return returnItem;
@@ -150,9 +151,4 @@ public class BaseServiceImpl implements IBaseService {
 		return String.valueOf(System.currentTimeMillis());
 	}
 
-	@Override
-	public AllotStyleDTO getAllAllotStyle() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

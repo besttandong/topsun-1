@@ -5,7 +5,6 @@ import java.util.List;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.datamodel.AllotStyle;
 import com.topsun.posclient.datamodel.Item;
-import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
 import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
@@ -20,8 +19,6 @@ public interface IBaseService {
 	public String getEmployeeNameById(int userId) throws Exception;
 
 	public CashierModeDTO getAllCashierMode() throws POSException;
-	
-	public AllotStyleDTO getAllAllotStyle() throws Exception;
 	
 	public ItemDTO getAllItem() throws Exception;
 	
@@ -48,7 +45,7 @@ public interface IBaseService {
 	
 	
 	/**
-	 * 根据款号获取商品信息
+	 * 根据款号（条形码）获取商品信息
 	 * @return
 	 * @throws POSException
 	 */

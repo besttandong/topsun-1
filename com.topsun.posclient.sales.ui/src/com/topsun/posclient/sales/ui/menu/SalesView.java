@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.sound.midi.SysexMessage;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ISelection;
@@ -23,10 +21,8 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
@@ -41,7 +37,6 @@ import org.eclipse.ui.part.ViewPart;
 import com.topsun.posclient.common.MockDataFactory;
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.core.BarcodeBuffer;
 import com.topsun.posclient.common.core.BarcodeListenetManager;
 import com.topsun.posclient.common.core.IBarcodeListener;
 import com.topsun.posclient.common.listener.IKeyListener;
@@ -573,6 +568,25 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 			data.widthHint = 100;
 			data.horizontalSpan = 1;
 			button.setLayoutData(data);
+			button.addSelectionListener(new SelectionListener() {
+				public void widgetSelected(SelectionEvent e) {
+					Button saveButton = (Button)e.getSource();
+					Item item = null;
+					try {
+						item = partSaleService.getItemByCode("10020006042");
+					} catch (POSException e1) {
+						MessageDialog.openError(saveButton.getShell(), MessageResources.message_ui_tips, e1.getErrorMessage());
+					}
+					if(null != item){
+						System.out.println("---------->>获取到商品信息 code: "+item.getItemCode()+"name: "+item.getItemName());
+					}else{
+						MessageDialog.openError(saveButton.getShell(), MessageResources.message_ui_tips, "没有找到商品信息");
+					}
+				}
+				public void widgetDefaultSelected(SelectionEvent e) {
+					
+				}
+			});
 		}
 		{
 			Label label = new Label(printCompoiste, SWT.NONE);
