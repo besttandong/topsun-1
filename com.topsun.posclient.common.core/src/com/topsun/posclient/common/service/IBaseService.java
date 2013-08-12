@@ -5,6 +5,7 @@ import java.util.List;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.datamodel.AllotStyle;
 import com.topsun.posclient.datamodel.Item;
+import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.dto.CashierModeDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
@@ -25,6 +26,8 @@ public interface IBaseService {
 	public ShopDTO getAllShop() throws Exception;
 	
 	public String getShopNameById(int shopId) throws Exception;
+	
+	public Shop getShopById(int shopId) throws Exception;
 	
 	public String getItemNameById(int itemId) throws Exception;
 	

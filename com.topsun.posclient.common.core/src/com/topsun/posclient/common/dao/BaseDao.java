@@ -154,6 +154,18 @@ public class BaseDao {
 		return "";
 	}
 	
+	public Shop getShopById(int shopId) throws Exception{
+		File file = new File(ProjectUtil.getRuntimeClassPath()+ AppConstants.DATA_SHOP_FILENAME);
+		ShopDTO shopDTO = (ShopDTO) getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(file), ShopDTO.class);
+		List<Shop> shopList = shopDTO.getShopList();
+		for(Shop s : shopList){
+			if(s.getId() == shopId){
+				return s;
+			}
+		}
+		return null;
+	}
+	
 	public String getItemNameById(int itemId) throws Exception {
 		File file = new File(ProjectUtil.getRuntimeClassPath()+ AppConstants.DATA_ITEM_FILENAME);
 		ItemDTO itemDTO = (ItemDTO) getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(file), ItemDTO.class);

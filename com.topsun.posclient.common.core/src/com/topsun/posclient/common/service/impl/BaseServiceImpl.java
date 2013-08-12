@@ -7,6 +7,7 @@ import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AllotStyle;
 import com.topsun.posclient.datamodel.Item;
+import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
 import com.topsun.posclient.datamodel.dto.CashierModeDTO;
@@ -149,6 +150,10 @@ public class BaseServiceImpl implements IBaseService {
 
 	public String createNo() throws POSException {
 		return String.valueOf(System.currentTimeMillis());
+	}
+
+	public Shop getShopById(int shopId) throws Exception {
+		return baseDao.getShopById(shopId);
 	}
 
 }
