@@ -1,7 +1,9 @@
 package com.topsun.posclient.sales.ui.menu;
 
+import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ICellModifier;
 import org.eclipse.jface.viewers.TableViewer;
+import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.TableItem;
 
 import com.topsun.posclient.common.POSException;
@@ -58,6 +60,8 @@ public class SalesItemCellModify implements ICellModifier {
 						saleItem.setNum(1);
 						saleItem.setRetailPrice(queryItem.getRetailPrice());
 						tableViewer.refresh();
+					}else{
+						MessageDialog.openWarning(Display.getCurrent().getActiveShell(), "警告", "没有商品信息");
 					}
 				} catch (POSException e) {
 					// TODO Auto-generated catch block
