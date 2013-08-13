@@ -2,8 +2,10 @@ package com.topsun.posclient.repository.ui.view;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
@@ -165,10 +167,23 @@ public class AdjustStoreView extends ViewPart {
 				public void widgetSelected(SelectionEvent e) {
 					try {
 						
+						if(startDate.getDateAsString() == ""){
+							MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能为空！");
+							return;
+						}else{
+							if(startDate.getDate().after(endDate.getDate())){
+								MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
+								return;
+							}
+						}
+						
+						
 						AdjustShopInfo adjustShopInfo = new AdjustShopInfo();
 						//查询条件
 						HashMap<String, Object> queryParams = new HashMap<String, Object>();
 						adjustShopInfo.setVoucherNo(orderNo.getText());
+						queryParams.put("startDate", startDate.getDate().getTime());
+						queryParams.put("endDate", endDate.getDate().getTime());
 						List<AdjustShopInfo> adjustShopInfos  = adjShopSerivice.queryAdjustShopList(queryParams);
 						searchViewer.setInput(adjustShopInfos);
 					} catch (POSException e1) {

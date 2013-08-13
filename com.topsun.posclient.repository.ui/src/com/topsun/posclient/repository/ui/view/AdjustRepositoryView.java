@@ -2,7 +2,10 @@ package com.topsun.posclient.repository.ui.view;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
@@ -30,15 +33,12 @@ import org.eclipse.ui.part.ViewPart;
 import com.topsun.posclient.common.MockDataFactory;
 import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
-import com.topsun.posclient.common.service.IBaseService;
-import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.common.ui.table.ItemTableContentProvider;
 import com.topsun.posclient.common.ui.table.ItemTableLableProvider;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
-import com.topsun.posclient.datamodel.dto.AdjustRepositoryDTO;
 import com.topsun.posclient.repository.service.IAdjustRepositoryService;
 import com.topsun.posclient.repository.service.impl.AdjustRepositoryServiceImpl;
 import com.topsun.posclient.repository.ui.table.AdjustStoreCellModify;
@@ -159,6 +159,18 @@ public class AdjustRepositoryView extends ViewPart {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					try {
+						if(startDate.getDateAsString() == ""){
+							MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能为空！");
+							return;
+						}else{
+							if(startDate.getDate().after(endDate.getDate())){
+								MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
+								return;
+							}
+						}
+						Map<String, Date> dateMap =new HashMap<String, Date>();
+						dateMap.put("startDate", startDate.getDate().getTime());
+						dateMap.put("endDate", endDate.getDate().getTime());
 						
 						AdjustRepositoryInfo repsInfo = new AdjustRepositoryInfo();
 						repsInfo.setOrderNo(orderNo.getText());
