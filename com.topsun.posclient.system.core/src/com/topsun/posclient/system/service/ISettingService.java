@@ -11,10 +11,18 @@ import com.topsun.posclient.datamodel.SettingData;
 public interface ISettingService extends IBaseService {
 	
 	/**
+	 * 保存系统设置
 	 * @param settingData
 	 * @throws POSException
 	 */
 	public void saveSetting(SettingData settingData) throws POSException;
+	
+	/**
+	 * 清理备份数据
+	 * 
+	 * @throws POSException
+	 */
+	public void cleanBackData() throws POSException;
 	
 	/**
 	 * 获取系统配置信息

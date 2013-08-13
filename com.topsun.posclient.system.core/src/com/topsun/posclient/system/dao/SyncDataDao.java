@@ -12,6 +12,7 @@ import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.Text;
 
 import com.topsun.posclient.common.AppConstants;
+import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.datamodel.AdjustRepositoryInfo;
@@ -22,6 +23,7 @@ import com.topsun.posclient.datamodel.dto.AdjustRepositoryDTO;
 import com.topsun.posclient.datamodel.dto.AdjustShopDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.PartSalesDTO;
+import com.topsun.posclient.datamodel.dto.UserDTO;
 import com.topsun.posclient.system.MessageResources;
 import com.topsun.posclient.system.SyncProgress;
 import com.topsun.posclient.system.service.SyncDataListenerManager;
@@ -30,7 +32,12 @@ import com.topsun.posclient.webservice.dto.ArrayOfRetail;
 import com.topsun.posclient.webservice.dto.ArrayOfbackWarehouse;
 import com.topsun.posclient.webservice.dto.ArrayOfshopAllot;
 import com.topsun.posclient.webservice.dto.ArrayOfsyncItemDataResultItem;
+import com.topsun.posclient.webservice.dto.ArrayOfuser;
 import com.topsun.posclient.webservice.dto.BackWarehouse;
+import com.topsun.posclient.webservice.dto.GetUserInfo;
+import com.topsun.posclient.webservice.dto.GetUserInfoReq;
+import com.topsun.posclient.webservice.dto.GetUserInfoResponse;
+import com.topsun.posclient.webservice.dto.GetUserInfoResult;
 import com.topsun.posclient.webservice.dto.Retail;
 import com.topsun.posclient.webservice.dto.SavePartSales;
 import com.topsun.posclient.webservice.dto.SavePartSalesReq;
@@ -48,6 +55,8 @@ import com.topsun.posclient.webservice.dto.SyncItemDataReqCondition;
 import com.topsun.posclient.webservice.dto.SyncItemDataResponse;
 import com.topsun.posclient.webservice.dto.SyncItemDataResult;
 import com.topsun.posclient.webservice.dto.SyncItemDataResultItem;
+import com.topsun.posclient.webservice.dto.User;
+import com.topsun.posclient.webservice.dto.UserCredential;
 
 /**
  * 数据同步处理
@@ -57,18 +66,52 @@ import com.topsun.posclient.webservice.dto.SyncItemDataResultItem;
  */
 public class SyncDataDao extends BaseDao {
 	
+	/**
+	 * 下载用户数据
+	 * @param progress
+	 * @param count
+	 * @throws Exception
+	 */
 	public void downloadUserData(final SyncProgress progress,final int count) throws Exception  {
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
 				public void run() {
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_startsyncuser);
 					try {
-//						GetUserInfo getUserInfo = getServerCaller().buildGetUserInfo();
-//						String userInfoReqStr = getLocalProcessor().getStringFromObject(getUserInfo);
-//						IPosWebService webservice = getServerCaller().getWebService();
-//						String returnVal = webservice.downloadUserData(userInfoReqStr);
-//
-//						saveLocalFile(AppConstants.DATA_USER_FILENAME, returnVal);
+						UserCredential userCredential = new UserCredential();
+						userCredential.setPassWord(POSClientApp.get().getLoginUser().getPassWord());
+						userCredential.setUserName(POSClientApp.get().getLoginUser().getUserName());
+						GetUserInfoReq req = new GetUserInfoReq();
+						req.setUserCode(POSClientApp.get().getLoginUser().getUserCode());
+						req.setUserCredential(userCredential);
+						
+						GetUserInfo getUserInfo = new GetUserInfo();
+						getUserInfo.setGetUserInfoReq(req);
+						GetUserInfoResponse response = POSServerCaller.getWebService().getUserInfo(getUserInfo);
+						GetUserInfoResult result = response.getGetUserInfoResult();
+						String flag = result.getResult().getFlag();
+						if(null == flag || flag.equals("false")){
+							return;
+						}
+						ArrayOfuser userArray = result.getUsers();
+						User[] users = userArray.getUser();
+						List<com.topsun.posclient.datamodel.User> userList = new ArrayList<com.topsun.posclient.datamodel.User>(); 
+						UserDTO userDTO = new UserDTO();
+						for(int i=0; i<users.length; i++){
+							User user = users[i];
+							com.topsun.posclient.datamodel.User uu = new com.topsun.posclient.datamodel.User();
+							uu.setUserCode(user.getUserCode());
+							uu.setDeptId(user.getDeptId());
+							uu.setDeptName(user.getDeptName());
+							uu.setEmployeeId(user.getEmployeeId());
+							uu.setEmployeeName(user.getEmployeeName());
+							uu.setId(user.getUserId());
+							userList.add(uu);
+						}
+						userDTO.setUserList(userList);
+						
+						// 更新本地数据文件
+						getLocalProcessor().updateLocalDataFile(userDTO, AppConstants.DATA_USER_FILENAME_BACK, AppConstants.DATA_USER_FILENAME);
 						
 					} catch (Exception e) {
 						throw new RuntimeException();
@@ -78,6 +121,13 @@ public class SyncDataDao extends BaseDao {
 			});
 	}
 	
+	/**
+	 * 下载店铺数据
+	 * 
+	 * @param progress
+	 * @param count
+	 * @throws Exception
+	 */
 	public void downloadShopData(SyncProgress progress,final int count) throws Exception{
 		
 			Display.getDefault().asyncExec(new Runnable() {
@@ -401,7 +451,6 @@ public class SyncDataDao extends BaseDao {
 		
 	}
 	
-	/*************************************************************************************************/
 	public void saveLocalFile(String filepath, String fileContent) throws Exception{
 		File file = new File(ProjectUtil.getRuntimeClassPath()+filepath);
     	file.deleteOnExit();
