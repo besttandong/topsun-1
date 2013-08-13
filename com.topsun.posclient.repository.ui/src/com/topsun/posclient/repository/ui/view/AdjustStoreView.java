@@ -114,6 +114,7 @@ public class AdjustStoreView extends ViewPart {
 			startDate = new CalendarCombo(serachComposite, SWT.READ_ONLY, new Settings(), null);
 			GridData data = new GridData();
 			startDate.setLayoutData(data);
+			startDate.setDate(Calendar.getInstance());
 		}
 		{
 			Label label = new Label(serachComposite, SWT.NONE);

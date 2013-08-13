@@ -109,6 +109,7 @@ public class AdjustRepositoryView extends ViewPart {
 		    startDate = new CalendarCombo(serachComposite, SWT.READ_ONLY, new Settings(), null);
 			GridData data = new GridData();
 			startDate.setLayoutData(data);
+			startDate.setDate(Calendar.getInstance());
 		}
 		{
 			Label label = new Label(serachComposite, SWT.NONE);
@@ -315,36 +316,6 @@ public class AdjustRepositoryView extends ViewPart {
 	private void buildCaculator(Composite parent) {
 		Composite caculatorComposite = new Composite(parent, SWT.NONE);
 		caculatorComposite.setLayout(new GridLayout(6, false));
-//		{
-//			Label label = new Label(caculatorComposite, SWT.NONE);
-//			GridData data = new GridData();
-//			data.horizontalSpan = 1;
-//			label.setLayoutData(data);
-//			label.setText("数量合计：");
-//		}
-//		{
-//			numberTotal = new Text(caculatorComposite, SWT.BORDER);
-//			numberTotal.setEditable(false);
-//			GridData data = new GridData();
-//			data.widthHint = 100;
-//			data.horizontalSpan = 1;
-//			numberTotal.setLayoutData(data);
-//		}
-//		{
-//			Label label = new Label(caculatorComposite, SWT.NONE);
-//			GridData data = new GridData();
-//			data.horizontalSpan = 1;
-//			label.setLayoutData(data);
-//			label.setText("金额合计：");
-//		}
-//		{
-//			priceTotal = new Text(caculatorComposite, SWT.BORDER);
-//			priceTotal.setEditable(false);
-//			GridData data = new GridData();
-//			data.widthHint = 100;
-//			data.horizontalSpan = 1;
-//			priceTotal.setLayoutData(data);
-//		}
 
 		{
 			Label label = new Label(caculatorComposite, SWT.NONE);

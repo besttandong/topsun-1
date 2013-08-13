@@ -225,23 +225,33 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 
 	@Override
 	public void onChange(String operationType) {
-		if(tableViewer.getInput() != null){
-			List<Item> items = (List<Item>)tableViewer.getInput() ;
-			Item addItem = new Item();
-			addItem.setNum(1);
-			items.add(addItem);
-			tableViewer.setInput(items);
-			tableViewer.editElement(addItem, 0);
-			tableViewer.setSelection(new StructuredSelection(addItem));
-		}else{
-			List<Item> items = new ArrayList<Item>();
-			Item addItem = new Item();
-			addItem.setNum(1);
-			items.add(addItem);
-			tableViewer.setInput(items);
-			tableViewer.editElement(addItem, 0);
-		}
-		caculatorNumAndPrice();
+		
+		Display.getDefault().asyncExec(new Runnable() {
+			
+			@Override
+			public void run() {
+				if(tableViewer.getInput() != null){
+					List<Item> items = (List<Item>)tableViewer.getInput() ;
+					Item addItem = new Item();
+					addItem.setNum(1);
+					items.add(addItem);
+					tableViewer.setInput(items);
+					tableViewer.editElement(addItem, 0);
+					tableViewer.setSelection(new StructuredSelection(addItem));
+				}else{
+					List<Item> items = new ArrayList<Item>();
+					Item addItem = new Item();
+					addItem.setNum(1);
+					items.add(addItem);
+					tableViewer.setInput(items);
+					tableViewer.editElement(addItem, 0);
+				}
+				caculatorNumAndPrice();
+				
+			}
+		});
+		
+		
 	}
 	
 	@Override
