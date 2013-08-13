@@ -1,6 +1,10 @@
 package com.topsun.posclient.finance.ui.view;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.eclipse.jface.dialogs.MessageDialog;
@@ -23,10 +27,11 @@ import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.ui.part.ViewPart;
 
+import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
-import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.PayRecord;
+import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.PayRecordDTO;
 import com.topsun.posclient.finance.service.IShopPayService;
 import com.topsun.posclient.finance.service.impl.ShopPayServiceImpl;
@@ -74,13 +79,29 @@ public class ShopPayView extends ViewPart {
 				
 				@Override
 				public void widgetSelected(SelectionEvent e) {
+				
+					
+					User user = POSClientApp.get().getLoginUser();
 					
 					if(tableViewer.getInput()!=null){
 						PayRecord input = new PayRecord();
+
+						SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+						
+						String date = dateFormat.format(Calendar.getInstance().getTime());
+						input.setApproveDate(date);
+						input.setApprove(user.getUserName());
+						
 						payRecords.add(input);
 						tableViewer.setInput(payRecords);
 					}else{
 						PayRecord input = new PayRecord();
+
+						SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+						
+						String date = dateFormat.format(Calendar.getInstance().getTime());
+						input.setApproveDate(date);
+						input.setApprove(user.getUserName());
 						payRecords.add(input);
 						tableViewer.setInput(payRecords);
 					}

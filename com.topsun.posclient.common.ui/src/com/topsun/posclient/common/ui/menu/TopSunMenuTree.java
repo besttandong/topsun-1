@@ -1,20 +1,13 @@
 package com.topsun.posclient.common.ui.menu;
 
-import java.util.List;
-
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
 
 import com.topsun.posclient.common.ui.utils.ColorUtils;
-import com.topsun.posclient.common.ui.utils.ImageUtils;
 import com.topsun.posclient.widget.pshelf.PShelf;
-import com.topsun.posclient.widget.pshelf.PShelfItem;
 
 public class TopSunMenuTree extends ViewPart{
 
@@ -31,7 +24,6 @@ public class TopSunMenuTree extends ViewPart{
 	 */
 	@Override
 	public void createPartControl(Composite parent) {
-		
 		Composite composite = new Composite(parent, SWT.NONE);
 		composite.setBackground(ColorUtils.getSystemColor(SWT.COLOR_WHITE));
 		GridLayout gridLayout = new GridLayout(1,false);

@@ -14,6 +14,8 @@ public class Perspective implements IPerspectiveFactory {
 //		editor.addView("com.topsun.sales");
 //		editor.addPlaceholder("com.topsun.sales");
 		layout.setEditorAreaVisible(false);
+		layout.getViewLayout("topsun.menu").setCloseable(false);
+		layout.getViewLayout("topsun.menu").setMoveable(false);
 		layout.setFixed(true);
 //		new LockSashMove().earlyStartup();
 	}
