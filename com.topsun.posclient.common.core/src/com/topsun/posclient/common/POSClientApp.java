@@ -38,5 +38,6 @@ public class POSClientApp {
 	public User getLoginUser(){
 		return (User)contextData.get(AppConstants.LOGIN_USER);
 	}
+	
 
 }

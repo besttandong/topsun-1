@@ -67,12 +67,14 @@ public class POSTicketPrinter {
 	}
 
 	public void printReceipts() {
-		final Display display = Display.getDefault();
-		final Shell shell = new Shell();
-
-		// 用打印对话框取得一个打印对话printer
-		PrintDialog printDlg = new PrintDialog(shell);
-		PrinterData printerData = printDlg.open();
+//		final Display display = Display.getDefault();
+//		final Shell shell = new Shell();
+//
+//		// 用打印对话框取得一个打印对话printer
+//		PrintDialog printDlg = new PrintDialog(shell);
+//		PrinterData printerData = printDlg.open();
+		PrinterData printerData = new PrinterData();
+		
 		if (printerData != null) {
 			Printer printer = new Printer(printerData);
 			// 打印文件
@@ -85,7 +87,7 @@ public class POSTicketPrinter {
 			}
 			printer.dispose();// printer对象没用后要手动dispose掉
 		}
-		display.dispose();
+//		display.dispose();
 	}
 
 	/**

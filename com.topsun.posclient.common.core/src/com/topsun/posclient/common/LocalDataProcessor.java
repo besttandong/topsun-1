@@ -40,6 +40,12 @@ public class LocalDataProcessor {
 		this.id = id;
 	}
 	
+	public void cleanBackData(File backFile){
+		if(backFile.exists()){
+			backFile.delete();
+		}
+	}
+	
 	/**
 	 * @param file
 	 * @param backPath

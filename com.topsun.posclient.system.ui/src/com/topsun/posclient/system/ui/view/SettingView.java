@@ -32,7 +32,6 @@ public class SettingView extends ViewPart {
 	
 	public Text serverIP;
 	public Text serverPort;
-	public Text reconnectionTime;
 	
 	public TableViewer tableViewer;
 
@@ -100,21 +99,6 @@ public class SettingView extends ViewPart {
 			serverPort.setLayoutData(data);
 			serverPort.setText(defaultSettingData.getPort());
 		}
-		{
-			Label lable = new Label(leftComposite, SWT.NONE);
-			lable.setText(MessageResources.message_reconnection);
-			GridData data = new GridData();
-			data.horizontalSpan = 1;
-			lable.setLayoutData(data);
-		}
-		{
-			reconnectionTime = new Text(leftComposite, SWT.MULTI | SWT.BORDER);
-			GridData data = new GridData();
-			data.horizontalSpan = 3;
-			data.widthHint = 210;
-			reconnectionTime.setLayoutData(data);
-			reconnectionTime.setText(defaultSettingData.getReconnectionTime());
-		}
 	}
 
 	private void buildOperation(Composite parent) {
@@ -145,16 +129,9 @@ public class SettingView extends ViewPart {
 						serverPort.forceFocus();
 						return;
 					}
-					String time = reconnectionTime.getText();
-					if(null == time || ("").equals(time)){
-						MessageDialog.openError(saveButton.getShell(), MessageResources.message_tips, MessageResources.message_tips_inputreconnectiontime);
-						reconnectionTime.forceFocus();
-						return;
-					}
 					SettingData settingData = new SettingData();
 					settingData.setIp(ipAdd);
 					settingData.setPort(port);
-					settingData.setReconnectionTime(time);
 					try {
 						settingService.saveSetting(settingData);
 						MessageDialog.openInformation(saveButton.getShell(), MessageResources.message_tips, MessageResources.message_tips_success);
@@ -164,6 +141,21 @@ public class SettingView extends ViewPart {
 				}
 				public void widgetDefaultSelected(SelectionEvent e) {
 				}
+			});
+			
+			Button clearBtn = new Button(operation, SWT.NONE);
+			clearBtn.setText("清理本地备份数据");
+			clearBtn.setLayoutData(data);
+			clearBtn.addSelectionListener(new SelectionListener(){
+				public void widgetSelected(SelectionEvent e) {
+					try {
+						settingService.cleanBackData();
+					} catch (POSException e1) {
+						Button clearBtn = (Button)e.getSource();
+						MessageDialog.openError(clearBtn.getShell(), MessageResources.message_tips, e1.getErrorMessage());
+					}
+				}
+				public void widgetDefaultSelected(SelectionEvent e) {}
 			});
 		}
 	}

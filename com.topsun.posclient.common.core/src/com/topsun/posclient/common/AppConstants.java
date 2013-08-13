@@ -11,7 +11,7 @@ public class AppConstants {
 	public static String APPLICATION_ID = "posclient";
 	
 	public static String SEETING_FILE = "data\\system\\posclient.properties";
-	public static String DATA_USER_PATH = "data\\download\\user_data\\";
+	public static String DATA_USER_FILENAME_BACK = "data\\download\\back\\data_user.xml";
 	public static String DATA_USER_FILENAME = "data\\download\\data_user.xml";
 	public static String DATA_REPOSITORY_PATH = "data\\download\\repository_data\\";
 	public static String DATA_CASHIERMODE_FILENAME = "data\\download\\data_cashiermode.xml";
