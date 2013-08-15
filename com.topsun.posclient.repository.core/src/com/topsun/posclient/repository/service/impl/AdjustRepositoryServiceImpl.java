@@ -1,5 +1,6 @@
 package com.topsun.posclient.repository.service.impl;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.topsun.posclient.common.LoggerUtil;
@@ -48,11 +49,10 @@ public class AdjustRepositoryServiceImpl extends BaseServiceImpl implements
 	 * @see com.topsun.posclient.repository.service.IAdjustRepositoryService#
 	 * queryAdjustShopList(com.topsun.posclient.datamodel.AdjustShopInfo)
 	 */
-	public List<AdjustRepositoryInfo> queryAdjustShopList(
-			AdjustRepositoryInfo adjustRepositoryInfo) throws POSException {
+	public List<AdjustRepositoryInfo> queryAdjustShopList(HashMap<String, Object> params) throws POSException {
 		List<AdjustRepositoryInfo> adjustRepositoryList = null;
 		try {
-			adjustRepositoryList = adjustRepositoryDao.queryAdjustRepository(adjustRepositoryInfo);
+			adjustRepositoryList = adjustRepositoryDao.queryAdjustRepository(params);
 		} catch (Exception e) {
 			LoggerUtil.logError(RepositoryActivator.PLUGIN_ID, e);
 			throw new POSException("查询失败");

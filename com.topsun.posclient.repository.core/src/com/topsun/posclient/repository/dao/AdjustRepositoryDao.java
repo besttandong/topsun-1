@@ -1,6 +1,7 @@
 package com.topsun.posclient.repository.dao;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import com.topsun.posclient.common.AppConstants;
@@ -78,11 +79,23 @@ public class AdjustRepositoryDao extends BaseDao {
 	 * @return
 	 * @throws Exception
 	 */
-	public List<AdjustRepositoryInfo> queryAdjustRepository(AdjustRepositoryInfo adjustRepositoryInfo) throws Exception {
+	public List<AdjustRepositoryInfo> queryAdjustRepository(HashMap<String, Object> params) throws Exception {
 		List<AdjustRepositoryInfo> resultList = null;
 		try{
+			Object docNum = params.get("docNum");
+			Object makerId = params.get("makerId");
+			Object shopId = params.get("shopId");
 			//设置查询条件
 			QueryReturnRepositoryReqCondition condition = new QueryReturnRepositoryReqCondition();
+			if(null != docNum){
+				condition.setDocNum(String.valueOf(docNum));
+			}
+			if(null != makerId){
+				condition.setMakerId(Integer.valueOf(makerId.toString()));
+			}
+			if(null != shopId){
+				condition.setShopId(Integer.valueOf(shopId.toString()));
+			}
 			
 			QueryReturnRepositoryReq req = new QueryReturnRepositoryReq();
 			req.setUserCredential(POSServerCaller.getDefaultUserCredential());

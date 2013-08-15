@@ -1,5 +1,6 @@
 package com.topsun.posclient.repository.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import com.topsun.posclient.common.POSException;
@@ -29,5 +30,5 @@ public interface IAdjustRepositoryService extends IBaseService {
 	 * @return
 	 * @throws POSException
 	 */
-	public List<AdjustRepositoryInfo> queryAdjustShopList(AdjustRepositoryInfo adjustRepositoryInfo) throws POSException;
+	public List<AdjustRepositoryInfo> queryAdjustShopList(HashMap<String, Object> params) throws POSException;
 }
