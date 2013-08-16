@@ -869,7 +869,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 			
 			TableViewer promotionTableView = new TableViewer(prom.getParent(),SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL | SWT.BORDER);
 			Table table = promotionTableView.getTable();
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 			table.setHeaderVisible(true);
 			
 			{

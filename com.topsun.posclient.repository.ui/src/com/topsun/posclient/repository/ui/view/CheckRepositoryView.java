@@ -478,7 +478,7 @@ public class CheckRepositoryView extends ViewPart {
 			tableData.heightHint = 100;
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 
 		{
@@ -538,7 +538,7 @@ public class CheckRepositoryView extends ViewPart {
 			tableData.heightHint = 100;
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 
 		{

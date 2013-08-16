@@ -78,7 +78,7 @@ public class DisbursementView extends ViewPart {
 			tableData.heightHint = 300;
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		
 		{

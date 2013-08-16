@@ -168,13 +168,17 @@ public class AdjustRepositoryView extends ViewPart {
 								return;
 							}
 						}
-						Map<String, Date> dateMap =new HashMap<String, Date>();
+						HashMap<String, Object> dateMap =new HashMap<String, Object>();
 						dateMap.put("startDate", startDate.getDate().getTime());
 						dateMap.put("endDate", endDate.getDate().getTime());
+						dateMap.put("docNum", "");
+						dateMap.put("makerId", "");
+						dateMap.put("shopId", "");
+						
 						
 						AdjustRepositoryInfo repsInfo = new AdjustRepositoryInfo();
 						repsInfo.setOrderNo(orderNo.getText());
-						List<AdjustRepositoryInfo> AdjustRespositoryInfos  = repositoryService.queryAdjustShopList(repsInfo);
+						List<AdjustRepositoryInfo> AdjustRespositoryInfos  = repositoryService.queryAdjustShopList(dateMap);
 						searchViewer.setInput(AdjustRespositoryInfos);
 					} catch (POSException e1) {
 						MessageDialog.openError(((Button)e.getSource()).getShell(), "错误", e1.getErrorMessage());
@@ -496,7 +500,7 @@ public class AdjustRepositoryView extends ViewPart {
 			tableData.heightHint = 100;
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		
 		{
@@ -556,7 +560,7 @@ public class AdjustRepositoryView extends ViewPart {
 			tableData.heightHint = 100;
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 
 		{

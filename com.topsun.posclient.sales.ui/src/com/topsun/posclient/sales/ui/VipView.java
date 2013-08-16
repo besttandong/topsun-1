@@ -748,7 +748,7 @@ public class VipView extends ViewPart implements IKeyListener {
 			GridData tableData = new GridData(GridData.FILL_BOTH);
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		
 		{
@@ -830,7 +830,7 @@ public class VipView extends ViewPart implements IKeyListener {
 			GridData tableData = new GridData(GridData.FILL_BOTH);
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		
 		{
@@ -907,7 +907,7 @@ public class VipView extends ViewPart implements IKeyListener {
 			GridData tableData = new GridData(GridData.FILL_BOTH);
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		
 		{

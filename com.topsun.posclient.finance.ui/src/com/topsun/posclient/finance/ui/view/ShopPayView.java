@@ -196,7 +196,7 @@ public class ShopPayView extends ViewPart {
 			GridData tableData = new GridData(GridData.FILL_BOTH);
 			table.setLayoutData(tableData);
 			table.setHeaderVisible(true);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 		}
 		{
 			TableColumn column = new TableColumn(table, SWT.NONE);

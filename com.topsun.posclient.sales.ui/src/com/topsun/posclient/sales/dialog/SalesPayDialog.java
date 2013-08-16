@@ -170,7 +170,7 @@ public class SalesPayDialog extends Dialog{
 			
 			cashierModelItemCellModify  = new CashierModelItemCellModify(tableViewer,cashBack,getPrice());
 			tableViewer.setCellModifier(cashierModelItemCellModify);
-			table.setLinesVisible(true);
+			table.setLinesVisible(false);
 			table.setHeaderVisible(true);
 			{
 				TableColumn column = new TableColumn(table, SWT.NONE);
