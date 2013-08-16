@@ -159,10 +159,16 @@ public class CheckRepositoryView extends ViewPart {
 							MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能为空！");
 							return;
 						}else{
-							if(startDate.getDate().after(endDate.getDate())){
-								MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
-								return;
+							if(endDate.getDateAsString() == ""){
+							
+							}else{
+								if(startDate.getDate().after(endDate.getDate())){
+									MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
+									return;
+								}
 							}
+							
+						
 						}
 						StockCheck stockCheck = new StockCheck();
 						stockCheck.setDocNum(docNum.getText());

@@ -167,14 +167,23 @@ public class AdjustStoreView extends ViewPart {
 				public void widgetSelected(SelectionEvent e) {
 					try {
 						
+					
+						
 						if(startDate.getDateAsString() == ""){
 							MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能为空！");
 							return;
 						}else{
-							if(startDate.getDate().after(endDate.getDate())){
-								MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
-								return;
+							
+							if(endDate.getDateAsString() == ""){
+								
+							}else{
+								if(startDate.getDate().after(endDate.getDate())){
+									MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
+									return;
+								}
 							}
+							
+							
 						}
 						
 						
@@ -183,7 +192,11 @@ public class AdjustStoreView extends ViewPart {
 						HashMap<String, Object> queryParams = new HashMap<String, Object>();
 						adjustShopInfo.setVoucherNo(orderNo.getText());
 						queryParams.put("startDate", startDate.getDate().getTime());
-						queryParams.put("endDate", endDate.getDate().getTime());
+					
+						if(endDate.getDateAsString() != ""){
+							queryParams.put("endDate", endDate.getDate().getTime());
+						}
+						
 						List<AdjustShopInfo> adjustShopInfos  = adjShopSerivice.queryAdjustShopList(queryParams);
 						searchViewer.setInput(adjustShopInfos);
 					} catch (POSException e1) {

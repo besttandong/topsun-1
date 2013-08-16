@@ -159,18 +159,28 @@ public class AdjustRepositoryView extends ViewPart {
 				@Override
 				public void widgetSelected(SelectionEvent e) {
 					try {
+						
+						
 						if(startDate.getDateAsString() == ""){
 							MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能为空！");
 							return;
 						}else{
-							if(startDate.getDate().after(endDate.getDate())){
-								MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
-								return;
+							
+							if(endDate.getDateAsString() == ""){
+								
+							}else{
+								if(startDate.getDate().after(endDate.getDate())){
+									MessageDialog.openError(((Button)e.getSource()).getShell(), "错误","开始时间不能晚于结束时间！");
+									return;
+								}
 							}
+							
 						}
 						HashMap<String, Object> dateMap =new HashMap<String, Object>();
 						dateMap.put("startDate", startDate.getDate().getTime());
-						dateMap.put("endDate", endDate.getDate().getTime());
+						if(endDate.getDateAsString() != ""){
+							dateMap.put("endDate", endDate.getDate().getTime());
+						}
 						dateMap.put("docNum", "");
 						dateMap.put("makerId", "");
 						dateMap.put("shopId", "");
