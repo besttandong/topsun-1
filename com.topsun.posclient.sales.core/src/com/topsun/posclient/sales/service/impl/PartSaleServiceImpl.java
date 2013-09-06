@@ -25,7 +25,7 @@ public class PartSaleServiceImpl extends BaseServiceImpl implements IPartSaleSer
 			partSaleDao.saveSalesData(salesDTO);
 		} catch (Exception e) {
 			e.printStackTrace();
-			throw new Exception("保存零售数据失败");
+			throw new Exception("上传零售数据失败,数据已保存在本地");
 		}
 	}
 
