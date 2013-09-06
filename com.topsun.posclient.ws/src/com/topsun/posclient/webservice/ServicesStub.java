@@ -6,6 +6,8 @@
  */
 package com.topsun.posclient.webservice;
 
+import com.topsun.posclient.common.POSClientApp;
+import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.webservice.dto.GetUserInfo;
 import com.topsun.posclient.webservice.dto.GetUserInfoResponse;
 import com.topsun.posclient.webservice.dto.HelloWorld;
@@ -169,7 +171,7 @@ public class ServicesStub extends org.apache.axis2.client.Stub implements
 			org.apache.axis2.context.ConfigurationContext configurationContext)
 			throws org.apache.axis2.AxisFault {
 
-		this(configurationContext, "http://114.80.119.77:8088/RMS/Service.svc");
+		this(configurationContext, initConfig());
 
 	}
 
@@ -177,9 +179,13 @@ public class ServicesStub extends org.apache.axis2.client.Stub implements
 	 * Default Constructor
 	 */
 	public ServicesStub() throws org.apache.axis2.AxisFault {
-
-		this("http://114.80.119.77:8088/RMS/Service.svc");
-
+		this(initConfig());
+	}
+	
+	private static String initConfig(){
+		String ip = POSClientApp.get().getSysConfig().getIp();
+		String port = POSClientApp.get().getSysConfig().getPort();
+		return "http://"+ip+":"+port+"/RMS/Service.svc";
 	}
 
 	/**
