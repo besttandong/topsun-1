@@ -49,18 +49,14 @@ public class SyncDataManager implements ISyncDataListener{
 		for (int i = 0; i < syncStack.size(); i++) {
 			count = count + (100/size);
 			syncStack.get(i).syncData(progress,count);
-			
 		}
-		
 		syncStack.clear();
 		
 		Display.getDefault().asyncExec(new Runnable() {
-			
-			@Override
 			public void run() {
 				Shell shell = progress.getBar().getShell();
 				progress.getBar().setSelection(100);
-				MessageDialog.openInformation(shell, MessageResources.message_tips, MessageResources.message_tips_sync_success);
+				MessageDialog.openInformation(shell, MessageResources.message_tips, "数据同步完成");
 				progress.getBar().setSelection(0);
 			}
 		});

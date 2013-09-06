@@ -114,7 +114,8 @@ public class SyncDataDao extends BaseDao {
 						getLocalProcessor().updateLocalDataFile(userDTO, AppConstants.DATA_USER_FILENAME_BACK, AppConstants.DATA_USER_FILENAME);
 						
 					} catch (Exception e) {
-						throw new RuntimeException();
+						SyncDataListenerManager.getInstance().fireChange("下载用户数据失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncuser,count);
 				}
@@ -142,7 +143,8 @@ public class SyncDataDao extends BaseDao {
 //						
 //						saveLocalFile(AppConstants.DATA_SHOP_FILENAME, returnVal);
 					} catch (Exception e) {
-						throw new RuntimeException();
+						SyncDataListenerManager.getInstance().fireChange("下载店铺数据失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncshop,count);
 				}
@@ -207,7 +209,8 @@ public class SyncDataDao extends BaseDao {
 						
 					} catch (Exception e) {
 						e.printStackTrace();
-						throw new RuntimeException();
+						SyncDataListenerManager.getInstance().fireChange("下载商品主数据失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncitem,count);
 				}
@@ -228,7 +231,8 @@ public class SyncDataDao extends BaseDao {
 //						
 //						saveLocalFile(AppConstants.DATA_CASHIERMODE_FILENAME, returnVal);
 					} catch (Exception e) {
-						throw new RuntimeException();
+						SyncDataListenerManager.getInstance().fireChange("下载结算方式数据失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsynccashiermode,count);
 				}
@@ -247,6 +251,7 @@ public class SyncDataDao extends BaseDao {
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
 							if(!dataFile.isFile()){
+								SyncDataListenerManager.getInstance().fireChange("本地没有需要上传的零售数据文件。");
 								return;
 							}
 							PartSalesDTO dto = (PartSalesDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), PartSalesDTO.class) ;
@@ -291,7 +296,9 @@ public class SyncDataDao extends BaseDao {
 							System.out.println("----------->> Call webservice savePartSales finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
-						throw new RuntimeException();
+						e.printStackTrace();
+						SyncDataListenerManager.getInstance().fireChange("零售数据上传失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncsales,count);
 				}
@@ -344,7 +351,8 @@ public class SyncDataDao extends BaseDao {
 //							System.out.println("----------->> Call webservice saveShopAllot finished!");
 						}
 					} catch (Exception e) {
-						throw new RuntimeException();
+						SyncDataListenerManager.getInstance().fireChange("缴款数据上传失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncpayment,count);
 				}
@@ -362,6 +370,7 @@ public class SyncDataDao extends BaseDao {
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
 							if(!dataFile.isFile()){
+								SyncDataListenerManager.getInstance().fireChange("本地没有需要上传的调店数据文件。");
 								return;
 							}
 							AdjustShopDTO dto = (AdjustShopDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustShopDTO.class) ;
@@ -396,7 +405,9 @@ public class SyncDataDao extends BaseDao {
 							System.out.println("----------->> Call webservice saveShopAllot finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
-						throw new RuntimeException();
+						e.printStackTrace();
+						SyncDataListenerManager.getInstance().fireChange("调店数据上传失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncadjustshop,count);
 				}
@@ -414,6 +425,7 @@ public class SyncDataDao extends BaseDao {
 						for(int i=0; i<dataFiles.length; i++){
 							File dataFile = dataFiles[i];
 							if(!dataFile.isFile()){
+								SyncDataListenerManager.getInstance().fireChange("本地没有需要上传的回仓数据文件。");
 								return;
 							}
 							AdjustRepositoryDTO dto = (AdjustRepositoryDTO)getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(dataFile), AdjustRepositoryDTO.class) ;
@@ -443,7 +455,9 @@ public class SyncDataDao extends BaseDao {
 							System.out.println("----------->> Call webservice saveReturnRepository finished!&Flag = "+flag);
 						}
 					} catch (Exception e) {
-						throw new RuntimeException();
+						e.printStackTrace();
+						SyncDataListenerManager.getInstance().fireChange("回仓数据上传失败");
+						return;
 					}
 					SyncDataListenerManager.getInstance().fireChange("---------------> "+MessageResources.message_tips_endsyncadjustrepository,count);
 				}
