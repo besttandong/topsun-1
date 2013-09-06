@@ -12,8 +12,10 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 
+import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.listener.IKeyListener;
 import com.topsun.posclient.common.listener.KeyListenerManager;
+import com.topsun.posclient.common.ui.style.TouchModeApplication;
 
 /**
  * This class controls all aspects of the application's execution
@@ -60,8 +62,6 @@ public class Application implements IApplication{
 	    });;
 		try {
 			Shell shell = Display.getCurrent().getActiveShell();
-
-
 		      try {
 		        if (!doLogin(shell)) {
 		          Platform.endSplash();
@@ -73,6 +73,16 @@ public class Application implements IApplication{
 		          shell.dispose();
 		        }
 		      }
+		      
+		    Object showmode = POSClientApp.get().getData("SHOWMODE");
+		    if(showmode instanceof String ){
+		    	String str = (String)showmode;
+		    	if("Touch Mode".equals(str)){
+		    		TouchModeApplication.createShell(display);
+		    	}
+		    }
+		    
+		    
 			int returnCode = PlatformUI.createAndRunWorkbench(display, new ApplicationWorkbenchAdvisor());
 			if (returnCode == PlatformUI.RETURN_RESTART) {
 				return IApplication.EXIT_RESTART;
