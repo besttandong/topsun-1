@@ -34,6 +34,10 @@ public class TopSunTreeModel {
 		this.pluginId = pluginId;
 	}
 
+	public TopSunTreeModel(){
+		
+	}
+	
 	public TopSunTreeModel(TopSunMenuModel menu){
 		menu.getTrees().add(this);
 	}

@@ -4,11 +4,14 @@ import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
@@ -16,7 +19,11 @@ import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
 
+import com.hexapixel.widgets.ribbon.RibbonButton;
+import com.hexapixel.widgets.ribbon.RibbonShell;
+import com.hexapixel.widgets.ribbon.RibbonTester;
 import com.topsun.posclient.common.LoggerUtil;
+import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
 import com.topsun.posclient.datamodel.User;
@@ -100,7 +107,47 @@ public class LoginDialog extends TitleAreaDialog {
 		passwordText.setLayoutData(gd_passwordText);
 		passwordText.setText("123456");
 
+		
+		final Label sytle = new Label(container, SWT.RIGHT);
+		sytle.setText("样式");
+		GridData styledate = new GridData();
+		styledate.verticalIndent = 20;
+		sytle.setFont(font);
+		sytle.setForeground( Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
+		sytle.setLayoutData(data2);
+		
+		Combo combo = new Combo(container, SWT.NONE);
+		{
+			combo.setItems(new String[]{"Default","Touch Mode"});
+			final GridData stylecombo = new GridData();
+			stylecombo.widthHint = 135;
+			stylecombo.verticalIndent = 20;
+			combo.setFont(font);
+			combo.setForeground( Display.getCurrent().getSystemColor(SWT.COLOR_WHITE));
+			combo.setLayoutData(stylecombo);
+			combo.select(1);
+			combo.addSelectionListener(new SelectionListener() {
+				
+				@Override
+				public void widgetSelected(SelectionEvent e) {
+					Combo style = (Combo)e.getSource();
+					POSClientApp.get().setData("SHOWMODE", style.getText());
+					
+				}
+				
+				@Override
+				public void widgetDefaultSelected(SelectionEvent e) {
+					// TODO Auto-generated method stub
+					
+				}
+			});
+			POSClientApp.get().setData("SHOWMODE", combo.getText());
+		}
+		
+		
 		setTitle(MessageResources.message_posclient);
+		
+		RibbonTester ribbonTester = new RibbonTester();
 		return area;
 	}
 
