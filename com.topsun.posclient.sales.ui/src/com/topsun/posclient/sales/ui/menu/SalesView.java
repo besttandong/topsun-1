@@ -361,15 +361,6 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					PartSalesDTO salesDTO = new PartSalesDTO();
 					salesDTO.setPartSalesList(partSalesList);
 					
-					try {
-						partSaleService.saveSaleData(salesDTO);
-					} catch (Exception e1) {
-						MessageDialog.openError(parent.getShell(), "", e1.getMessage());
-						e1.printStackTrace();
-						return;
-					}
-					
-					
 					
 					Receipts receipts = new Receipts();
 					try {
@@ -381,12 +372,20 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 						receipts.setDate(Calendar.getInstance().getTime().toString());
 						receipts.setNetAddress("www.topsun.com");
 						receipts.setBootString("021-678987888");
-						
+						receipts.setItems((List<Item>)tableViewer.getInput());
 						POSTicketPrinter print = new POSTicketPrinter(receipts);
 						print.printReceipts();
 					} catch (Exception e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();
+					}
+					
+					try {
+						partSaleService.saveSaleData(salesDTO);
+					} catch (Exception e1) {
+						MessageDialog.openError(parent.getShell(), "", e1.getMessage());
+						e1.printStackTrace();
+						return;
 					}
 					
 					

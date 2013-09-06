@@ -6,15 +6,15 @@ import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.TableViewer;
 import org.eclipse.jface.viewers.TextCellEditor;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Group;
 import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.TabFolder;
 import org.eclipse.swt.widgets.TabItem;
 import org.eclipse.swt.widgets.Table;
@@ -99,6 +99,9 @@ public class VipView extends ViewPart implements IKeyListener {
 	
 	public TableViewer rechargeViewer; //充值记录
 	
+	public CalendarCombo startDate;
+	public CalendarCombo endDate;
+	
 	public void onChange(String operationType) {
 		
 	}
@@ -149,18 +152,6 @@ public class VipView extends ViewPart implements IKeyListener {
 		item5Comp.setLayout(new GridLayout(1,false));
 		buildRechargeViewer(item5Comp);
 		item5.setControl(item5Comp);
-		
-//		TabItem item6 = new TabItem(vipFolder, SWT.NONE);
-//		item6.setText("问卷调查");
-//		
-//		TabItem item7 = new TabItem(vipFolder, SWT.NONE);
-//		item7.setText("消费指标分析");
-//		
-//		TabItem item8 = new TabItem(vipFolder, SWT.NONE);
-//		item8.setText("消费习惯分析");
-//		
-//		TabItem item9 = new TabItem(vipFolder, SWT.NONE);
-//		item9.setText("客户回访记录");
 	}
 	
 	public void buildCardInfo(Composite parent){
@@ -294,8 +285,6 @@ public class VipView extends ViewPart implements IKeyListener {
 	
 	public void buildRechargeInfo(Composite parent){
 		Group baseInfo = new Group(parent, SWT.NONE);
-		baseInfo.setText("充值信息");
-		
 		GridLayout gridLayout = new GridLayout(2,false);
 		gridLayout.marginLeft = 30;
 		baseInfo.setLayout(gridLayout);
@@ -724,6 +713,9 @@ public class VipView extends ViewPart implements IKeyListener {
 	private void buildBuyRecord(Composite parent){
 		Group productInfo = new Group(parent, SWT.NONE);
 		productInfo.setText("会员消费历史记录");
+		
+		buildSerachInfo(productInfo);
+		
 		GridLayout gridLayout = new GridLayout(1,false);
 		gridLayout.marginLeft = 20;
 		productInfo.setLayout(gridLayout);
@@ -806,6 +798,7 @@ public class VipView extends ViewPart implements IKeyListener {
 	private void buildPointRecord(Composite parent){
 		Group productInfo = new Group(parent, SWT.NONE);
 		productInfo.setText("会员积分历史记录");
+		buildSerachInfo(productInfo);
 		GridLayout gridLayout = new GridLayout(1,false);
 		gridLayout.marginLeft = 20;
 		productInfo.setLayout(gridLayout);
@@ -883,6 +876,7 @@ public class VipView extends ViewPart implements IKeyListener {
 	private void buildRechargeViewer(Composite parent){
 		Group productInfo = new Group(parent, SWT.NONE);
 		productInfo.setText("会员充值历史记录");
+		buildSerachInfo(productInfo);
 		GridLayout gridLayout = new GridLayout(1,false);
 		gridLayout.marginLeft = 20;
 		productInfo.setLayout(gridLayout);
@@ -968,41 +962,49 @@ public class VipView extends ViewPart implements IKeyListener {
 		}
 	}
 	
-	public static void main(String[] args){
-		
-		Display dis = new Display();
-		Shell shell = new Shell(dis);
-		shell.setText("eeee");
-		shell.setSize(400, 300);
-		shell.setLayout(new GridLayout(1, false));
-		
-		TabFolder folder = new TabFolder(shell, SWT.NONE);
-		folder.setLayout(new GridLayout(1,false));
-		folder.setLayoutData(new GridData(GridData.FILL_BOTH));
-		
-		TabItem item1 = new TabItem(folder, SWT.NONE);
-		item1.setText("ssssss");
-		
-		TabItem item2 = new TabItem(folder, SWT.NONE);
-		item2.setText("dddddd");
-		
-		Composite control = new Composite(item1.getParent(), SWT.NONE);
-		control.setLayout(new GridLayout(1, false));
-		
-		Group group2 = new Group(control, SWT.NONE);
-		group2.setText("group2");
-		
-		Group group3 = new Group(control, SWT.NONE);
-		group3.setText("group3");
-		
-		item2.setControl(control);
-		
-		shell.open();
-		while(!shell.isDisposed()){
-			if(!dis.readAndDispatch())
-				dis.sleep();
+	/**
+	 * 开始日期和结束日期查询条件
+	 * @param parent
+	 */
+	private void buildSerachInfo(Composite parent){
+		Composite serachComposite = new Composite(parent, SWT.NONE);
+		serachComposite.setLayout(new GridLayout(9, false));
+		{
+			Label label = new Label(serachComposite, SWT.NONE);
+			GridData data = new GridData();
+			label.setLayoutData(data);
+			label.setText("开始日期：");
 		}
-		dis.dispose();
-	}
+		{
+		    startDate = new CalendarCombo(serachComposite, SWT.READ_ONLY, new Settings(), null);
+			GridData data = new GridData();
+			startDate.setLayoutData(data);
+			startDate.setDate(Calendar.getInstance());
+		}
+		{
+			Label label = new Label(serachComposite, SWT.NONE);
+			GridData data = new GridData();
+			label.setLayoutData(data);
+			label.setText("结束日期：");
+		}
+		{
+			endDate = new CalendarCombo(serachComposite, SWT.READ_ONLY, new Settings(), null);
+			GridData data = new GridData();
+			endDate.setLayoutData(data);
+			endDate.setDate(Calendar.getInstance());
+		}
+		{
+			Button searchBtn = new Button(serachComposite, SWT.NONE);
+			GridData data = new GridData();
+			searchBtn.setLayoutData(data);
+			searchBtn.setText("查询");
+			searchBtn.addSelectionListener(new SelectionListener() {
+				public void widgetSelected(SelectionEvent e) {
+				}
+				public void widgetDefaultSelected(SelectionEvent e) {
+				}
+			});
+		}
+	};
 
 }
