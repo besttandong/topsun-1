@@ -1,11 +1,14 @@
 package com.topsun.posclient.common;
 
 import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.math.BigDecimal;
 import java.net.InetAddress;
+import java.net.Socket;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -123,27 +126,33 @@ public class ProjectUtil {
 	 * @return
 	 */
 	public static boolean checkConnection() {
-		boolean status = false;
-		try {
-			String host = ProjectUtil.readValue(
-					ProjectUtil.getRuntimeClassPath()
-							+ AppConstants.SEETING_FILE, "serverIP");
-			String timeOut = ProjectUtil.readValue(
-					ProjectUtil.getRuntimeClassPath()
-							+ AppConstants.SEETING_FILE, "reconnectionTime");
-			status = InetAddress.getByName(host).isReachable(
-					Integer.valueOf(timeOut));
-			System.out.println("联机状态 --------->>> "+status);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		boolean status = true;
+//		try {
+//			String host = ProjectUtil.readValue(
+//					ProjectUtil.getRuntimeClassPath()
+//							+ AppConstants.SEETING_FILE, "serverIP");
+//			String timeOut = ProjectUtil.readValue(
+//					ProjectUtil.getRuntimeClassPath()
+//							+ AppConstants.SEETING_FILE, "reconnectionTime");
+//			status = InetAddress.getByName(host).isReachable(
+//					Integer.valueOf(timeOut));
+//			System.out.println("联机状态 --------->>> "+status);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		return status;
 	}
 	
 	public static void main(String[] args){
 		boolean status = false;
 		try {
-			status = InetAddress.getByName("127.0.0.1").isReachable(2000);
+			 InetAddress theAddress = InetAddress.getByName("114.80.119.77");
+			 Socket theSocket = new Socket(theAddress, 8088);
+			 BufferedReader  networkIn = new BufferedReader(new InputStreamReader(
+				       theSocket.getInputStream()));
+				     System.out.println(networkIn.readLine());
+			 
+			status = InetAddress.getByName("114.80.119.77").isReachable(5000);
 			System.out.println("联机状态 --------->>> "+status);
 			
 			InetAddress address1=InetAddress.getLocalHost();

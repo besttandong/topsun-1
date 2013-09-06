@@ -7,6 +7,7 @@ import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AllotStyle;
 import com.topsun.posclient.datamodel.Item;
+import com.topsun.posclient.datamodel.Material;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
@@ -154,6 +155,13 @@ public class BaseServiceImpl implements IBaseService {
 
 	public Shop getShopById(int shopId) throws Exception {
 		return baseDao.getShopById(shopId);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.topsun.posclient.common.service.IBaseService#calculatePoints(com.topsun.posclient.datamodel.Material)
+	 */
+	public int calculatePoints(Material material) throws POSException {
+		return 0;
 	}
 
 }

@@ -175,7 +175,7 @@ public class LocalDataProcessor {
 			// 将旧文件拷贝到备份目录，删除原文件
 			this.copyFileToBack(file, filePath+backPath, true);
 		}
-		//创建新的本地数据文件
+		//创建新的本地数据文件 
 		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
 		JAXBContext context = JAXBContext.newInstance(data.getClass());
 		Marshaller marshaller = context.createMarshaller();
