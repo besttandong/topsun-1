@@ -91,7 +91,7 @@ public class Shop implements Serializable {
 	}
 
 	public String getShpName() {
-		return DataModel.convert(shpName);
+		return shpName;
 	}
 
 	public void setShpName(String shpName) {
@@ -179,7 +179,7 @@ public class Shop implements Serializable {
 	}
 
 	public String getAddress() {
-		return DataModel.convert(address);
+		return address;
 	}
 
 	public void setAddress(String address) {
@@ -283,7 +283,7 @@ public class Shop implements Serializable {
 	}
 
 	public String getBank() {
-		return DataModel.convert(bank);
+		return bank;
 	}
 
 	public void setBank(String bank) {

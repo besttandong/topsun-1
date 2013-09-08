@@ -29,7 +29,7 @@ public class CashierModel implements Serializable {
 	}
 
 	public String getTypeName() {
-		return DataModel.convert(typeName);
+		return typeName;
 	}
 
 	public void setTypeName(String typeName) {

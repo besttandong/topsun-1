@@ -7,6 +7,26 @@ public class SettingData {
 	private String port;
 	
 	private String reconnectionTime;
+	
+	private String posNo; //POS编号
+	
+	private String oldGoldCountNum; //旧金编号
+	
+	public final String getOldGoldCountNum() {
+		return oldGoldCountNum;
+	}
+
+	public final void setOldGoldCountNum(String oldGoldCountNum) {
+		this.oldGoldCountNum = oldGoldCountNum;
+	}
+
+	public final String getPosNo() {
+		return posNo;
+	}
+
+	public final void setPosNo(String posNo) {
+		this.posNo = posNo;
+	}
 
 	public String getIp() {
 		return ip;

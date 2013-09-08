@@ -41,7 +41,7 @@ public class AllotStyle {
 	}
 
 	public String getStyleName() {
-		return DataModel.convert(styleName);
+		return styleName;
 	}
 
 	public void setStyleName(String styleName) {
