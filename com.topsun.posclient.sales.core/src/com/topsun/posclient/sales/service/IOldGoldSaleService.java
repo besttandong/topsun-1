@@ -18,5 +18,5 @@ public interface IOldGoldSaleService extends IBaseService {
 	 * @throws Exception
 	 */
 	public void saveOldGoldData(OldGoldDTO oldGoldDTO) throws POSException;
-
+	
 }

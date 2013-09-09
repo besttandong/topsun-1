@@ -10,6 +10,7 @@ import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.PartSales;
 import com.topsun.posclient.datamodel.PartSalesCashier;
 import com.topsun.posclient.datamodel.dto.PartSalesDTO;
+import com.topsun.posclient.datamodel.dto.RetailDTO;
 import com.topsun.posclient.webservice.POSServerCaller;
 import com.topsun.posclient.webservice.dto.ArrayOfRetail;
 import com.topsun.posclient.webservice.dto.ArrayOfRetail_M;
@@ -29,6 +30,7 @@ public class PartSaleDao extends BaseDao {
 	/**
 	 * @throws Exception
 	 */
+	@Deprecated
 	public void saveSalesData(PartSalesDTO salesData) throws Exception {
 		
 		if(checkConnection()){
@@ -77,6 +79,19 @@ public class PartSaleDao extends BaseDao {
 			
 		}else{
 			this.getLocalProcessor().createXmlFileFromObject(salesData, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
+		}
+	}
+	
+	/**
+	 * 保存零售数据
+	 * @param retailDto
+	 * @throws Exception
+	 */
+	public void saveSalesData(RetailDTO retailDto) throws Exception {
+		if(checkConnection()){
+			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
+		}else{
+			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
 		}
 	}
 	
