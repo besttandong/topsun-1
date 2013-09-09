@@ -2,6 +2,7 @@ package com.topsun.posclient.datamodel;
 
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 零售数据
@@ -37,12 +38,29 @@ public class Retail {
 	private int IsReturn; //是否有过退货
 	private int IsReplace; //是否旧金贴换
 	private int IsUpload; //是否上传SAP
-	private int DelFlg; //删除标识（默认为0）
-	private int Creater; //创建者
-	private Date CreatedTime; //创建时间
-	private int Updater; //最后修改者
-	private Date LastUpdatedTime; //最后修改时间
-	private String Revision; //版本戳
+	
+	private List<RetailM> retailMList; //零售明细 
+	private List<RetailP> retailPList;//零售结算  整单结算金额分配
+	private List<RetailMP> retailMPList;//零售结算 拆分到每个商品的结算金额
+	
+	public final List<RetailP> getRetailPList() {
+		return retailPList;
+	}
+	public final void setRetailPList(List<RetailP> retailPList) {
+		this.retailPList = retailPList;
+	}
+	public final List<RetailM> getRetailMList() {
+		return retailMList;
+	}
+	public final void setRetailMList(List<RetailM> retailMList) {
+		this.retailMList = retailMList;
+	}
+	public final List<RetailMP> getRetailMPList() {
+		return retailMPList;
+	}
+	public final void setRetailMPList(List<RetailMP> retailMPList) {
+		this.retailMPList = retailMPList;
+	}
 	public final int getID() {
 		return ID;
 	}
@@ -198,41 +216,5 @@ public class Retail {
 	}
 	public final void setIsUpload(int isUpload) {
 		IsUpload = isUpload;
-	}
-	public final int getDelFlg() {
-		return DelFlg;
-	}
-	public final void setDelFlg(int delFlg) {
-		DelFlg = delFlg;
-	}
-	public final int getCreater() {
-		return Creater;
-	}
-	public final void setCreater(int creater) {
-		Creater = creater;
-	}
-	public final Date getCreatedTime() {
-		return CreatedTime;
-	}
-	public final void setCreatedTime(Date createdTime) {
-		CreatedTime = createdTime;
-	}
-	public final int getUpdater() {
-		return Updater;
-	}
-	public final void setUpdater(int updater) {
-		Updater = updater;
-	}
-	public final Date getLastUpdatedTime() {
-		return LastUpdatedTime;
-	}
-	public final void setLastUpdatedTime(Date lastUpdatedTime) {
-		LastUpdatedTime = lastUpdatedTime;
-	}
-	public final String getRevision() {
-		return Revision;
-	}
-	public final void setRevision(String revision) {
-		Revision = revision;
 	}
 }
