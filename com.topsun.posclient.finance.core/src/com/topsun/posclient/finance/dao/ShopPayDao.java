@@ -25,6 +25,7 @@ public class ShopPayDao extends BaseDao {
 			//保存本地备份数据
 			File file = this.getLocalProcessor().createXmlFileFromObject(payRecordDTO, "data_payRecord", AppConstants.DATA_SHOPPAY_PATH_BACK);
 			String saveData = this.getLocalProcessor().getDataFileContent(file);
+			this.getLocalProcessor().createXmlFileFromObject(payRecordDTO, "data_payRecord", AppConstants.DATA_SHOPPAY_PATH_BACK);
 //			this.getServerCaller().getWebService().saveShopAllot(saveShopAllot6);
 		}else{
 			this.getLocalProcessor().createXmlFileFromObject(payRecordDTO, "data_payRecord", AppConstants.DATA_SHOPPAY_PATH);
