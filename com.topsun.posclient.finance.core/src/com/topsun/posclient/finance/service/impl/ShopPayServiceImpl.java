@@ -1,8 +1,10 @@
 package com.topsun.posclient.finance.service.impl;
 
+import com.topsun.posclient.common.LoggerUtil;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.dto.PayRecordDTO;
+import com.topsun.posclient.finance.FinanceActivator;
 import com.topsun.posclient.finance.dao.ShopPayDao;
 import com.topsun.posclient.finance.service.IShopPayService;
 
@@ -21,7 +23,7 @@ public class ShopPayServiceImpl extends BaseServiceImpl implements IShopPayServi
 		try{
 			storePayLocalDao.saveStorePay(payRecordDTO);
 		}catch(Exception e){
-			e.printStackTrace();
+			LoggerUtil.logError(FinanceActivator.PLUGIN_ID, e);
 			throw new POSException("缴款失败");
 		}
 	}

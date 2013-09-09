@@ -2,10 +2,12 @@ package com.topsun.posclient.finance.service.impl;
 
 import java.util.List;
 
+import com.topsun.posclient.common.LoggerUtil;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.datamodel.Receive;
 import com.topsun.posclient.datamodel.dto.ReceiveDTO;
+import com.topsun.posclient.finance.FinanceActivator;
 import com.topsun.posclient.finance.MessageResources;
 import com.topsun.posclient.finance.dao.ReceiveDao;
 import com.topsun.posclient.finance.service.IReceiveService;
@@ -25,6 +27,7 @@ public class ReceiveServiceImpl extends BaseServiceImpl implements IReceiveServi
 		try {
 			receiveDao.saveReceive(receiveDTO);
 		} catch (Exception e) {
+			LoggerUtil.logError(FinanceActivator.PLUGIN_ID, e);
 			throw new POSException(MessageResources.message_tips_save_error);
 		}
 	}
@@ -34,6 +37,7 @@ public class ReceiveServiceImpl extends BaseServiceImpl implements IReceiveServi
 		try {
 			returnDTO = receiveDao.queryReceive(receiveDTO);
 		} catch (Exception e) {
+			LoggerUtil.logError(FinanceActivator.PLUGIN_ID, e);
 			throw new POSException(MessageResources.message_tips_query_error);
 		}
 		return returnDTO.getReceiveList();
