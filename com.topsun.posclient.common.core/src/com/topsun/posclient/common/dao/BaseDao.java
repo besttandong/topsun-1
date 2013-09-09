@@ -12,6 +12,7 @@ import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
 import com.topsun.posclient.datamodel.dto.CashierModeDTO;
+import com.topsun.posclient.datamodel.dto.GoldPriceDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
 import com.topsun.posclient.datamodel.dto.UserDTO;
@@ -72,6 +73,7 @@ public class BaseDao {
 	}
 	
 	/**
+	 * 根据用户ID获取雇员名称
 	 * @param userId
 	 * @return
 	 * @throws Exception
@@ -130,7 +132,7 @@ public class BaseDao {
 	}
 	
 	/**
-	 * 
+	 * 获取所有店铺信息
 	 * @return
 	 * @throws Exception
 	 */
@@ -142,6 +144,12 @@ public class BaseDao {
 		return shopDTO;
 	}
 	
+	/**
+	 * 根据ID获取店铺名称
+	 * @param shopId
+	 * @return
+	 * @throws Exception
+	 */
 	public String getShopNameById(int shopId) throws Exception {
 		File file = new File(ProjectUtil.getRuntimeClassPath()+ AppConstants.DATA_SHOP_FILENAME);
 		ShopDTO shopDTO = (ShopDTO) getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(file), ShopDTO.class);
@@ -154,6 +162,12 @@ public class BaseDao {
 		return "";
 	}
 	
+	/**
+	 * 根据ID获取店铺
+	 * @param shopId
+	 * @return
+	 * @throws Exception
+	 */
 	public Shop getShopById(int shopId) throws Exception{
 		File file = new File(ProjectUtil.getRuntimeClassPath()+ AppConstants.DATA_SHOP_FILENAME);
 		ShopDTO shopDTO = (ShopDTO) getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(file), ShopDTO.class);
@@ -166,6 +180,12 @@ public class BaseDao {
 		return null;
 	}
 	
+	/**
+	 * 根据ID获取单品名称
+	 * @param itemId
+	 * @return
+	 * @throws Exception
+	 */
 	public String getItemNameById(int itemId) throws Exception {
 		File file = new File(ProjectUtil.getRuntimeClassPath()+ AppConstants.DATA_ITEM_FILENAME);
 		ItemDTO itemDTO = (ItemDTO) getLocalProcessor().getObjectFromXml(getLocalProcessor().getDataFileContent(file), ItemDTO.class);
@@ -177,4 +197,18 @@ public class BaseDao {
 		}
 		return "";
 	}
+	
+	/**
+	 * 获取所有实时金价信息
+	 * @return 实时金价
+	 * @throws Exception
+	 */
+	public GoldPriceDTO getAllGoldPrice() throws Exception {
+		File file = new File(ProjectUtil.getRuntimeClassPath()
+				+ AppConstants.DATA_GOLDPRICE_FILENAME);
+		GoldPriceDTO goldPriceDTO = (GoldPriceDTO) getLocalProcessor()
+				.getObjectFromXml(getLocalProcessor().getDataFileContent(file), GoldPriceDTO.class);
+		return goldPriceDTO;
+	}
+	
 }

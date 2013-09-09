@@ -1,5 +1,6 @@
 package com.topsun.posclient.common.service;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.topsun.posclient.common.POSException;
@@ -91,6 +92,12 @@ public interface IBaseService {
 	 */
 	public int calculatePoints(Material material)throws POSException;
 	
+	/**
+	 * 根据物料编号，获取实时金价
+	 * @param mtartCode 物料编号
+	 * @return 实时金价
+	 * @throws POSException
+	 */
+	public BigDecimal getGoldPriceByMtartCode(String mtartCode) throws POSException;
 	
-
 }

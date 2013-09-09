@@ -65,6 +65,17 @@ public class ProjectUtil {
 		}
 		return dateStr;
 	}
+	
+	public static String getDateString(Date date, String custFormat) {
+		SimpleDateFormat dataformat = new SimpleDateFormat(custFormat);
+		String dateStr = null;
+		if(null == date){
+			dateStr = dataformat.format(new Date());
+		}else{
+			dateStr = dataformat.format(date);
+		}
+		return dateStr;
+	}
 
 	public static Date getDateTime(String dateStr) {
 		Date date = null;
@@ -143,24 +154,54 @@ public class ProjectUtil {
 		return status;
 	}
 	
-	public static void main(String[] args){
-		boolean status = false;
-		try {
-			 InetAddress theAddress = InetAddress.getByName("114.80.119.77");
-			 Socket theSocket = new Socket(theAddress, 8088);
-			 BufferedReader  networkIn = new BufferedReader(new InputStreamReader(
-				       theSocket.getInputStream()));
-				     System.out.println(networkIn.readLine());
-			 
-			status = InetAddress.getByName("114.80.119.77").isReachable(5000);
-			System.out.println("联机状态 --------->>> "+status);
-			
-			InetAddress address1=InetAddress.getLocalHost();
-			System.out.println(address1.isReachable(5000));
-		} catch (Exception e) {
-			e.printStackTrace();
+	/**
+	 * @return
+	 */
+	public static String getOldGoldCountNum(){
+		StringBuffer ret = new StringBuffer("0000");
+		String countNum = POSClientApp.get().getSysConfig().getOldGoldCountNum();//当前累加0001-9999
+		if(countNum.equals("0000")){
+			return "0001";
+		}else{
+			Integer num = Integer.valueOf(countNum);
+			num = num+1;
+			String numStr = String.valueOf(num);
+			for(int i=0; i<4-numStr.length(); i++){
+				ret.append("0");
+			}
+			ret.append(numStr);
 		}
+		return ret.toString();
+	}
+	
+	public static void main(String[] args){
+//		boolean status = false;
+//		try {
+//			 InetAddress theAddress = InetAddress.getByName("114.80.119.77");
+//			 Socket theSocket = new Socket(theAddress, 8088);
+//			 BufferedReader  networkIn = new BufferedReader(new InputStreamReader(
+//				       theSocket.getInputStream()));
+//				     System.out.println(networkIn.readLine());
+//			 
+//			status = InetAddress.getByName("114.80.119.77").isReachable(5000);
+//			System.out.println("联机状态 --------->>> "+status);
+//			
+//			InetAddress address1=InetAddress.getLocalHost();
+//			System.out.println(address1.isReachable(5000));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
 		
+		StringBuffer ret = new StringBuffer();
+		String countNum = "0023";//当前累加0001-9999
+			Integer num = Integer.valueOf(countNum);
+			num = num+1;
+			String numStr = String.valueOf(num);
+			for(int i=0; i<4-numStr.length(); i++){
+				ret.append("0");
+			}
+			ret.append(numStr);
+		System.out.println(ret.toString());
 	}
 	
 }

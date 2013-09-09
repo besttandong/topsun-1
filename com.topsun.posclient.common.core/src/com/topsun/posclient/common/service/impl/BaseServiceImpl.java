@@ -1,21 +1,30 @@
 package com.topsun.posclient.common.service.impl;
 
+import java.math.BigDecimal;
 import java.util.List;
 
+import com.topsun.posclient.common.LoggerUtil;
 import com.topsun.posclient.common.POSException;
+import com.topsun.posclient.common.core.CommonCoreActivator;
 import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.common.service.IBaseService;
 import com.topsun.posclient.datamodel.AllotStyle;
+import com.topsun.posclient.datamodel.GoldPrice;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.Material;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.AllotStyleDTO;
 import com.topsun.posclient.datamodel.dto.CashierModeDTO;
+import com.topsun.posclient.datamodel.dto.GoldPriceDTO;
 import com.topsun.posclient.datamodel.dto.ItemDTO;
 import com.topsun.posclient.datamodel.dto.ShopDTO;
 import com.topsun.posclient.datamodel.dto.UserDTO;
 
+/**
+ * @author Dong
+ *
+ */
 public class BaseServiceImpl implements IBaseService {
 	
 	BaseDao baseDao = new BaseDao();
@@ -52,7 +61,7 @@ public class BaseServiceImpl implements IBaseService {
 		try {
 			return baseDao.getAllCashierMode();
 		} catch (Exception e) {
-			e.printStackTrace();
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
 			throw new POSException("查询结算方式出错!"+e.getStackTrace());
 		}
 	}
@@ -89,6 +98,7 @@ public class BaseServiceImpl implements IBaseService {
 		try {
 			userDto = baseDao.getUserById(userId);
 		} catch (Exception e) {
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
 			throw new POSException("查询店铺名称出错！");
 		}
 		List<User> userList = userDto.getUserList();
@@ -127,7 +137,7 @@ public class BaseServiceImpl implements IBaseService {
 				}
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
 			throw new POSException("查询商品信息出错！");
 		}
 		return returnItem;
@@ -143,7 +153,7 @@ public class BaseServiceImpl implements IBaseService {
 				allotStyleList = allotStyleDTO.getAllotStyleList();
 			}
 		} catch (Exception e) {
-			e.printStackTrace();
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
 			throw new POSException("获取调拨类型信息失败");
 		}
 		return allotStyleList;
@@ -164,4 +174,33 @@ public class BaseServiceImpl implements IBaseService {
 		return 0;
 	}
 
+	/* (non-Javadoc)
+	 * @see com.topsun.posclient.common.service.IBaseService#getGoldPriceByMtartCode(java.lang.String)
+	 */
+	public BigDecimal getGoldPriceByMtartCode(String mtartCode)
+			throws POSException {
+		GoldPrice returnGoldPrice = null;
+		GoldPriceDTO goldPriceDTO = null;
+		BigDecimal retPrice = new BigDecimal(0);
+		try {
+			goldPriceDTO = baseDao.getAllGoldPrice();
+
+			if (null != goldPriceDTO) {
+				List<GoldPrice> goldPriceList = goldPriceDTO.getGoldPriceList();
+				if (null == goldPriceList || goldPriceList.size() <= 0) {
+					return null;
+				}
+				for (GoldPrice goldPrice : goldPriceList) {
+					if (goldPrice.getMtartCode().equals(mtartCode)) {
+						returnGoldPrice = goldPrice;
+					}
+				}
+			}
+			retPrice = new BigDecimal(returnGoldPrice.getPrice());
+		} catch (Exception e) {
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
+			throw new POSException("查询实时金价信息出错！");
+		}
+		return retPrice;
+	}
 }

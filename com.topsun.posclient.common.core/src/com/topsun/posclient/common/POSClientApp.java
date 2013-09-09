@@ -1,6 +1,5 @@
 package com.topsun.posclient.common;
 
-import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -56,18 +55,24 @@ public class POSClientApp {
 		return contextData.get(key);
 	}
 
+	/**
+	 * 获取系统配置信息
+	 * @return
+	 */
 	public SettingData getSysConfig() {
-		String filepath = ProjectUtil.getRuntimeClassPath()
-				+ AppConstants.SEETING_FILE;
+		String filepath = ProjectUtil.getRuntimeClassPath()+AppConstants.SEETING_FILE;
 		SettingData settingData = new SettingData();
 		try {
 			String serverIP = ProjectUtil.readValue(filepath, "serverIP");
 			String serverPort = ProjectUtil.readValue(filepath, "serverPort");
-			String reconnectionTime = ProjectUtil.readValue(filepath,
-					"reconnectionTime");
+			String reconnectionTime = ProjectUtil.readValue(filepath, "reconnectionTime");
+			String posNo = ProjectUtil.readValue(filepath, "posNo");
+			String countNum = ProjectUtil.readValue(filepath, "oldGoldCountNum");
 			settingData.setIp(serverIP);
 			settingData.setPort(serverPort);
 			settingData.setReconnectionTime(reconnectionTime);
+			settingData.setPosNo(posNo);
+			settingData.setOldGoldCountNum(countNum);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

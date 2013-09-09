@@ -15,8 +15,10 @@ public class AppConstants {
 	public static String DATA_USER_FILENAME = "data\\download\\data_user.xml";
 	public static String DATA_REPOSITORY_PATH = "data\\download\\repository_data\\";
 	public static String DATA_CASHIERMODE_FILENAME = "data\\download\\data_cashiermode.xml";
+	public static String DATA_MEMBER_FILENAME = "data\\download\\data_member.xml";
 	public static String DATA_ALLOTSTYLE_FILENAME = "data\\download\\data_allotstyle.xml";
 	public static String DATA_SHOP_FILENAME = "data\\download\\data_shop.xml";
+	public static String DATA_GOLDPRICE_FILENAME = "data\\download\\data_goldprice.xml";
 	public static String DATA_PROMOTE_FILENAME = "data\\download\\data_promote.xml";
 	public static String DATA_ITEM_FILENAME = "data\\download\\data_item.xml";
 	public static String DATA_ITEM_FILENAME_BACK = "data\\download\\back\\data_item.xml";
@@ -29,6 +31,8 @@ public class AppConstants {
 	public static String DATA_SHOPPAY_PATH_BACK = "data\\upload\\shoppay_data\\back\\";
 	public static String DATA_PARTSALES_PATH = "data\\upload\\partsales_data\\";
 	public static String DATA_PARTSALES_PATH_BACK = "data\\upload\\partsales_data\\back\\";
+	public static String DATA_OLDGOLD_PATH = "data\\upload\\oldgold_data\\";
+	public static String DATA_OLDGOLD_PATH_BACK = "data\\upload\\oldgold_data\\back\\";
 	public static String DATA_ADJUSTSHOP_PATH = "data\\upload\\adjustshop_data\\";
 	public static String DATA_ADJUSTSHOP_PATH_BACK = "data\\upload\\adjustshop_data\\back\\";
 	public static String DATA_ADJUSTREPOSITORY_PATH = "data\\upload\\adjustrepository_data\\";
