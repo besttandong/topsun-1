@@ -9,11 +9,13 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  com.topsun.posclient.common.core;bundle-version="1.0.0",
  com.topsun.posclient.datamodel;bundle-version="1.0.0",
- com.topsun.posclient.ws;bundle-version="1.0.0"
+ com.topsun.posclient.ws;bundle-version="1.0.0",
+ org.junit
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: com.topsun.posclient.sales.core,
- com.topsun.posclient.sales.dao,
- com.topsun.posclient.sales.service,
- com.topsun.posclient.sales.service.impl
+ com.topsun.posclient.sales.core.dao,
+ com.topsun.posclient.sales.core.service,
+ com.topsun.posclient.sales.core.service.impl,
+ com.topsun.posclient.sales.service
 Bundle-ClassPath: com.topsun.posclient.sales.core.jar

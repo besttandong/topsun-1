@@ -1,4 +1,4 @@
-package com.topsun.posclient.sales.dao;
+package com.topsun.posclient.sales.core.dao;
 
 import com.topsun.posclient.common.AppConstants;
 import com.topsun.posclient.common.dao.BaseDao;

@@ -1,15 +1,22 @@
-package com.topsun.posclient.sales.dao;
+package com.topsun.posclient.sales.core.dao;
 
+import java.io.File;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import com.topsun.posclient.common.AppConstants;
+import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.common.dao.BaseDao;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.PartSales;
 import com.topsun.posclient.datamodel.PartSalesCashier;
+import com.topsun.posclient.datamodel.Promotion;
 import com.topsun.posclient.datamodel.dto.PartSalesDTO;
+import com.topsun.posclient.datamodel.dto.PromotionDTO;
 import com.topsun.posclient.datamodel.dto.RetailDTO;
 import com.topsun.posclient.webservice.POSServerCaller;
 import com.topsun.posclient.webservice.dto.ArrayOfRetail;
@@ -85,13 +92,75 @@ public class PartSaleDao extends BaseDao {
 	/**
 	 * 保存零售数据
 	 * @param retailDto
+	 * @param isBack 
 	 * @throws Exception
 	 */
-	public void saveSalesData(RetailDTO retailDto) throws Exception {
-		if(checkConnection()){
-			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
+	public void saveRetail(RetailDTO retailDto) throws Exception {
+		//this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
+		this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
+	}
+	
+	/**
+	 * 获取有效时间促销方案
+	 * @return
+	 * @throws POSException 
+	 */
+	public PromotionDTO getValidTimePromotion() throws Exception{
+		String fullPath = ProjectUtil.getRuntimeClassPath()+AppConstants.DATA_PROMOTE_FILENAME;
+		File file = new File(fullPath);
+		String localData = this.getLocalProcessor().getDataFileContent(file);
+		PromotionDTO promotionDTO = (PromotionDTO)this.getLocalProcessor().getObjectFromXml(localData, PromotionDTO.class);
+		if(null == promotionDTO || null == promotionDTO.getPromotionList() || promotionDTO.getPromotionList().size() == 0){
+			return promotionDTO;
+		}
+		List<Promotion> prmis = new ArrayList<Promotion>();
+		List<Promotion> promotions = promotionDTO.getPromotionList();
+		for(Promotion prmi : promotions){
+			//时间判断，当前时间是否在促销时间范围内
+			if(validatePrmi(prmi)){
+				prmis.add(prmi);
+			}
+		}
+		promotionDTO.setPromotionList(prmis);
+		return promotionDTO;
+	}
+	
+	private boolean validatePrmi(Promotion promotion){
+		if(ProjectUtil.compareCurrentDate(promotion.getStartDate(), promotion.getEndDate())){
+			if(validateWeek(promotion)){
+				int sHour = Integer.valueOf(promotion.getStartTime());
+				int eHour = Integer.valueOf(promotion.getEndTime());
+				return ProjectUtil.compareCurrentHour(sHour, eHour);
+			}else{
+				return false;
+			}
 		}else{
-			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
+			return false;
+		}
+	}
+	
+	private boolean validateWeek(Promotion promotion){
+		Calendar calendar = Calendar.getInstance();
+		Date currDate = new Date();
+		calendar.setTime(currDate);
+		int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+		switch(dayOfWeek){
+			case 0:
+				return promotion.getMon() == 1?true:false;
+			case 1:
+				return promotion.getTur() == 1?true:false;
+			case 2:
+				return promotion.getWen() == 1?true:false;
+			case 3:
+				return promotion.getThu() == 1?true:false;
+			case 4:
+				return promotion.getFri() == 1?true:false;
+			case 5:
+				return promotion.getSat() == 1?true:false;
+			case 6:
+				return promotion.getSun() == 1?true:false;
+			default:
+				return false;
 		}
 	}
 	
