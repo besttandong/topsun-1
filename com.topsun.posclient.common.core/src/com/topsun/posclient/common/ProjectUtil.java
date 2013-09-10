@@ -11,6 +11,8 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
 
+import org.eclipse.core.runtime.Platform;
+
 /**
  * @author LiLei
  *
@@ -22,11 +24,8 @@ public class ProjectUtil {
 	static SimpleDateFormat defaultTimeFmt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
 	public static String getRuntimeClassPath() {
-		// String path = Platform.getBundle(CommonCoreActivator.PLUGIN_ID)
-		// .getLocation().replace("initial@reference:file:", "")
-		// + "bin\\";
-//		String path = Platform.getInstanceLocation().getURL().getFile();
-		String path = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
+		String path = Platform.getInstanceLocation().getURL().getFile();
+//		String path = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
 		return path;
 	}
 
@@ -62,10 +61,13 @@ public class ProjectUtil {
 	 * @return
 	 */
 	public static boolean compareCurrentDate(Date startDate, Date endDate){
+		Calendar calendar = Calendar.getInstance();
 		Date currentDate = ProjectUtil.getDateByFormat("yyyyMMdd");
 		Date sDate = ProjectUtil.getDateByFormat(ProjectUtil.getDateString(startDate), "yyyyMMdd");
 		Date eDate = ProjectUtil.getDateByFormat(ProjectUtil.getDateString(endDate), "yyyyMMdd");
-		if(currentDate.compareTo(sDate) == 1 && currentDate.compareTo(eDate) == -1){
+		if(currentDate.compareTo(sDate) == 1 || currentDate.compareTo(eDate) == 1){
+			return true;
+		}else if(calendar.after(sDate) && calendar.before(eDate)){
 			return true;
 		}else{
 			return false;
