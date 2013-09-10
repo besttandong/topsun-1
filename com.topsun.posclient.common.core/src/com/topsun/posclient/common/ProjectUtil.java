@@ -1,21 +1,15 @@
 package com.topsun.posclient.common;
 
 import java.io.BufferedInputStream;
-import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.math.BigDecimal;
-import java.net.InetAddress;
-import java.net.Socket;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
-
-import org.eclipse.core.runtime.Platform;
 
 /**
  * @author LiLei
@@ -31,7 +25,8 @@ public class ProjectUtil {
 		// String path = Platform.getBundle(CommonCoreActivator.PLUGIN_ID)
 		// .getLocation().replace("initial@reference:file:", "")
 		// + "bin\\";
-		String path = Platform.getInstanceLocation().getURL().getFile();
+//		String path = Platform.getInstanceLocation().getURL().getFile();
+		String path = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
 		return path;
 	}
 
@@ -40,6 +35,48 @@ public class ProjectUtil {
 		Date date = null;
 		try {
 			date = dataformat.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return date;
+	}
+	
+	/**
+	 * @param startHour
+	 * @param endHour
+	 * @return
+	 */
+	public static boolean compareCurrentHour(int startHour, int endHour){
+		Calendar calendar = Calendar.getInstance();
+		int hour = calendar.get(Calendar.HOUR_OF_DAY);
+		if(hour >= startHour && hour <= endHour){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	/**
+	 * @param startDate
+	 * @param endDate
+	 * @return
+	 */
+	public static boolean compareCurrentDate(Date startDate, Date endDate){
+		Date currentDate = ProjectUtil.getDateByFormat("yyyyMMdd");
+		Date sDate = ProjectUtil.getDateByFormat(ProjectUtil.getDateString(startDate), "yyyyMMdd");
+		Date eDate = ProjectUtil.getDateByFormat(ProjectUtil.getDateString(endDate), "yyyyMMdd");
+		if(currentDate.compareTo(sDate) == 1 && currentDate.compareTo(eDate) == -1){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public static Date getDateByFormat(String custFormat) {
+		SimpleDateFormat dataformat = new SimpleDateFormat(custFormat);
+		Date date = null;
+		try {
+			date = dataformat.parse(dataformat.format(new Date()));
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
