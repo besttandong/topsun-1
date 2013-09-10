@@ -1,7 +1,6 @@
 package com.topsun.posclient.datamodel;
 
 import java.math.BigDecimal;
-import java.util.Date;
 
 /**
  * 零售明细
@@ -19,7 +18,6 @@ public class RetailM {
 	private String ItemCode; //单品编号
 	private BigDecimal PalWeight; //损益重量
 	private BigDecimal PalAmount; //损益金额
-	private BigDecimal PalAccount; //损益结算金额
 	private String SourceCode; //原单品编码
 	private String ItemType; //单品状态
 	private String AccountType; //核算方式
@@ -28,31 +26,18 @@ public class RetailM {
 	private BigDecimal UnSalesWeight; //截断克重
 	private BigDecimal ProcessFee; //工费
 	private BigDecimal ProcessFee_S; //结算工费
-	private BigDecimal Price_G; //零售金价
-	private BigDecimal SettlementPrice_G; //结算金价
+	private BigDecimal Price_G; //零售金价;
 	private BigDecimal SalesAmount; //应售价
-	private BigDecimal FactAmount; //实售价
-	private BigDecimal PayAmount; //实付款
+	private BigDecimal FactAmount; //实售价 促销，店长打折后的价格
+	private BigDecimal PayAmount; //实付款 实际支付金额 实付款=应售款-旧金抵扣金额-换货抵扣金额
 	private BigDecimal PointAmount; //积分抵扣款
 	private BigDecimal OldAmount; //旧金抵扣金额
 	private BigDecimal ReplaceAmount; //换货抵扣金额
-	private BigDecimal SettlementRate_Multi; //结算扣率（乘）
-	private BigDecimal SettlementRate_Division; //结算扣率（除）
-	private BigDecimal SettlementPrice; //结算价
 	private String InvoceCode; //发票号码
 	private BigDecimal InvoiceAmount; //开票金额
-	private String PromotionID; //促销方案ID
+	private String PromotionID; //促销方案ID,多次促销,逗号区分
 	private String PromotionName; //促销方案Title
-	private BigDecimal Rate_SP; //商超结算扣率
-	private BigDecimal Account_SP; //商超结算价
-	private int Suppliser_N; //外部供应商
-	private int Suppliser_W; //内部供应商
-	private int DelFlg; //删除标识（默认为0）
-	private int Creater; //创建者
-	private Date CreatedTime; //创建时间
-	private int Updater; //最后修改者
-	private Date LastUpdatedTime; //最后修改时间
-	private String Revision; //版本戳
+	
 	public final int getID() {
 		return ID;
 	}
@@ -100,12 +85,6 @@ public class RetailM {
 	}
 	public final void setPalAmount(BigDecimal palAmount) {
 		PalAmount = palAmount;
-	}
-	public final BigDecimal getPalAccount() {
-		return PalAccount;
-	}
-	public final void setPalAccount(BigDecimal palAccount) {
-		PalAccount = palAccount;
 	}
 	public final String getSourceCode() {
 		return SourceCode;
@@ -161,12 +140,6 @@ public class RetailM {
 	public final void setPrice_G(BigDecimal price_G) {
 		Price_G = price_G;
 	}
-	public final BigDecimal getSettlementPrice_G() {
-		return SettlementPrice_G;
-	}
-	public final void setSettlementPrice_G(BigDecimal settlementPrice_G) {
-		SettlementPrice_G = settlementPrice_G;
-	}
 	public final BigDecimal getSalesAmount() {
 		return SalesAmount;
 	}
@@ -203,24 +176,6 @@ public class RetailM {
 	public final void setReplaceAmount(BigDecimal replaceAmount) {
 		ReplaceAmount = replaceAmount;
 	}
-	public final BigDecimal getSettlementRate_Multi() {
-		return SettlementRate_Multi;
-	}
-	public final void setSettlementRate_Multi(BigDecimal settlementRate_Multi) {
-		SettlementRate_Multi = settlementRate_Multi;
-	}
-	public final BigDecimal getSettlementRate_Division() {
-		return SettlementRate_Division;
-	}
-	public final void setSettlementRate_Division(BigDecimal settlementRate_Division) {
-		SettlementRate_Division = settlementRate_Division;
-	}
-	public final BigDecimal getSettlementPrice() {
-		return SettlementPrice;
-	}
-	public final void setSettlementPrice(BigDecimal settlementPrice) {
-		SettlementPrice = settlementPrice;
-	}
 	public final String getInvoceCode() {
 		return InvoceCode;
 	}
@@ -244,65 +199,5 @@ public class RetailM {
 	}
 	public final void setPromotionName(String promotionName) {
 		PromotionName = promotionName;
-	}
-	public final BigDecimal getRate_SP() {
-		return Rate_SP;
-	}
-	public final void setRate_SP(BigDecimal rate_SP) {
-		Rate_SP = rate_SP;
-	}
-	public final BigDecimal getAccount_SP() {
-		return Account_SP;
-	}
-	public final void setAccount_SP(BigDecimal account_SP) {
-		Account_SP = account_SP;
-	}
-	public final int getSuppliser_N() {
-		return Suppliser_N;
-	}
-	public final void setSuppliser_N(int suppliser_N) {
-		Suppliser_N = suppliser_N;
-	}
-	public final int getSuppliser_W() {
-		return Suppliser_W;
-	}
-	public final void setSuppliser_W(int suppliser_W) {
-		Suppliser_W = suppliser_W;
-	}
-	public final int getDelFlg() {
-		return DelFlg;
-	}
-	public final void setDelFlg(int delFlg) {
-		DelFlg = delFlg;
-	}
-	public final int getCreater() {
-		return Creater;
-	}
-	public final void setCreater(int creater) {
-		Creater = creater;
-	}
-	public final Date getCreatedTime() {
-		return CreatedTime;
-	}
-	public final void setCreatedTime(Date createdTime) {
-		CreatedTime = createdTime;
-	}
-	public final int getUpdater() {
-		return Updater;
-	}
-	public final void setUpdater(int updater) {
-		Updater = updater;
-	}
-	public final Date getLastUpdatedTime() {
-		return LastUpdatedTime;
-	}
-	public final void setLastUpdatedTime(Date lastUpdatedTime) {
-		LastUpdatedTime = lastUpdatedTime;
-	}
-	public final String getRevision() {
-		return Revision;
-	}
-	public final void setRevision(String revision) {
-		Revision = revision;
 	}
 }

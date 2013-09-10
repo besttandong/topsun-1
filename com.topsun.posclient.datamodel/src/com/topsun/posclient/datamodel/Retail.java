@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+
 /**
  * 零售数据
  * 
@@ -43,18 +46,26 @@ public class Retail {
 	private List<RetailP> retailPList;//零售结算  整单结算金额分配
 	private List<RetailMP> retailMPList;//零售结算 拆分到每个商品的结算金额
 	
+	@XmlElementWrapper(name="retailPList")
+    @XmlElement(name="RetailP")
 	public final List<RetailP> getRetailPList() {
 		return retailPList;
 	}
 	public final void setRetailPList(List<RetailP> retailPList) {
 		this.retailPList = retailPList;
 	}
+	
+	@XmlElementWrapper(name="retailMList")
+    @XmlElement(name="RetailM")
 	public final List<RetailM> getRetailMList() {
 		return retailMList;
 	}
 	public final void setRetailMList(List<RetailM> retailMList) {
 		this.retailMList = retailMList;
 	}
+	
+	@XmlElementWrapper(name="retailMPList")
+    @XmlElement(name="RetailMP")
 	public final List<RetailMP> getRetailMPList() {
 		return retailMPList;
 	}

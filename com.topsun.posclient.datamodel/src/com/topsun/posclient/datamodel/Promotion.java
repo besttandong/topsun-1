@@ -1,6 +1,11 @@
 package com.topsun.posclient.datamodel;
 
 import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 
 /**
  * 促销方案
@@ -10,20 +15,12 @@ import java.math.BigDecimal;
  */
 public class Promotion {
 	
-	private String id; //标识
-	
-	private int num;//第N件
-	private double points;//打M折
-	
-	private BigDecimal pointPrices; // 满N元
-	private BigDecimal salesPrices;// 减M元
-	
 	/*******************************************************************/
 	private int ID; //ID编号
 	private String DocNum; //方案编号
 	private String Title; //方案名称
-	private String StartDate; //起始时间
-	private String EndDate; //终止时间
+	private Date StartDate; //起始时间
+	private Date EndDate; //终止时间
 	private int Mon; //星期一
 	private int Tur; //星期二
 	private int Wen; //星期三
@@ -41,6 +38,42 @@ public class Promotion {
 	private BigDecimal Set1; //设定值1
 	private BigDecimal Set2; //设定值2
 	
+	private List<PromotionM> promotionMList;//
+	
+	private List<PromotionA> promotionAList;
+	
+	private List<PromotionS> promotionSList;
+	
+	@XmlElementWrapper(name="promotionMList")
+    @XmlElement(name="PromotionM")
+	public final List<PromotionM> getPromotionMList() {
+		return promotionMList;
+	}
+
+	public final void setPromotionMList(List<PromotionM> promotionMList) {
+		this.promotionMList = promotionMList;
+	}
+
+	@XmlElementWrapper(name="promotionAList")
+    @XmlElement(name="PromotionA")
+	public final List<PromotionA> getPromotionAList() {
+		return promotionAList;
+	}
+
+	public final void setPromotionAList(List<PromotionA> promotionAList) {
+		this.promotionAList = promotionAList;
+	}
+
+	@XmlElementWrapper(name="promotionSList")
+    @XmlElement(name="PromotionS")
+	public final List<PromotionS> getPromotionSList() {
+		return promotionSList;
+	}
+
+	public final void setPromotionSList(List<PromotionS> promotionSList) {
+		this.promotionSList = promotionSList;
+	}
+
 	public final int getID() {
 		return ID;
 	}
@@ -65,19 +98,19 @@ public class Promotion {
 		Title = title;
 	}
 
-	public final String getStartDate() {
+	public final Date getStartDate() {
 		return StartDate;
 	}
 
-	public final void setStartDate(String startDate) {
+	public final void setStartDate(Date startDate) {
 		StartDate = startDate;
 	}
 
-	public final String getEndDate() {
+	public final Date getEndDate() {
 		return EndDate;
 	}
 
-	public final void setEndDate(String endDate) {
+	public final void setEndDate(Date endDate) {
 		EndDate = endDate;
 	}
 
@@ -208,45 +241,4 @@ public class Promotion {
 	public final void setSet2(BigDecimal set2) {
 		Set2 = set2;
 	}
-
-	public final BigDecimal getSalesPrices() {
-		return salesPrices;
-	}
-
-	public final void setSalesPrices(BigDecimal salesPrices) {
-		this.salesPrices = salesPrices;
-	}
-
-	public final BigDecimal getPointPrices() {
-		return pointPrices;
-	}
-
-	public final void setPointPrices(BigDecimal pointPrices) {
-		this.pointPrices = pointPrices;
-	}
-
-	public final String getId() {
-		return id;
-	}
-
-	public final void setId(String id) {
-		this.id = id;
-	}
-
-	public final int getNum() {
-		return num;
-	}
-
-	public final void setNum(int num) {
-		this.num = num;
-	}
-
-	public final double getPoints() {
-		return points;
-	}
-
-	public final void setPoints(double points) {
-		this.points = points;
-	}
-	
 }

@@ -5,12 +5,11 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlElements;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
 
 import com.topsun.posclient.datamodel.Retail;
-import com.topsun.posclient.datamodel.Shop;
 
 /**
  * 零售数据
@@ -26,9 +25,11 @@ public class RetailDTO {
 	
 	private List<Retail> retailList;
 
-	@XmlElements({
-        @XmlElement(name = "retailList", type = Shop.class)
-    })
+//	@XmlElements({
+//        @XmlElement(name = "retailList", type = Retail.class)
+//    })
+    @XmlElementWrapper(name="retailList")
+    @XmlElement(name="Retail")
 	public final List<Retail> getRetailList() {
 		return retailList;
 	}

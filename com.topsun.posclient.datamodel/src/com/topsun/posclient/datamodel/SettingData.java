@@ -6,6 +6,8 @@ public class SettingData {
 	
 	private String port;
 	
+	private String cdKey;
+	
 	private String reconnectionTime;
 	
 	private String posNo; //POS编号
@@ -50,5 +52,13 @@ public class SettingData {
 
 	public void setReconnectionTime(String reconnectionTime) {
 		this.reconnectionTime = reconnectionTime;
+	}
+
+	public final String getCdKey() {
+		return cdKey;
+	}
+
+	public final void setCdKey(String cdKey) {
+		this.cdKey = cdKey;
 	}
 }

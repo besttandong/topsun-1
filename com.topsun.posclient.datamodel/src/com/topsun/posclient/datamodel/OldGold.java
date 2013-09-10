@@ -35,6 +35,7 @@ public class OldGold {
 	private int Updater; //ID最后修改者
 	private Date LastUpdatedTime; //ID最后修改时间
 	private String Revision; //ID版本戳
+	
 	public final int getID() {
 		return ID;
 	}
