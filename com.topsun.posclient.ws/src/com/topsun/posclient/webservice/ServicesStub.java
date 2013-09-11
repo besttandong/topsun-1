@@ -183,8 +183,8 @@ public class ServicesStub extends org.apache.axis2.client.Stub implements
 	}
 	
 	private static String initConfig(){
-		String ip = POSClientApp.get().getSysConfig().getIp();
-		String port = POSClientApp.get().getSysConfig().getPort();
+		String ip = POSClientApp.get().getSysConfig().getServerIp();
+		String port = POSClientApp.get().getSysConfig().getServerPort();
 		return "http://"+ip+":"+port+"/RMS/Service.svc";
 	}
 
