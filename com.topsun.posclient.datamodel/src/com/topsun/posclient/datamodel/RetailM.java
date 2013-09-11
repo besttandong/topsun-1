@@ -16,6 +16,7 @@ public class RetailM {
 	private String DocNum; //单据编号
 	private int ItemId; //单品ID
 	private String ItemCode; //单品编号
+	private String ItemName; //单品名称
 	private BigDecimal PalWeight; //损益重量
 	private BigDecimal PalAmount; //损益金额
 	private String SourceCode; //原单品编码
@@ -37,12 +38,25 @@ public class RetailM {
 	private BigDecimal InvoiceAmount; //开票金额
 	private String PromotionID; //促销方案ID,多次促销,逗号区分
 	private String PromotionName; //促销方案Title
+	private String MATNR;//物料号 
 	
+	public final String getMATNR() {
+		return MATNR;
+	}
+	public final void setMATNR(String mATNR) {
+		MATNR = mATNR;
+	}
 	public final int getID() {
 		return ID;
 	}
 	public final void setID(int iD) {
 		ID = iD;
+	}
+	public final String getItemName() {
+		return ItemName;
+	}
+	public final void setItemName(String itemName) {
+		ItemName = itemName;
 	}
 	public final int getEmployeeID() {
 		return EmployeeID;
