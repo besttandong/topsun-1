@@ -27,9 +27,10 @@ public interface IPartSaleService extends IBaseService {
 	/**
 	 * 保存零售数据
 	 * @param retailDTO
-	 * @throws Exception
+	 * @param docNum 单据编号
+	 * @throws POSException
 	 */
-	public void saveRetail(RetailDTO retailDTO) throws POSException;
+	public void saveRetail(RetailDTO retailDTO, String docNum) throws POSException;
 	
 	
 	/**
