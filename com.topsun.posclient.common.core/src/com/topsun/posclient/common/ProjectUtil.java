@@ -2,16 +2,17 @@ package com.topsun.posclient.common;
 
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Properties;
-
-import org.eclipse.core.runtime.Platform;
 
 /**
  * @author LiLei
@@ -24,8 +25,8 @@ public class ProjectUtil {
 	static SimpleDateFormat defaultTimeFmt = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
 	public static String getRuntimeClassPath() {
-		String path = Platform.getInstanceLocation().getURL().getFile();
-//		String path = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
+//		String path = Platform.getInstanceLocation().getURL().getFile();
+		String path = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
 		return path;
 	}
 
@@ -142,6 +143,15 @@ public class ProjectUtil {
 		Properties p = getProperties(fileName);
 		return p.get(keyName);
 	}
+	
+	public static void setValue(String keyName, String value) throws Exception{
+		String filepath = getRuntimeClassPath()+AppConstants.SEETING_FILE;
+		Properties prop = new Properties();
+		OutputStream outputStream = new FileOutputStream(filepath);  
+		prop.setProperty(keyName, value);  
+		prop.store(outputStream, "author: topsun");  
+        outputStream.close();  
+	}
 
 	public static String readValue(String filePath, String key)
 			throws Exception {
@@ -194,11 +204,21 @@ public class ProjectUtil {
 	}
 	
 	/**
-	 * @return
+	 * 生成单据编号
+	 * @param type 单据编号类型 1、零售单据编号 2、旧金编号
+	 * @return 当日编号累加
 	 */
-	public static String getOldGoldCountNum(){
-		StringBuffer ret = new StringBuffer("0000");
-		String countNum = POSClientApp.get().getSysConfig().getOldGoldCountNum();//当前累加0001-9999
+	public String generateDocNum(int type){
+		String countNum = "0000";
+		switch(type){
+			case 1:
+				countNum = POSClientApp.get().getSysConfig().getDocNum();
+				break;
+			case 2:
+				countNum = POSClientApp.get().getSysConfig().getOgDocNum();
+				break;
+		}
+		StringBuffer ret = new StringBuffer("");
 		if(countNum.equals("0000")){
 			return "0001";
 		}else{
@@ -213,34 +233,8 @@ public class ProjectUtil {
 		return ret.toString();
 	}
 	
-	public static void main(String[] args){
-//		boolean status = false;
-//		try {
-//			 InetAddress theAddress = InetAddress.getByName("114.80.119.77");
-//			 Socket theSocket = new Socket(theAddress, 8088);
-//			 BufferedReader  networkIn = new BufferedReader(new InputStreamReader(
-//				       theSocket.getInputStream()));
-//				     System.out.println(networkIn.readLine());
-//			 
-//			status = InetAddress.getByName("114.80.119.77").isReachable(5000);
-//			System.out.println("联机状态 --------->>> "+status);
-//			
-//			InetAddress address1=InetAddress.getLocalHost();
-//			System.out.println(address1.isReachable(5000));
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-		
-		StringBuffer ret = new StringBuffer();
-		String countNum = "0023";//当前累加0001-9999
-			Integer num = Integer.valueOf(countNum);
-			num = num+1;
-			String numStr = String.valueOf(num);
-			for(int i=0; i<4-numStr.length(); i++){
-				ret.append("0");
-			}
-			ret.append(numStr);
-		System.out.println(ret.toString());
+	public static void main(String[] args) {
+		System.out.println(new ProjectUtil().generateDocNum(1));
+		System.out.println(new ProjectUtil().generateDocNum(2));
 	}
-	
 }

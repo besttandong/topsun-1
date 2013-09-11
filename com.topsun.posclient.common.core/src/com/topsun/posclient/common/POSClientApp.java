@@ -3,6 +3,7 @@ package com.topsun.posclient.common;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.topsun.posclient.common.core.CommonCoreActivator;
 import com.topsun.posclient.datamodel.SettingData;
 import com.topsun.posclient.datamodel.User;
 
@@ -63,20 +64,35 @@ public class POSClientApp {
 		String filepath = ProjectUtil.getRuntimeClassPath()+AppConstants.SEETING_FILE;
 		SettingData settingData = new SettingData();
 		try {
-			String serverIP = ProjectUtil.readValue(filepath, "serverIP");
-			String serverPort = ProjectUtil.readValue(filepath, "serverPort");
-			String reconnectionTime = ProjectUtil.readValue(filepath, "reconnectionTime");
-			String posNo = ProjectUtil.readValue(filepath, "posNo");
-			String countNum = ProjectUtil.readValue(filepath, "oldGoldCountNum");
-			settingData.setIp(serverIP);
-			settingData.setPort(serverPort);
-			settingData.setReconnectionTime(reconnectionTime);
+			String serverIP = ProjectUtil.readValue(filepath, AppConstants.SERVER_IP);
+			String serverPort = ProjectUtil.readValue(filepath, AppConstants.SERVER_PORT);
+			String cdKey = ProjectUtil.readValue(filepath, AppConstants.CDKEY);
+			String syncWaitTime = ProjectUtil.readValue(filepath, AppConstants.SYNC_WAITTIME);
+			String posNo = ProjectUtil.readValue(filepath, AppConstants.POSNO);
+			String ogDocNum = ProjectUtil.readValue(filepath, AppConstants.OG_DOCNUM);
+			String docNum = ProjectUtil.readValue(filepath, AppConstants.DOCNUM);
+			
+			settingData.setServerIp(serverIP);
+			settingData.setServerPort(serverPort);
+			settingData.setCdKey(cdKey);
+			settingData.setSyncWaitTime(syncWaitTime);
 			settingData.setPosNo(posNo);
-			settingData.setOldGoldCountNum(countNum);
+			settingData.setOgDocNum(ogDocNum);
+			settingData.setDocNum(docNum);
+			
 		} catch (Exception e) {
-			e.printStackTrace();
+			LoggerUtil.logError(CommonCoreActivator.PLUGIN_ID, e);
 		}
 		return settingData;
+	}
+	
+	/**
+	 * 业务员签退
+	 * @throws Exception 
+	 */
+	public void doExit() throws Exception{
+		ProjectUtil.setValue(AppConstants.OG_DOCNUM, "0000");
+		ProjectUtil.setValue(AppConstants.DOCNUM, "0000");
 	}
 
 }

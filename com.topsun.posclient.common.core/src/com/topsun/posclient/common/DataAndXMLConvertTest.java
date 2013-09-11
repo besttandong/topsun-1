@@ -6,26 +6,41 @@ import java.io.FileOutputStream;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.Marshaller;
 
-import com.topsun.posclient.datamodel.dto.CashierModeDTO;
+import com.topsun.posclient.datamodel.dto.PromotionDTO;
 
+/**
+ * @author Dong
+ *
+ */
 public class DataAndXMLConvertTest {
 
 	public static void main(String[] args) throws Exception {
+		PromotionDTO promotionDTO = MockDataFactory.createPromotionDTO();
+		String filePath = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
+		File file = new File(filePath + AppConstants.DATA_PROMOTE_FILENAME);
+		file.deleteOnExit();
+		file.createNewFile();
+		
+		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+		JAXBContext context = JAXBContext.newInstance(PromotionDTO.class);
+		Marshaller marshaller = context.createMarshaller();
+		marshaller.marshal(promotionDTO, fos);
+			
 
 		//生成所有结算方式数据文件
-		CashierModeDTO cashierModeDTO = new CashierModeDTO();
-		cashierModeDTO.setCashierModeList(MockDataFactory.createCashierModelList());
-
-		String filePath = DataAndXMLConvertTest.class.getClassLoader().getResource("").getFile();
-		File file = new File(filePath + AppConstants.DATA_CASHIERMODE_FILENAME);
-
-		if (!file.exists()) {
-			file.createNewFile();
-		}
-		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
-		JAXBContext context = JAXBContext.newInstance(CashierModeDTO.class);
-		Marshaller marshaller = context.createMarshaller();
-		marshaller.marshal(cashierModeDTO, fos);
+//		CashierModeDTO cashierModeDTO = new CashierModeDTO();
+//		cashierModeDTO.setCashierModeList(MockDataFactory.createCashierModelList());
+//
+//		String filePath = DataAndXMLConvertTest.class.getClassLoader().getResource("").getFile();
+//		File file = new File(filePath + AppConstants.DATA_CASHIERMODE_FILENAME);
+//
+//		if (!file.exists()) {
+//			file.createNewFile();
+//		}
+//		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+//		JAXBContext context = JAXBContext.newInstance(CashierModeDTO.class);
+//		Marshaller marshaller = context.createMarshaller();
+//		marshaller.marshal(cashierModeDTO, fos);
 		
 //		AdjustRepositoryDTO adjustRepositoryDTO = new AdjustRepositoryDTO();
 //		adjustRepositoryDTO.setAdjustRepositoryInfos(MockDataFactory.createAdjustRepositoryInfoList());

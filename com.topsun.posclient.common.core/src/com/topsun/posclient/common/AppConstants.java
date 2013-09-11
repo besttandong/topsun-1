@@ -1,11 +1,21 @@
 package com.topsun.posclient.common;
 
 /**
- * 
+ * 系统常量
  * @author Dong
  *
  */
 public class AppConstants {
+	
+	/*****************系统配置常量****************/
+	public static String SERVER_IP = "serverIp";
+	public static String SERVER_PORT = "serverPort";
+	public static String CDKEY = "cdKey";
+	public static String SYNC_WAITTIME = "syncWaitTime";
+	public static String POSNO = "posNo";
+	public static String OG_DOCNUM = "ogDocNum";
+	public static String DOCNUM = "docNum";
+	/********************************************/
 	
 	public static String LOGIN_USER = "loginUser";
 	public static String APPLICATION_ID = "posclient";

@@ -51,13 +51,6 @@ public interface IBaseService {
 	
 	
 	/**
-	 * 生成单据编号
-	 * @return
-	 * @throws POSException
-	 */
-	public String createNo() throws POSException;
-	
-	/**
 	 * 根据用户ID获取店铺名称
 	 * 
 	 * @throws Exception
@@ -79,6 +72,20 @@ public interface IBaseService {
 	 * @throws POSException
 	 */
 	public List<AllotStyle> getAllotStyle() throws POSException;
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 生成单据编号
+	 * @return
+	 * @throws POSException
+	 */
+	public String createNo() throws POSException;
 	
 	/**
 	 * 计算积分	
