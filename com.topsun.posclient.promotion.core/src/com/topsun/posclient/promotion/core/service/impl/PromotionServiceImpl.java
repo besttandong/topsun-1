@@ -37,8 +37,8 @@ public class PromotionServiceImpl implements IPromotionService {
 	 */
 	public List<Item> applyNM(List<Item> items, Promotion promotion) throws POSException {
 		List<Item> itemList = new ArrayList<Item>();
-		int num = promotion.getNum();//第N件
-		double points = promotion.getPoints();//打M折
+		int num = promotion.getSet1().intValue();//第N件
+		double points = promotion.getSet2().doubleValue();//打M折
 		for(Item item : items){
 			if(item.getNum() >= num){
 				item.setRetailPrice(item.getRetailPrice()*points);
@@ -57,8 +57,8 @@ public class PromotionServiceImpl implements IPromotionService {
 		for(Item item : items){
 			countPrices = countPrices.add(item.getZMDLSBQJ().multiply(item.getZZJ()));//累加门店零售标签价为总价
 		}
-		if(countPrices.compareTo(promotion.getPointPrices()) == 1){//整单满N元，符合减M元条件
-			return doAllNM(items, countPrices, promotion.getSalesPrices());//按权重将减少的M元分摊到每件商品
+		if(countPrices.compareTo(promotion.getSet1()) == 1){//整单满N元，符合减M元条件
+			return doAllNM(items, countPrices, promotion.getSet2());//按权重将减少的M元分摊到每件商品
 		}else{
 			return items;
 		}
@@ -97,18 +97,10 @@ public class PromotionServiceImpl implements IPromotionService {
 		return itemList;
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args){
 		Promotion promotion = new Promotion();
-		promotion.setPointPrices(new BigDecimal(1000));
-		promotion.setSalesPrices(new BigDecimal(300));
+		promotion.setSet1(new BigDecimal(1000));
+		promotion.setSet2(new BigDecimal(300));
 		List<Item> items = MockDataFactory.createItemList();
 		System.out.println("促销之前");
 		for(Item item : items){
