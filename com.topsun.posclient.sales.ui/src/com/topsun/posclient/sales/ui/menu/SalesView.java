@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import javax.annotation.PostConstruct;
-
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.CellEditor;
 import org.eclipse.jface.viewers.ISelection;
@@ -54,10 +52,11 @@ import com.topsun.posclient.datamodel.PartSalesCashier;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
 import com.topsun.posclient.datamodel.dto.PartSalesDTO;
+import com.topsun.posclient.datamodel.dto.RetailDTO;
 import com.topsun.posclient.sales.MessageResources;
+import com.topsun.posclient.sales.core.service.IPartSaleService;
+import com.topsun.posclient.sales.core.service.impl.PartSaleServiceImpl;
 import com.topsun.posclient.sales.dialog.SalesPayDialog;
-import com.topsun.posclient.sales.service.IPartSaleService;
-import com.topsun.posclient.sales.service.impl.PartSaleServiceImpl;
 import com.topsun.posclient.sales.ui.table.SalesTableContentProvider;
 import com.topsun.posclient.sales.ui.table.SalesTableLableProvider;
 import com.topsun.widget.calendar.CalendarCombo;
@@ -359,6 +358,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					List<PartSales> partSalesList = new ArrayList<PartSales>();
 					partSalesList.add(partSales);
 					PartSalesDTO salesDTO = new PartSalesDTO();
+					RetailDTO dto = new RetailDTO();
 					salesDTO.setPartSalesList(partSalesList);
 					
 					
@@ -386,6 +386,9 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 						MessageDialog.openError(parent.getShell(), "", e1.getMessage());
 						e1.printStackTrace();
 						return;
+					} catch (POSException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
 					}
 					
 					

@@ -15,7 +15,8 @@ import com.topsun.posclient.datamodel.dto.PromotionDTO;
 public class DataAndXMLConvertTest {
 
 	public static void main(String[] args) throws Exception {
-		PromotionDTO promotionDTO = MockDataFactory.createPromotionDTO();
+		PromotionDTO promotionDTO = null;
+			//MockDataFactory.createPromotionDTO();
 		String filePath = "D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/";
 		File file = new File(filePath + AppConstants.DATA_PROMOTE_FILENAME);
 		file.deleteOnExit();

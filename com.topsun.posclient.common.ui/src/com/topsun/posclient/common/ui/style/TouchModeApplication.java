@@ -43,13 +43,13 @@ public class TouchModeApplication {
 		
 
 		for (TopSunTreeModel topSunTreeModel : list) {
-			RibbonGroup tbGroup = new RibbonGroup(saleTab, topSunTreeModel.getTreeName());
+			RibbonGroup tbGroup = new RibbonGroup(saleTab, topSunTreeModel.getTreeName()+ "          ");
 			RibbonToolbar toolbar = new RibbonToolbar(tbGroup,
-					RibbonToolbar.STYLE_NO_BORDER, 2);
+					RibbonToolbar.STYLE_NO_BORDER, 1);
 			RibbonToolbarGrouping rtg = new RibbonToolbarGrouping(toolbar, 1);
 			
-			Bundle bundle = BundleHelper.getDefault().getBundle(topSunTreeModel.getPluginId());
-			Image image = ImageDescriptor.createFromURL(BundleUtility.find(bundle,topSunTreeModel.getIcon())).createImage();
+			Bundle bundle = BundleHelper.getDefault().getBundle("com.topsun.posclient.common.ui");
+			Image image = ImageDescriptor.createFromURL(BundleUtility.find(bundle,"icons//user.png")).createImage();
 			
 			RibbonButton button = new RibbonButton(rtg,image, null,RibbonButton.STYLE_NO_DEPRESS);
 			button.addSelectionListener(new SelectionListener() {

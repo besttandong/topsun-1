@@ -82,7 +82,7 @@ public class SettingView extends ViewPart {
 			data.horizontalSpan = 3;
 			data.widthHint = 210;
 			serverIP.setLayoutData(data);
-			serverIP.setText(defaultSettingData.getIp());
+			serverIP.setText(defaultSettingData.getServerIp());
 		}
 		{
 			Label lable = new Label(leftComposite, SWT.NONE);
@@ -97,7 +97,7 @@ public class SettingView extends ViewPart {
 			data.horizontalSpan = 3;
 			data.widthHint = 210;
 			serverPort.setLayoutData(data);
-			serverPort.setText(defaultSettingData.getPort());
+			serverPort.setText(defaultSettingData.getServerPort());
 		}
 	}
 
@@ -130,8 +130,8 @@ public class SettingView extends ViewPart {
 						return;
 					}
 					SettingData settingData = new SettingData();
-					settingData.setIp(ipAdd);
-					settingData.setPort(port);
+					settingData.setServerIp(ipAdd);
+					settingData.setServerPort(port);
 					try {
 						settingService.saveSetting(settingData);
 						MessageDialog.openInformation(saveButton.getShell(), MessageResources.message_tips, MessageResources.message_tips_success);
