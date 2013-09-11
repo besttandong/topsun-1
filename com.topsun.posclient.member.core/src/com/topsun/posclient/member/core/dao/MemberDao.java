@@ -5,6 +5,7 @@ import java.io.File;
 import com.topsun.posclient.common.AppConstants;
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.common.dao.BaseDao;
+import com.topsun.posclient.datamodel.Member;
 import com.topsun.posclient.datamodel.dto.MemberDTO;
 
 /**
@@ -26,5 +27,4 @@ public class MemberDao extends BaseDao{
 				.getObjectFromXml(getLocalProcessor().getDataFileContent(file),MemberDTO.class);
 		return memberDTO;
 	}
-	
 }
