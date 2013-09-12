@@ -16,6 +16,8 @@ public class SettingData {
 	
 	private String syncWaitTime;//自动同步默认间隔时间
 	
+	private String currConnStatu; //当前连接状态
+	
 	private String posNo; //POS机器号
 	
 	private String ogDocNum; //旧金编号
@@ -76,5 +78,19 @@ public class SettingData {
 
 	public final void setCdKey(String cdKey) {
 		this.cdKey = cdKey;
+	}
+
+	public final String getCurrConnStatu() {
+		if(currConnStatu.equals("0")){
+			return "离线";
+		}else if(currConnStatu.equals("1")){
+			return "在线";
+		}else{
+			return "未知";
+		}
+	}
+
+	public final void setCurrConnStatu(String currConnStatu) {
+		this.currConnStatu = currConnStatu;
 	}
 }

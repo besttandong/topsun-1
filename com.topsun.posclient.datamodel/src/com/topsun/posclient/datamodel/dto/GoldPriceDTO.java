@@ -6,6 +6,7 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlElements;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -32,9 +33,11 @@ public class GoldPriceDTO implements Serializable {
 	
 	private List<GoldPrice> goldPriceList;
 
-	@XmlElements({
-        @XmlElement(name = "goldPriceList", type = Item.class)
-    })
+//	@XmlElements({
+//        @XmlElement(name = "goldPriceList", type = GoldPrice.class)
+//    })
+    @XmlElementWrapper(name="goldPriceList")
+    @XmlElement(name="GoldPrice")
 	public final List<GoldPrice> getGoldPriceList() {
 		return goldPriceList;
 	}
