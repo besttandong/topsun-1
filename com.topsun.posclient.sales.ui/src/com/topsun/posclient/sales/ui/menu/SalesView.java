@@ -45,6 +45,7 @@ import com.topsun.posclient.common.print.POSTicketPrinter;
 import com.topsun.posclient.common.print.printdata.Receipts;
 import com.topsun.posclient.common.service.impl.BaseServiceImpl;
 import com.topsun.posclient.common.ui.utils.ImageUtils;
+import com.topsun.posclient.common.ui.utils.TouchModeManager;
 import com.topsun.posclient.datamodel.CashierModel;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.PartSales;
@@ -63,8 +64,6 @@ import com.topsun.widget.calendar.CalendarCombo;
 import com.topsun.widget.calendar.DefaultSettings;
 
 public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener {
-	
-	
 	
 	public IPartSaleService partSaleService = new PartSaleServiceImpl();
 	public User user = POSClientApp.get().getLoginUser();
@@ -256,6 +255,12 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 	@Override
 	public void createPartControl(Composite parent) {
 		parent.setLayout(new GridLayout(1,false));
+//		Composite composite = TouchModeManager.getInstance().getComposite();
+//		composite = new Composite(parent,SWT.NONE);
+//		composite.setLayout(new GridLayout(1,false));
+//		GridData data = new GridData(GridData.FILL_BOTH);
+//		composite.setLayoutData(data);
+//		composite.layout(true, true);
 		buildBaseInfo(parent);
 		buildPrintInfo(parent);
 		buildProductInfo(parent);
