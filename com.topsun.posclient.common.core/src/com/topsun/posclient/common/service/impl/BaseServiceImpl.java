@@ -203,4 +203,19 @@ public class BaseServiceImpl implements IBaseService {
 		}
 		return retPrice;
 	}
+
+	/* (non-Javadoc)
+	 * @see com.topsun.posclient.common.service.IBaseService#updateGoldPriceByMtartCode(java.lang.String, java.math.BigDecimal)
+	 */
+	public boolean updateGoldPriceByMtartCode(String mtartCode, BigDecimal gprice)
+			throws POSException {
+		boolean flag = true;
+		try{
+			baseDao.updateGoldPriceByMtartCode(mtartCode, gprice.toString());
+		}catch(Exception e){
+			flag = false;
+			throw new POSException("实时金价修改出错");
+		}
+		return flag;
+	}
 }

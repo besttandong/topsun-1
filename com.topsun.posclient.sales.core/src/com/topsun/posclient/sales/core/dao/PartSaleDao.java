@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.topsun.posclient.common.AppConstants;
+import com.topsun.posclient.common.POSClientApp;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ProjectUtil;
 import com.topsun.posclient.common.dao.BaseDao;
@@ -96,8 +97,11 @@ public class PartSaleDao extends BaseDao {
 	 * @throws Exception
 	 */
 	public void saveRetail(RetailDTO retailDto) throws Exception {
-		//this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
-		this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
+		if(POSClientApp.get().isConnected()){
+			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH_BACK);
+		}else{
+			this.getLocalProcessor().createXmlFileFromObject(retailDto, "data_PartSales", AppConstants.DATA_PARTSALES_PATH);
+		}
 	}
 	
 	/**
@@ -186,9 +190,9 @@ public class PartSaleDao extends BaseDao {
 			Retail_M m = new Retail_M();
 			m.setItemId(item.getId());
 			m.setLineNum(i);
-			m.setPrice(new BigDecimal(item.getRetailPrice()));
-			m.setQuantity(item.getNum());
-			m.setSum(new BigDecimal(item.getRetailPrice()));
+			m.setPrice(item.getZMDLSBQJ());
+			m.setQuantity(item.getZDPZL().intValue());
+			m.setSum(item.getZMDLSBQJ());
 			retail_MArray[i] = m;
 		}
 		ArrayOfRetail_M arrayOfRetail_M = new ArrayOfRetail_M();

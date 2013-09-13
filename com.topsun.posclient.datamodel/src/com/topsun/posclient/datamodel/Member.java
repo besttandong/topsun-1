@@ -1,5 +1,6 @@
 package com.topsun.posclient.datamodel;
 
+import java.math.BigDecimal;
 import java.util.Date;
 
 /**

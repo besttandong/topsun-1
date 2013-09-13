@@ -13,18 +13,14 @@ import com.topsun.posclient.datamodel.User;
  */
 public class POSClientApp {
 
-	/**
-	 * 
-	 */
 	static POSClientApp posClientApp;
 
 	/**
-	 * 
+	 * 保存系统相关数据
 	 */
 	private Map<String, Object> contextData = new HashMap<String, Object>();
 
-	private POSClientApp() {
-	}
+	private POSClientApp() {}
 
 	public static POSClientApp get() {
 		if (null == posClientApp) {
@@ -71,11 +67,13 @@ public class POSClientApp {
 			String posNo = ProjectUtil.readValue(filepath, AppConstants.POSNO);
 			String ogDocNum = ProjectUtil.readValue(filepath, AppConstants.OG_DOCNUM);
 			String docNum = ProjectUtil.readValue(filepath, AppConstants.DOCNUM);
+			String currConnStatu = ProjectUtil.readValue(filepath, AppConstants.CURR_CONN_STATU);
 			
 			settingData.setServerIp(serverIP);
 			settingData.setServerPort(serverPort);
 			settingData.setCdKey(cdKey);
 			settingData.setSyncWaitTime(syncWaitTime);
+			settingData.setCurrConnStatu(currConnStatu);
 			settingData.setPosNo(posNo);
 			settingData.setOgDocNum(ogDocNum);
 			settingData.setDocNum(docNum);
@@ -86,8 +84,23 @@ public class POSClientApp {
 		return settingData;
 	}
 	
+	public boolean isConnected(){
+		String currConnStatu = getSysConfig().getCurrConnStatu();
+		if(null == currConnStatu || "".equals(currConnStatu)){
+			return false;
+		}
+		return currConnStatu.equals("0")?false:true;
+	}
+	
 	/**
-	 * 业务员签退
+	 * @param serverIp
+	 * @param port
+	 */
+	public void doConnect(String serverIp, int port){
+		
+	}
+	
+	/**
 	 * @throws Exception 
 	 */
 	public void doExit() throws Exception{

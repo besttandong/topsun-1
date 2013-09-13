@@ -168,7 +168,6 @@ public class AdjustShopDao extends BaseDao {
 			Item iii = new Item();
 			iii.setId(im.getItemId());
 			iii.setItemCode(String.valueOf(im.getLineNum()));
-			iii.setNum(im.getQuantity());
 			items.add(iii);
 		}
 		return items;

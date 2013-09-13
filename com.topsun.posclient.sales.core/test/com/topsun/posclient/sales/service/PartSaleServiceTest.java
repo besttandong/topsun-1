@@ -3,6 +3,7 @@ package com.topsun.posclient.sales.service;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -35,13 +36,26 @@ public class PartSaleServiceTest extends TestCase {
 	
 	public void testApplyPromotion(){
 		RetailDTO retailDTO = getData();
+		
 		for(Retail retail : retailDTO.getRetailList()){
-			
+			for(RetailM rmm : retail.getRetailMList()){
+				System.out.println(rmm.getItemCode()+"打折之前的零售价为："+rmm.getSalesAmount());
+			}
 			try {
 				retail = saleService.applyPromotion(retail);
+				
 			} catch (POSException e) {
 				e.printStackTrace();
 			}
+			
+			for(RetailM rmm : retail.getRetailMList()){
+				System.out.println();
+				System.out.println(rmm.getPromotionID());
+				System.out.println(rmm.getPromotionName());
+				System.out.println();
+				System.out.println(rmm.getItemCode()+"打折之后的实售价为："+rmm.getFactAmount());
+			}
+			
 		}
 	}
 	
@@ -88,8 +102,13 @@ public class PartSaleServiceTest extends TestCase {
 		retailM1.setID(1);
 		retailM1.setDocNum("1010101");
 		retailM1.setItemId(1);
-		retailM1.setItemCode("0202");
+		retailM1.setItemCode("0201");
 		retailM1.setItemType("0303");
+		retailM1.setSalesAmount(new BigDecimal(6000));
+		retailM1.setFactAmount(new BigDecimal(6000));
+		retailM1.setPromotionID("");
+		retailM1.setPromotionName("");
+		retailM1.setMATNR("101010");
 		
 		RetailM retailM2 = new RetailM();
 		retailM2.setID(2);
@@ -97,6 +116,11 @@ public class PartSaleServiceTest extends TestCase {
 		retailM2.setItemId(1);
 		retailM2.setItemCode("0202");
 		retailM2.setItemType("0303");
+		retailM2.setSalesAmount(new BigDecimal(4000));
+		retailM2.setFactAmount(new BigDecimal(4000));
+		retailM2.setPromotionID("");
+		retailM2.setPromotionName("");
+		retailM2.setMATNR("101012");
 		
 		List<RetailM> retailMList = new ArrayList<RetailM>();
 		retailMList.add(retailM1);
