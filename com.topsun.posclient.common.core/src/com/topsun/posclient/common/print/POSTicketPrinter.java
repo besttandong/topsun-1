@@ -47,8 +47,8 @@ public class POSTicketPrinter {
 		buffer.append("----------------------------------\n");
 		BigDecimal countAmount = new BigDecimal(0.00);
 		for(Item item : receipts.getItems()){
-			countAmount = countAmount.add(new BigDecimal(item.getRetailPrice()*item.getNum()));
-			buffer.append(formatItemName(item.getItemName())+"（"+item.getRetailPrice()+"x"+item.getNum()+"）\t"+item.getRetailPrice()*item.getNum()+"\n\n");
+//			countAmount = countAmount.add(new BigDecimal(item.getRetailPrice()*item.getNum()));
+//			buffer.append(formatItemName(item.getItemName())+"（"+item.getRetailPrice()+"x"+item.getNum()+"）\t"+item.getRetailPrice()*item.getNum()+"\n\n");
 		}
 		buffer.append("合计：\t"+countAmount+"\n");
 		buffer.append("----------------------------------\n");
@@ -234,61 +234,61 @@ public class POSTicketPrinter {
 	}
 	
 	public static void main(String[] args){
-		Item item1 = new Item();
-		item1.setItemName("秘制小龙虾");
-		item1.setRetailPrice(30.5);
-		item1.setNum(2);
-		
-		Item item2 = new Item();
-		item2.setItemName("小笼包");
-		item2.setRetailPrice(20.5);
-		item2.setNum(2);
-		
-		Item item3 = new Item();
-		item3.setItemName("清风原木纯品");
-		item3.setRetailPrice(20.5);
-		item3.setNum(1);
-		
-		Item item4 = new Item();
-		item4.setItemName("洁云抽取式面纸原木纯朴");
-		item4.setRetailPrice(20.5);
-		item4.setNum(2);
-		
-		Item item5 = new Item();
-		item5.setItemName("中华香烟");
-		item5.setRetailPrice(45.00);
-		item5.setNum(1);
-		
-		Item item6 = new Item();
-		item6.setItemName("可口可乐");
-		item6.setRetailPrice(5.0);
-		item6.setNum(1);
-		
-		Item item7 = new Item();
-		item7.setItemName("Tommy");
-		item7.setRetailPrice(2000.5);
-		item7.setNum(1);
-		
-		List<Item> items = new ArrayList<Item>();
-		items.add(item1);
-		items.add(item2);
-		items.add(item3);
-		items.add(item4);
-		items.add(item5);
-		items.add(item6);
-		items.add(item7);
-		
-		Receipts receipts = new Receipts();
-		receipts.setTitle("城隍庙豫园小吃");
-		receipts.setTelephone("021-23456789");
-		receipts.setAddress("上海市豫园");
-		receipts.setCashier("张三");
-		receipts.setDate("2013/09/23 14:34");
-		receipts.setItems(items);
-		receipts.setBootString("021-678987888");
-		receipts.setNetAddress("www.yuyuan.com");
-		
-		POSTicketPrinter printer = new POSTicketPrinter(receipts);
-		printer.printReceipts();
+//		Item item1 = new Item();
+//		item1.setItemName("秘制小龙虾");
+//		item1.setRetailPrice(30.5);
+//		item1.setNum(2);
+//		
+//		Item item2 = new Item();
+//		item2.setItemName("小笼包");
+//		item2.setRetailPrice(20.5);
+//		item2.setNum(2);
+//		
+//		Item item3 = new Item();
+//		item3.setItemName("清风原木纯品");
+//		item3.setRetailPrice(20.5);
+//		item3.setNum(1);
+//		
+//		Item item4 = new Item();
+//		item4.setItemName("洁云抽取式面纸原木纯朴");
+//		item4.setRetailPrice(20.5);
+//		item4.setNum(2);
+//		
+//		Item item5 = new Item();
+//		item5.setItemName("中华香烟");
+//		item5.setRetailPrice(45.00);
+//		item5.setNum(1);
+//		
+//		Item item6 = new Item();
+//		item6.setItemName("可口可乐");
+//		item6.setRetailPrice(5.0);
+//		item6.setNum(1);
+//		
+//		Item item7 = new Item();
+//		item7.setItemName("Tommy");
+//		item7.setRetailPrice(2000.5);
+//		item7.setNum(1);
+//		
+//		List<Item> items = new ArrayList<Item>();
+//		items.add(item1);
+//		items.add(item2);
+//		items.add(item3);
+//		items.add(item4);
+//		items.add(item5);
+//		items.add(item6);
+//		items.add(item7);
+//		
+//		Receipts receipts = new Receipts();
+//		receipts.setTitle("城隍庙豫园小吃");
+//		receipts.setTelephone("021-23456789");
+//		receipts.setAddress("上海市豫园");
+//		receipts.setCashier("张三");
+//		receipts.setDate("2013/09/23 14:34");
+//		receipts.setItems(items);
+//		receipts.setBootString("021-678987888");
+//		receipts.setNetAddress("www.yuyuan.com");
+//		
+//		POSTicketPrinter printer = new POSTicketPrinter(receipts);
+//		printer.printReceipts();
 	}
 }
