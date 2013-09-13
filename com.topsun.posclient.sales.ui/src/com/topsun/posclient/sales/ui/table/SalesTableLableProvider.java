@@ -45,9 +45,9 @@ public class SalesTableLableProvider implements ITableLabelProvider {
 			Item item = (Item) element;
 			String productName = item.getItemName();
 			String type = item.getItemCode();
-			int number = item.getNum();
-			double retailPrice = item.getRetailPrice();
-			double total = retailPrice * number;
+			//int number = item.getNum();
+		//	double retailPrice = item.getRetailPrice();
+			double total = 0;
 
 			switch (columnIndex) {
 			case 0:
@@ -55,12 +55,12 @@ public class SalesTableLableProvider implements ITableLabelProvider {
 			case 1:
 				return type;
 			case 2:
-				return String.valueOf(number);
+				return String.valueOf(0);
 			case 3:
-				if(retailPrice == 0){
+				if(0 == 0){
 					return "";
 				}
-				return String.valueOf(retailPrice);
+				return String.valueOf(0);
 			case 4:
 				if(total == 0){
 					return "";

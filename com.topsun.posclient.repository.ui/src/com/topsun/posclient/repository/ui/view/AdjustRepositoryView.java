@@ -439,15 +439,15 @@ public class AdjustRepositoryView extends ViewPart {
 		int totalNum = 0;
 		double totalPrice = 0;
 		for (Item item : (List<Item>)recordViewer.getInput()) {
-			int num = item.getNum();
-			totalNum = totalNum+num;
+		//	int num = item.getNum();
+			totalNum = 0;
 		}
 		numberTotal.setText(String.valueOf(totalNum));
 		
 		for (Item item : (List<Item>)recordViewer.getInput()) {
-			int num = item.getNum();
-			double price  = item.getRetailPrice()* num;
-			totalPrice = totalPrice + price;
+//			int num = item.getNum();
+//			double price  = item.getRetailPrice()* num;
+			totalPrice = 0;
 		}
 		priceTotal.setText(String.valueOf(totalPrice));
 	}

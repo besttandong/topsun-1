@@ -231,7 +231,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 				if(tableViewer.getInput() != null){
 					List<Item> items = (List<Item>)tableViewer.getInput() ;
 					Item addItem = new Item();
-					addItem.setNum(1);
+				//	addItem.setNum(1);
 					items.add(addItem);
 					tableViewer.setInput(items);
 					tableViewer.editElement(addItem, 0);
@@ -239,7 +239,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 				}else{
 					List<Item> items = new ArrayList<Item>();
 					Item addItem = new Item();
-					addItem.setNum(1);
+					//addItem.setNum(1);
 					items.add(addItem);
 					tableViewer.setInput(items);
 					tableViewer.editElement(addItem, 0);
@@ -525,15 +525,15 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 		int totalNum = 0;
 		double totalPrice = 0;
 		for (Item item : (List<Item>)tableViewer.getInput()) {
-			int num = item.getNum();
-			totalNum = totalNum+num;
+			//int num = item.getNum();
+			totalNum = 0;
 		}
 		numberTotal.setText(String.valueOf(totalNum));
 		
 		for (Item item : (List<Item>)tableViewer.getInput()) {
-			int num = item.getNum();
-			double price  = item.getRetailPrice()* num;
-			totalPrice = totalPrice + price;
+//			int num = item.getNum();
+//			double price  = item.getRetailPrice()* num;
+			totalPrice = 0;
 		}
 		priceTotal.setText(String.valueOf(totalPrice));
 	}
@@ -965,8 +965,8 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 							for (Item t_item : items) {
 								String itemCode = t_item.getItemCode();
 								if(itemCode.equals(operationType)){
-									int t_Num = t_item.getNum() + 1;
-									t_item.setNum(t_Num);
+									//int t_Num = t_item.getNum() + 1;
+									//t_item.setNum(t_Num);
 									selectedItem = t_item;
 								}
 							}
@@ -978,7 +978,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 							try {
 								Item addItem = 	baseService.getItemByCode(operationType);
 //								addItem.setItemCode(operationType);
-								addItem.setNum(1);
+								//addItem.setNum(1);
 								items.add(addItem);
 								tableViewer.setInput(items);
 								tableViewer.editElement(addItem, 2);
@@ -993,7 +993,7 @@ public class SalesView extends ViewPart implements IKeyListener,IBarcodeListener
 					}else{
 						List<Item> items = new ArrayList<Item>();
 						Item addItem = new Item();
-						addItem.setNum(1);
+						//addItem.setNum(1);
 						addItem.setItemCode(operationType);
 						items.add(addItem);
 						tableViewer.setInput(items);

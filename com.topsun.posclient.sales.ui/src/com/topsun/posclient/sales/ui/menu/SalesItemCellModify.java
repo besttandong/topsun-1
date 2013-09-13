@@ -36,7 +36,7 @@ public class SalesItemCellModify implements ICellModifier {
 			}
 			
 			if("num".equals(property)){
-				return String.valueOf(item.getNum());
+				return "";
 			}
 		}
 		
@@ -57,8 +57,8 @@ public class SalesItemCellModify implements ICellModifier {
 					if(queryItem != null){
 						saleItem.setItemName(queryItem.getItemName());
 						saleItem.setItemCode(value.toString());
-						saleItem.setNum(1);
-						saleItem.setRetailPrice(queryItem.getRetailPrice());
+						//saleItem.setNum(1);
+						//saleItem.setRetailPrice(queryItem.getRetailPrice());
 						tableViewer.refresh();
 					}else{
 						MessageDialog.openWarning(Display.getCurrent().getActiveShell(), "警告", "没有商品信息");
@@ -76,7 +76,7 @@ public class SalesItemCellModify implements ICellModifier {
 				if(value.toString().length() > 10){
 					
 				}else{
-					saleItem.setNum(Integer.valueOf(value.toString()));
+				//	saleItem.setNum(Integer.valueOf(value.toString()));
 					tableViewer.refresh();
 				}
 				

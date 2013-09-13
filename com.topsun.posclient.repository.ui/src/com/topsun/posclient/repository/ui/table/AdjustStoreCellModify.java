@@ -32,7 +32,7 @@ public class AdjustStoreCellModify implements ICellModifier {
 			}
 			
 			if("num".equals(property)){
-				return String.valueOf(item.getNum());
+				//return String.valueOf(item.getNum());
 			}
 		}
 		
@@ -54,8 +54,8 @@ public class AdjustStoreCellModify implements ICellModifier {
 					if(queryItem != null){
 						saleItem.setItemName(queryItem.getItemName());
 						saleItem.setItemCode(value.toString());
-						saleItem.setNum(1);
-						saleItem.setRetailPrice(queryItem.getRetailPrice());
+					//	saleItem.setNum(1);
+						//saleItem.setRetailPrice(queryItem.getRetailPrice());
 						tableViewer.refresh();
 					}
 				} catch (POSException e) {
@@ -68,7 +68,7 @@ public class AdjustStoreCellModify implements ICellModifier {
 				if("".equals(value.toString().trim())){
 					return;
 				}
-				saleItem.setNum(Integer.valueOf(value.toString()));
+				//saleItem.setNum(Integer.valueOf(value.toString()));
 				tableViewer.refresh();
 			}
 		}

@@ -45,9 +45,9 @@ public class AdjustStoreLableProvider implements ITableLabelProvider {
 			Item item = (Item) element;
 			String productName = item.getItemName();
 			String type = item.getItemCode();
-			int number = item.getNum();
-			double retailPrice = item.getRetailPrice();
-			double total = retailPrice * number;
+			//int number = item.getNum();
+			//double retailPrice = item.getRetailPrice();
+			double total = 1;
 
 			switch (columnIndex) {
 			case 0:
@@ -59,13 +59,13 @@ public class AdjustStoreLableProvider implements ITableLabelProvider {
 				//String.valueOf(number);
 			case 3:
 
-				return	String.valueOf(number);
+				return	String.valueOf(1);
 
 			case 4:
-				if(retailPrice == 0){
+				if(1 == 0){
 					return "";
 				}
-				return String.valueOf(retailPrice);
+				return String.valueOf(1);
 			case 5:
 				if(total == 0){
 					return "";

@@ -411,14 +411,14 @@ public class CheckRepositoryView extends ViewPart {
 		int totalNum = 0;
 		double totalPrice = 0;
 		for (Item item : (List<Item>)recordViewer.getInput()) {
-			int num = item.getNum();
-			totalNum = totalNum+num;
+			//int num = item.getNum();
+			totalNum = 0;
 		}
 		numberTotal.setText(String.valueOf(totalNum));
 		
 		for (Item item : (List<Item>)recordViewer.getInput()) {
-			int num = item.getNum();
-			double price  = item.getRetailPrice()* num;
+			int num = 0;
+			double price  = 0;
 			totalPrice = totalPrice + price;
 		}
 		priceTotal.setText(String.valueOf(totalPrice));
