@@ -107,4 +107,13 @@ public interface IBaseService {
 	 */
 	public BigDecimal getGoldPriceByMtartCode(String mtartCode) throws POSException;
 	
+	/**
+	 * 根据物料编码修改实时金价
+	 * @param mtartCode 物料编码
+	 * @param gprice 金价
+	 * @return 成功/失败标识
+	 * @throws POSException
+	 */
+	public boolean updateGoldPriceByMtartCode(String mtartCode, BigDecimal gprice) throws POSException;
+	
 }

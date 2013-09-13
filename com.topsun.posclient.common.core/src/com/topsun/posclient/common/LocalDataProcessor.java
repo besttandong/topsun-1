@@ -17,6 +17,9 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
+import com.topsun.posclient.datamodel.Item;
+import com.topsun.posclient.datamodel.dto.ItemDTO;
+
 /**
  * 
  * @author Dong
@@ -47,6 +50,7 @@ public class LocalDataProcessor {
 	}
 	
 	/**
+	 * 拷贝文件到备份目录
 	 * @param file
 	 * @param backPath
 	 * @param needDel
@@ -94,6 +98,7 @@ public class LocalDataProcessor {
     }
 	
 	/**
+	 * 获取文件字符内容
 	 * @param file
 	 * @return
 	 */
@@ -124,7 +129,7 @@ public class LocalDataProcessor {
 	}
 
 	/**
-	 * 
+	 * 从XML数据获取JAXB Object对象
 	 * @param data
 	 * @param classe
 	 * @return
@@ -139,7 +144,7 @@ public class LocalDataProcessor {
 	}
 
 	/**
-	 * 
+	 * 根据Object对象创建JAXB XML文件
 	 * @param data
 	 * @param fileName
 	 * @param dataPath
@@ -151,6 +156,28 @@ public class LocalDataProcessor {
 		String filePath = ProjectUtil.getRuntimeClassPath();
 		File file = new File(filePath + dataPath + fileName + "_"
 				+ System.currentTimeMillis() + ".xml");
+		if (!file.exists()) {
+			file.createNewFile();
+		}
+		FileOutputStream fos = new FileOutputStream(file.getAbsoluteFile());
+		JAXBContext context = JAXBContext.newInstance(data.getClass());
+		Marshaller marshaller = context.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
+		marshaller.marshal(data, fos);
+		return file;
+	}
+	
+	/**
+	 * 根据Object对象创建JAXB XML文件
+	 * @param data
+	 * @param fullpath
+	 * @return
+	 * @throws JAXBException
+	 * @throws IOException
+	 */
+	public File createXmlFileFromObject(Object data, String fullpath) throws JAXBException, IOException {
+		String filePath = ProjectUtil.getRuntimeClassPath();
+		File file = new File(filePath + fullpath);
 		if (!file.exists()) {
 			file.createNewFile();
 		}
@@ -183,14 +210,53 @@ public class LocalDataProcessor {
 		marshaller.marshal(data, fos);
 	}
 	
+	/**
+	 * @param data
+	 * @return
+	 * @throws JAXBException
+	 * @throws IOException
+	 */
 	public String getStringFromObject(Object data) throws JAXBException, IOException {
-		
 		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		JAXBContext context = JAXBContext.newInstance(data.getClass());
 		Marshaller marshaller = context.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_ENCODING, "UTF-8");
 		marshaller.marshal(data, baos);
 		return baos.toString();
+	}
+	
+	public static void main(String[] args) {
+		File file = new File("D:/devtools/eclipse-rcp-helios-SR2-win32/runtime-New_configuration/data/download/data_item.xml");
+		StringBuffer fileData = new StringBuffer();
+		BufferedReader reader = null;
+		try {
+			InputStreamReader read = new InputStreamReader(new FileInputStream(file),"UTF-8");
+			reader = new BufferedReader(read);
+			String tempString = null;
+			int line = 1;
+			while ((tempString = reader.readLine()) != null) {
+				fileData.append(tempString);
+				line++;
+			}
+			JAXBContext context = JAXBContext.newInstance(ItemDTO.class);
+			Unmarshaller unMarshaller = context.createUnmarshaller();
+			ItemDTO itemDto = (ItemDTO)unMarshaller.unmarshal(new StringReader(fileData.toString()));
+			for(Item item : itemDto.getItemList()){
+				if(item.getItemName().equals("测试069999")){
+					System.out.println(item.getItemName());
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			if (reader != null) {
+				try {
+					reader.close();
+				} catch (IOException e1) {
+				}
+			}
+		}
 		
 	}
 }

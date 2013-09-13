@@ -12,6 +12,7 @@ public class AppConstants {
 	public static String SERVER_PORT = "serverPort";
 	public static String CDKEY = "cdKey";
 	public static String SYNC_WAITTIME = "syncWaitTime";
+	public static String CURR_CONN_STATU = "currConnStatu";
 	public static String POSNO = "posNo";
 	public static String OG_DOCNUM = "ogDocNum";
 	public static String DOCNUM = "docNum";
