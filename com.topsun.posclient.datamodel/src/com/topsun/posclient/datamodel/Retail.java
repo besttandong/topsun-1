@@ -45,6 +45,9 @@ public class Retail {
 	private List<RetailM> retailMList; //零售明细 
 	private List<RetailP> retailPList;//零售结算  整单结算金额分配
 	private List<RetailMP> retailMPList;//零售结算 拆分到每个商品的结算金额
+	private List<OldGold> oldGoldList; //旧金集合
+	
+	
 	
 	@XmlElementWrapper(name="retailPList")
     @XmlElement(name="RetailP")
