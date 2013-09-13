@@ -41,8 +41,6 @@ public class POSServerCaller {
 			com.topsun.posclient.webservice.dto.Item iii = new com.topsun.posclient.webservice.dto.Item();
 			iii.setItemId(ee.getId());
 			iii.setLineNum(Integer.valueOf(ee.getItemCode()));
-			iii.setMemo(ee.getDescription());
-			iii.setQuantity(ee.getNum());
 			itemArray[i] = iii;
 		}
 		arrayOfitem.setItem(itemArray);
@@ -57,10 +55,8 @@ public class POSServerCaller {
 			com.topsun.posclient.webservice.dto.BackWarehouseItem iii = new com.topsun.posclient.webservice.dto.BackWarehouseItem();
 			iii.setItemID(ee.getId());
 			iii.setLineNum(Integer.valueOf(ee.getItemCode()));
-			iii.setMemo(ee.getDescription());
-			iii.setSum(new BigDecimal(ee.getRetailPrice()));
-			iii.setPrice(new BigDecimal(ee.getRetailPrice()));
-			iii.setQuantity(new BigDecimal(ee.getNum()));
+			iii.setSum(ee.getZMDLSBQJ());
+			iii.setPrice(ee.getZMDLSBQJ());
 			itemArray[i] = iii;
 		}
 		arrayOfitem.setBackWarehouseItem(itemArray);
@@ -107,9 +103,8 @@ public class POSServerCaller {
 			Retail_M rm = new Retail_M();
 			rm.setItemId(item.getId());
 			rm.setLineNum(Integer.valueOf(item.getItemCode()));
-			rm.setPrice(new BigDecimal(item.getRetailPrice()));
-			rm.setQuantity(item.getNum());
-			rm.setSum(new BigDecimal(item.getRetailPrice()*item.getNum()));
+			rm.setPrice(item.getZMDLSBQJ());
+			rm.setSum(item.getZMDLSBQJ());
 			rms[i] = rm;
 		}
 		ArrayOfRetail_M aom = new ArrayOfRetail_M();
