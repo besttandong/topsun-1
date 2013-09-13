@@ -14,10 +14,11 @@ public interface IOldGoldSaleService extends IBaseService {
 	
 	/**
 	 * 保存旧金数据(旧金鉴定单)
-	 * @param oldGoldDTO
-	 * @throws Exception
+	 * @param oldGoldDTO 旧金鉴定数据
+	 * @param docNum 旧金编码
+	 * @throws POSException
 	 */
-	public void saveOldGoldData(OldGoldDTO oldGoldDTO) throws POSException;
+	public void saveOldGoldData(OldGoldDTO oldGoldDTO, String docNum) throws POSException;
 	
 	/**
 	 * 下载旧金鉴定信息
