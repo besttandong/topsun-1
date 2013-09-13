@@ -1,12 +1,14 @@
 package com.topsun.posclient.common.dao;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.List;
 
 import com.topsun.posclient.common.AppConstants;
 import com.topsun.posclient.common.LocalDataProcessor;
 import com.topsun.posclient.common.POSException;
 import com.topsun.posclient.common.ProjectUtil;
+import com.topsun.posclient.datamodel.GoldPrice;
 import com.topsun.posclient.datamodel.Item;
 import com.topsun.posclient.datamodel.Shop;
 import com.topsun.posclient.datamodel.User;
@@ -209,6 +211,29 @@ public class BaseDao {
 		GoldPriceDTO goldPriceDTO = (GoldPriceDTO) getLocalProcessor()
 				.getObjectFromXml(getLocalProcessor().getDataFileContent(file), GoldPriceDTO.class);
 		return goldPriceDTO;
+	}
+	
+	/**
+	 * 根据物料编码修改实时金价
+	 * @param mtartCode 物料编码
+	 * @param gprice 实时金价
+	 * @throws Exception
+	 */
+	public void updateGoldPriceByMtartCode(String mtartCode, String gprice) throws Exception {
+		GoldPriceDTO goldPriceDTO = getAllGoldPrice();
+		if(null == goldPriceDTO){
+			return;
+		}
+		List<GoldPrice> goldPriceList = goldPriceDTO.getGoldPriceList();
+		if(null == goldPriceList || goldPriceList.size() <= 0){
+			return;
+		}
+		for(GoldPrice gp : goldPriceList){
+			if(gp.getMtartCode().equals(mtartCode)){
+				gp.setPrice(gprice);
+			}
+		}
+		this.getLocalProcessor().createXmlFileFromObject(goldPriceDTO, AppConstants.DATA_GOLDPRICE_FILENAME);
 	}
 	
 }
